@@ -1,0 +1,32 @@
+/* style.css *
+
+/* 1. Import Tailwind layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --------------------------------------------------
+   2. Your own global styles / overrides
+-------------------------------------------------- */
+
+/* Example: Override the default body font‑size and line‑height */
+body {
+  @apply text-base leading-relaxed; /* uses Tailwind's utilities */
+}
+
+/* Custom component – a card with a subtle shadow */
+.card {
+  @apply bg-white rounded-lg shadow-md p-6 transition-shadow duration-200 hover:shadow-xl;
+}
+
+/* Dark‑mode tweaks (if you use the `dark` variant) */
+.dark .card {
+  @apply bg-gray-800 text-gray-100;
+}
+
+/* Utility class that isn’t in Tailwind by default */
+.text-gradient {
+  background: linear-gradient(45deg, theme('colors.primary'), theme('colors.secondary'));
+  -webkit-background-clip: text;
+  color: transparent;
+}
