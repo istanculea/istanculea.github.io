@@ -6,32 +6,6 @@ This repository hosts the personal portfolio website that showcases my backgroun
 
 
 
-🚀 Quick Start
-
-If you’d like to run the portfolio locally or tweak it:
-
-
-
-\# Clone the repo
-
-git clone https://github.com/ionut-stanculea/ionut-stanculea.github.io.git
-
-cd ionut-stanculea.github.io
-
-
-
-\# Open the index.html file in your browser (no build step needed)
-
-open index.html   # macOS
-
-start index.html  # Windows
-
-xdg-open index.html  # Linux
-
-The site is static, so no server or build tool is required.
-
-
-
 👤 About Me
 
 I am a Cloud, Infrastructure \& Operations Engineer with over 7 years of experience building and managing scalable infrastructure on Azure and AWS. My focus lies in:
