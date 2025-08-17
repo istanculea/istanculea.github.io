@@ -1,89 +1,147 @@
+import { Zap, Cloud, Wrench, Users, Activity, CheckCircle, MapPin, Heart, Award } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+// Using the new uploaded portrait image
+
 export function About() {
+  const chipHighlights = [
+    { icon: Zap, text: "7+ years in IT Operations, QA, and Cloud Engineering" },
+    { icon: Cloud, text: "AWS, Azure, CI/CD, Terraform, Docker, Kubernetes" },
+    { icon: Wrench, text: "Incident management, automation, platform reliability" },
+    { icon: Users, text: "Agile/Scrum, cross‑functional collaboration" },
+    { icon: Activity, text: "Monitoring, observability, performance in hybrid clouds" },
+    { icon: CheckCircle, text: "QA automation and DevOps best practices" }
+  ]
+
+  const skills = [
+    "Terraform", "Azure", "AWS", "CI/CD", "Automation", "Monitoring", "DevOps"
+  ]
+
+  const certifications = [
+    "Microsoft Azure Fundamentals (AZ-900)",
+    "Microsoft Azure Administrator Associate (AZ-104)"
+  ]
+
   return (
-    <section id="about" className="py-20 px-6">
-      <div className="container max-w-4xl mx-auto">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold">About Me</h2>
-          <p className="text-xl text-muted-foreground">
-            Building resilient cloud infrastructure with expertise and precision
+    <section id="about" className="py-20 px-6 scroll-mt-20">
+      <div className="container max-w-6xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center space-y-4 mb-16 animate-fade-up">
+          <h2 className="text-4xl lg:text-5xl font-bold">
+            <span className="text-gradient">Profile</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Cloud & Operations Engineer building reliable infrastructure with care and precision
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <p className="text-lg leading-relaxed">
-              I'm a passionate Cloud, Infrastructure & Operations Engineer with over 7 years 
-              of experience building, managing, and automating scalable infrastructure on Azure 
-              and AWS. Currently working at Electronic Arts, I specialize in optimizing hybrid 
-              cloud environments and implementing robust DevOps practices.
-            </p>
-            
-            <p className="text-lg leading-relaxed">
-              My expertise spans from Infrastructure as Code with Terraform to implementing 
-              comprehensive monitoring solutions with Grafana. I have a proven track record 
-              of reducing system incidents by 25% and deployment times by 35% through 
-              automation and process optimization.
-            </p>
+        {/* Main Content */}
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
+          {/* Left Column - Content */}
+          <div className="lg:col-span-7 space-y-8 animate-fade-up">
+            {/* Summary */}
+            <div className="space-y-6">
+              <p className="text-lg leading-relaxed text-foreground">
+                I'm a passionate <strong>Cloud & Operations Engineer</strong> with over 7 years 
+                of hands-on experience building, managing, and automating scalable infrastructure 
+                on Azure and AWS. Currently at Electronic Arts, I specialize in hybrid cloud 
+                environments and platform reliability that keeps teams productive and users happy.
+              </p>
+              
+              <p className="text-lg leading-relaxed text-foreground">
+                My approach combines deep technical expertise with genuine care for the people 
+                using these systems. Whether it's reducing incidents by 25% or solving complex 
+                infrastructure puzzles, I believe the best solutions are both robust and elegant.
+              </p>
 
-            <p className="text-lg leading-relaxed">
-              When I'm not optimizing cloud infrastructure, you'll find me working on smart 
-              home automation projects, 3D printing prototypes, or exploring the latest 
-              developments in cloud technologies.
-            </p>
+              <p className="text-lg leading-relaxed text-foreground flex items-center gap-2">
+                <Heart className="h-5 w-5 text-primary" />
+                When I'm not optimizing cloud infrastructure, you'll find me tinkering with smart 
+                home gadgets, 3D printing fun prototypes, or exploring the latest cloud technologies.
+              </p>
+            </div>
+
+            {/* Key Highlights */}
+            <div className="space-y-4">
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                {chipHighlights.map((highlight, index) => {
+                  const IconComponent = highlight.icon
+                  return (
+                    <div 
+                      key={index}
+                      className="surface-card flex items-center gap-3 p-3 rounded-lg hover:scale-[1.02] transition-transform duration-200"
+                      style={{ animationDelay: `${index * 50}ms` }}
+                    >
+                      <IconComponent className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+                      <span className="text-sm leading-relaxed">{highlight.text}</span>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+
+            {/* Core Skills */}
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-foreground">Core Skills</h3>
+              <div className="flex flex-wrap gap-2">
+                {skills.map((skill) => (
+                  <Badge key={skill} className="skill-badge">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {/* Certifications */}
+            <div className="space-y-4">
+              <h3 className="text-xl font-semibold text-foreground">Certifications</h3>
+              <div className="space-y-2">
+                {certifications.map((cert) => (
+                  <div key={cert} className="flex items-center space-x-3">
+                    <Award className="h-4 w-4 text-success" />
+                    <span className="cert-badge">{cert}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="pt-4">
+              <Button 
+                variant="outline"
+                className="relative overflow-hidden group border-primary/30 bg-gradient-to-r from-primary/5 to-accent/5 hover:from-primary/10 hover:to-accent/10 transition-all duration-300 hover-scale shadow-lg hover:shadow-xl hover:shadow-primary/20" 
+                onClick={() => {
+                  const experienceSection = document.getElementById('experience');
+                  experienceSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <MapPin className="h-4 w-4 mr-2 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
+                <span className="relative z-10">Career Journey</span>
+              </Button>
+            </div>
           </div>
 
-          <div className="space-y-8">
-            <div className="grid grid-cols-2 gap-6">
-              <div className="surface-card p-6 text-center">
-                <div className="text-3xl font-bold text-primary">5,000+</div>
-                <div className="text-sm text-muted-foreground mt-2">Global Users Supported</div>
+          {/* Right Column - Profile Image */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative animate-scale-in">
+              <div className="relative">
+                <img
+                  src="/lovable-uploads/170f5004-9944-4459-b193-b8cca34127e6.png"
+                  alt="Ionuț Stănculea - Cloud & Operations Engineer"
+                  className="w-80 h-80 lg:w-96 lg:h-96 object-cover object-[50%_20%] rounded-full shadow-tech animate-float"
+                  loading="lazy"
+                  decoding="async"
+                />
+                {/* Decorative ring */}
+                <div className="absolute inset-0 rounded-full ring-4 ring-primary/20 ring-offset-4 ring-offset-background"></div>
+                {/* Gradient overlay effect */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/10 to-accent/10"></div>
               </div>
-              <div className="surface-card p-6 text-center">
-                <div className="text-3xl font-bold text-primary">7+</div>
-                <div className="text-sm text-muted-foreground mt-2">Years Experience</div>
-              </div>
-              <div className="surface-card p-6 text-center">
-                <div className="text-3xl font-bold text-primary">25%</div>
-                <div className="text-sm text-muted-foreground mt-2">Incident Reduction</div>
-              </div>
-              <div className="surface-card p-6 text-center">
-                <div className="text-3xl font-bold text-primary">35%</div>
-                <div className="text-sm text-muted-foreground mt-2">Deployment Optimization</div>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold">Certifications</h3>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <span className="cert-badge">Microsoft Azure Fundamentals (AZ-900)</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <span className="cert-badge">Microsoft Azure Administrator Associate (AZ-104)</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold">Core Values</h3>
-              <ul className="space-y-3">
-                <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span>Infrastructure as Code</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span>Automation & Efficiency</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span>Continuous Learning</span>
-                </li>
-                <li className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span>Incident Prevention</span>
-                </li>
-              </ul>
+              
+              {/* Floating elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse"></div>
+              <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-accent rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
             </div>
           </div>
         </div>

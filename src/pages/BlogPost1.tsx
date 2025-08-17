@@ -2,158 +2,208 @@ import { ArrowLeft, Calendar, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useNavigate } from "react-router-dom"
 
-// -------------------- Reusable Components --------------------
-
-function BackButton() {
+export default function PostDeploymentMonitoring() {
   const navigate = useNavigate()
-  return (
-    <Button
-      variant="ghost"
-      onClick={() => navigate('/')}
-      className="mb-8 group"
-    >
-      <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-      Back to Home
-    </Button>
-  )
-}
 
-function PostMeta({ category, date, readTime }) {
-  return (
-    <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-      <span className="cloud-badge">{category}</span>
-      <span className="flex items-center space-x-1">
-        <Calendar className="h-4 w-4" />
-        <span>{date}</span>
-      </span>
-      <span className="flex items-center space-x-1">
-        <Clock className="h-4 w-4" />
-        <span>{readTime}</span>
-      </span>
-    </div>
-  )
-}
-
-function PostHeader({ title, description }) {
-  return (
-    <header className="mb-12 space-y-6">
-      <PostMeta category="Cloud Infrastructure" date="March 12, 2024" readTime="12 min read" />
-      <h1 className="text-4xl lg:text-5xl font-bold leading-tight">{title}</h1>
-      <p className="text-xl text-muted-foreground">{description}</p>
-    </header>
-  )
-}
-
-function PostImage({ src, alt }) {
-  return (
-    <div className="aspect-video mb-12 overflow-hidden rounded-lg">
-      <img src={src} alt={alt} className="w-full h-full object-cover" />
-    </div>
-  )
-}
-
-// -------------------- Main Blog Post --------------------
-
-export default function BlogPost1() {
   return (
     <div className="min-h-screen bg-background">
       <article className="container max-w-4xl mx-auto px-6 py-20">
-        
-        <BackButton />
+        <div className="mb-8 flex space-x-4">
+          <Button 
+            variant="ghost" 
+            onClick={() => navigate('/')}
+            className="group"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
+            Back to Home
+          </Button>
 
-        <PostHeader
-          title="Optimizing Azure Infrastructure with Terraform and Grafana"
-          description="A detailed journey of how we automated Azure deployments using Terraform, monitored them with Grafana, and achieved measurable improvements in efficiency, reliability, and observability."
-        />
+          <Button 
+            variant="ghost" 
+            onClick={() => navigate('/blog')}
+            className="group"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4 rotate-180 transition-transform group-hover:translate-x-1" />
+            Back to Blog
+          </Button>
+        </div>
 
-        <PostImage
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop&crop=entropy&auto=format"
-          alt="Azure Infrastructure with Terraform"
-        />
+        <header className="mb-12 space-y-6">
+          <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+            <span className="cloud-badge">DevOps</span>
+            <span className="flex items-center space-x-1">
+              <Calendar className="h-4 w-4" />
+              <span>August 17, 2025</span>
+            </span>
+            <span className="flex items-center space-x-1">
+              <Clock className="h-4 w-4" />
+              <span>15 min read</span>
+            </span>
+          </div>
+          
+          <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
+            Post Deployment: Monitoring and Error Tracking
+          </h1>
+          
+          <p className="text-xl text-muted-foreground">
+            Deploying new features is exciting—but in DevOps, deployment is just the starting line. The real challenge begins after the code hits production. How do you know your system is performing as expected? How quickly can you detect and resolve errors before they affect users? From managing hybrid cloud environments and large-scale systems, I've learned that post-deployment monitoring and error tracking are core pillars of reliability.
+          </p>
+        </header>
 
-        <div className="prose prose-lg max-w-none">
+        <div className="aspect-video mb-12 overflow-hidden rounded-lg">
+          <img
+            src="/lovable-uploads/c1178383-bd7a-40e1-aaba-c8fad01d0123.png"
+            alt="Post-deployment monitoring dashboards illustration"
+            className="w-full h-full object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 1024px"
+            loading="lazy"
+            decoding="async"
+            onError={(e) => {
+              e.currentTarget.src = '/placeholder.svg';
+            }}
+          />
+        </div>
 
-          <h2>Why Treat Infrastructure Like Code?</h2>
+        <div className="prose prose-lg max-w-none dark:prose-invert">
+          <div className="bg-primary/10 border-l-4 border-primary p-4 my-6 rounded-r-lg">
+            <p className="text-primary italic font-medium">
+              "In DevOps, deployment isn't the finish line; resilience and observability are."
+            </p>
+          </div>
+
+          <h2>Why Post-Deployment Monitoring Matters</h2>
           <p>
-            Manual cloud provisioning leads to inconsistencies, downtime, and operational stress. Treating infrastructure as code makes deployments reproducible, auditable, and version-controlled.
+            Early in my career, I deployed a major update confidently—only to watch a minor bug ripple into multiple user-facing issues. That moment drove home a lesson I now live by: if you can't see it, you can't fix it.
+          </p>
+          <p>
+            Post-deployment monitoring provides:
           </p>
           <ul>
-            <li>Inconsistent environments between dev, staging, and production</li>
-            <li>Time-consuming manual deployments</li>
-            <li>Configuration drift causing unexpected failures</li>
-            <li>Rollbacks that were risky and unreliable</li>
+            <li><strong>Visibility into system behavior:</strong> Understand how services interact and perform under load.</li>
+            <li><strong>Insights into user impact:</strong> Detect issues that affect end-user experience before they become complaints.</li>
+            <li><strong>Proactive problem detection:</strong> Identify trends that could lead to outages, rather than reacting after the fact.</li>
           </ul>
-
-          <h2>Terraform: Simplifying Azure Deployments</h2>
           <p>
-            We switched from ARM templates to Terraform. HCL provided readability, modularity, and reusability. Our infrastructure became declarative, enabling reliable replication of environments.
+            Monitoring is not just about metrics; it's about using those metrics to drive operational decisions and inform the team's next actions.
           </p>
 
-          <h2>Step 1: Start Small, Build Confidence</h2>
+          <h2>Observability vs. Monitoring in DevOps</h2>
           <p>
-            We began with a single project—a web app, database, and storage account. This limited scope allowed experimentation without production risk, while teaching the team Terraform basics and workflows.
-          </p>
-
-          <h2>Step 2: Build Reusable Modules</h2>
-          <p>
-            Repeating patterns for VMs, storage, networking, and monitoring were modularized:
+            In DevOps, I treat these as complementary but distinct concepts:
           </p>
           <ul>
-            <li><strong>web-app module:</strong> deploys app server, DB, storage, networking, monitoring</li>
-            <li><strong>network module:</strong> reusable VNet/subnet/security rules</li>
-            <li><strong>monitoring module:</strong> sets up Grafana dashboards and alerting</li>
+            <li><strong>Monitoring:</strong> Collect metrics, logs, and traces to detect anomalies and identify issues quickly.</li>
+            <li><strong>Observability:</strong> Understand why issues occur by analyzing outputs to infer internal system state.</li>
           </ul>
-
-          <h2>Step 3: Observability with Grafana</h2>
           <p>
-            Terraform deployment success is great—but without monitoring, you don’t know if resources perform optimally. Grafana dashboards became our single source of truth:
-          </p>
-          <ul>
-            <li><strong>Resource Utilization:</strong> CPU, memory, disk per VM, scaling patterns</li>
-            <li><strong>Deployment Metrics:</strong> deployment duration, success/failure, drift checks</li>
-            <li><strong>Environment Consistency:</strong> comparing dev/staging/prod in one view</li>
-            <li><strong>Alerts:</strong> misconfigured or failed deployments trigger notifications in Slack/Teams</li>
-          </ul>
-
-          <h2>Step 4: Short-, Medium-, and Long-Term Impact</h2>
-          <h3>Short-term (Weeks)</h3>
-          <ul>
-            <li>Reduced deployment time from 3–4 hours to 15–20 minutes</li>
-            <li>Immediate visibility into failed deployments</li>
-            <li>Team confidence in Terraform modules increased</li>
-          </ul>
-
-          <h3>Medium-term (Months)</h3>
-          <ul>
-            <li>Zero configuration drift between dev/staging/prod</li>
-            <li>Rapid creation of new environments (minutes instead of days)</li>
-            <li>Improved capacity planning with Grafana metrics</li>
-            <li>Fewer operational incidents and faster root cause analysis</li>
-          </ul>
-
-          <h3>Long-term (6+ Months)</h3>
-          <ul>
-            <li>Stable, predictable infrastructure with versioned deployments</li>
-            <li>Cost optimization informed by utilization dashboards</li>
-            <li>Self-service infrastructure for developers reduces bottlenecks</li>
-            <li>Proactive alerting prevents downtime before users notice</li>
-          </ul>
-
-          <h2>Lessons Learned</h2>
-          <ul>
-            <li>Start small, iterate gradually</li>
-            <li>Use remote state for collaboration</li>
-            <li>Modularize everything; treat modules as code</li>
-            <li>Tag all resources for cost and tracking</li>
-            <li>Secure state files containing sensitive info</li>
-            <li>Dashboards and alerts must evolve with the environment</li>
-          </ul>
-
-          <h2>Final Thoughts</h2>
-          <p>
-            Terraform combined with Grafana transformed our Azure operations. Deployments became fast, predictable, and observable. Teams now focus on improving systems, not firefighting deployments.
+            A well-observed system allows teams to diagnose complex production issues faster, maintain confidence in continuous delivery, and optimize operations across services.
           </p>
 
+          <h2>Tools and Setup: Building a DevOps Monitoring Stack</h2>
+          <p>
+            A layered monitoring stack is critical for reliability and fast feedback. Over the years, I've built monitoring stacks combining multiple layers:
+          </p>
+          <ul>
+            <li><strong>Metrics:</strong> Prometheus collects system-level metrics (CPU, memory, disk, network) and custom business KPIs such as API response success rates or queue processing times.</li>
+            <li><strong>Visualization:</strong> Grafana dashboards allow trend analysis and anomaly detection. Correlating multiple metrics helps identify root causes, e.g., a CPU spike causing increased error rates in API endpoints.</li>
+            <li><strong>Error Tracking:</strong> Sentry captures exceptions with stack traces, affected users, and environment context, enabling rapid debugging before errors affect end users.</li>
+            <li><strong>Cloud-Native Monitoring:</strong> CloudWatch, Azure Monitor, or GCP Stackdriver provide telemetry for cloud infrastructure components. Combining these with Prometheus/Grafana gives full-stack insights across services.</li>
+          </ul>
+          
+          <div className="bg-muted border-l-4 border-primary p-4 my-6 rounded-r-lg">
+            <p className="text-muted-foreground italic font-medium">
+              "Metrics without context are noise. Observability transforms numbers into actionable insights."
+            </p>
+          </div>
+
+          <p>
+            I configure monitoring to answer critical DevOps questions:
+          </p>
+          <ul>
+            <li>Are response times within SLA for critical endpoints?</li>
+            <li>Are error rates trending upward over time?</li>
+            <li>Are there early indicators of performance degradation?</li>
+          </ul>
+
+          <h2>Defining Alerts That Actually Work</h2>
+          <p>
+            Alerting is essential, but it must enable quick response without overwhelming the team. Alerts should enable fast response without creating alert fatigue. Here's how I handle them in practice:
+          </p>
+
+          <h3>1. Realistic Thresholds</h3>
+          <p>
+            Instead of arbitrary limits, I base alerts on historical system behavior and SLA expectations:
+          </p>
+          <ul>
+            <li><strong>CPU usage:</strong> Alert only if usage exceeds 90% sustained for 5 minutes, rather than on every spike.</li>
+            <li><strong>Error rates:</strong> Trigger alerts when errors exceed 2% of requests over 5 minutes, instead of a single 500 error.</li>
+            <li><strong>Response time:</strong> Alert when average API latency exceeds 300ms over 10 minutes.</li>
+          </ul>
+          <p>
+            Realistic thresholds reduce false positives and ensure that alerts indicate genuine operational issues.
+          </p>
+
+          <h3>2. Integrated Communication</h3>
+          <p>
+            Alerts must reach the team promptly and include escalation rules:
+          </p>
+          <ul>
+            <li><strong>Slack:</strong> Post actionable alerts in a dedicated channel (#alerts-production).</li>
+            <li><strong>Teams:</strong> Route critical Azure Monitor alerts to a monitored channel.</li>
+            <li><strong>Opsgenie/PagerDuty:</strong> Escalate high-priority alerts to on-call engineers if unresolved within a set time.</li>
+          </ul>
+          
+          <div className="bg-muted p-4 rounded-lg my-4 border border-border">
+            <p className="font-semibold mb-2 text-foreground">Example workflow:</p>
+            <p className="text-muted-foreground">Prometheus detects high error rate → alert posted to Slack → Opsgenie escalates to on-call if unresolved → engineer follows runbook to resolve.</p>
+          </div>
+
+          <h3>3. Runbooks</h3>
+          <p>
+            Runbooks provide step-by-step guidance to ensure consistent, confident responses. Examples:
+          </p>
+          <ul>
+            <li><strong>Service outage:</strong> Check logs, verify database connectivity, restart failing services, confirm system health.</li>
+            <li><strong>High error rate:</strong> Identify affected endpoints, roll back recent deployments if necessary, notify stakeholders.</li>
+            <li><strong>Performance degradation:</strong> Analyze CPU/memory metrics, scale resources, adjust alert thresholds as needed.</li>
+          </ul>
+          <p>
+            Runbooks reduce cognitive load during high-pressure incidents and standardize response across the team, regardless of who is on call.
+          </p>
+
+          <h2>Turning Incidents into Continuous Improvement</h2>
+          <p>
+            Every incident, minor or major, is an opportunity to improve reliability. After each incident, I conduct a post-mortem—even for minor glitches. We review:
+          </p>
+          <ul>
+            <li>What went wrong?</li>
+            <li>Why did it happen?</li>
+            <li>How can recurrence be prevented?</li>
+          </ul>
+          <p>
+            This feedback loop:
+          </p>
+          <ul>
+            <li>Refines dashboards and metrics based on lessons learned</li>
+            <li>Adjusts alert thresholds to reduce noise and increase accuracy</li>
+            <li>Enhances team confidence by sharing insights and improving processes</li>
+          </ul>
+          <p>
+            Over time, monitoring evolves from a reactive safety net into a proactive tool for optimizing system reliability.
+          </p>
+
+          <h2>Key DevOps Takeaways</h2>
+          <ul>
+            <li>Monitoring and observability are integral parts of the product</li>
+            <li>Combine metrics, logs, and traces for full system insight</li>
+            <li>Design alerts to be actionable and reduce unnecessary noise</li>
+            <li>Treat incidents as feedback loops to continuously improve reliability</li>
+            <li>Invest in observability early—it scales with both your systems and team maturity</li>
+          </ul>
+
+          <p>
+            In DevOps, deploying code is only half the journey. Real value comes from ensuring systems are resilient, observable, and continuously improving, giving users a stable experience and teams the confidence to respond efficiently. By prioritizing monitoring and error tracking, you ensure that your users get a stable experience and your team can respond with confidence.
+          </p>
         </div>
       </article>
     </div>

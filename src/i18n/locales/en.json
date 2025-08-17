@@ -1,0 +1,172 @@
+{
+  "nav": {
+    "about": "Profile",
+    "experience": "Experience",
+    "skills": "Skills",
+    "education": "Learning",
+    "blog": "Blog",
+    "getInTouch": "Get in Touch"
+  },
+  "hero": {
+    "badge1": "Cloud Specialist",
+    "badge2": "DevOps Engineer",
+    "name": "Ionut Zaman",
+    "title": "Cloud & Operations Engineer building reliable infrastructure with care and precision",
+    "description": "Passionate about creating scalable, secure cloud solutions that empower teams and delight users. Currently architecting hybrid cloud environments at Electronic Arts.",
+    "location": "Location",
+    "email": "Email",
+    "downloadCV": "Download CV"
+  },
+  "about": {
+    "title": "Profile",
+    "subtitle": "Cloud & Operations Engineer building reliable infrastructure with care and precision",
+    "paragraph1": "I'm a passionate Cloud & Operations Engineer with over 7 years of hands-on experience building, managing, and automating scalable infrastructure on Azure and AWS. Currently at Electronic Arts, I specialize in hybrid cloud environments and platform reliability that keeps teams productive and users happy.",
+    "paragraph2": "My approach combines deep technical expertise with genuine care for the people using these systems. Whether it's reducing incidents by 25% or solving complex infrastructure puzzles, I believe the best solutions are both robust and elegant.",
+    "paragraph3": "When I'm not optimizing cloud infrastructure, you'll find me tinkering with smart home gadgets, 3D printing fun prototypes, or exploring the latest cloud technologies.",
+    "highlights": {
+      "experience": "7+ Years Experience",
+      "cloud": "Multi-Cloud Expert",
+      "automation": "Automation Specialist",
+      "reliability": "Platform Reliability"
+    },
+    "coreSkills": "Core Skills",
+    "certifications": "Certifications",
+    "careerJourney": "Career Journey"
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "subtitle": "Building and scaling infrastructure across different industries and technologies",
+    "ea": {
+      "title": "Cloud & Operations Engineer",
+      "company": "Electronic Arts",
+      "location": "Bucharest, Romania",
+      "period": "Nov 2022 - Present",
+      "achievements": [
+        "Architected hybrid cloud solutions combining on-premises infrastructure with Azure services, improving scalability and reducing operational overhead by 30%",
+        "Led the migration of legacy systems to cloud-native architectures, resulting in 40% cost reduction and enhanced performance",
+        "Implemented comprehensive monitoring and alerting systems, reducing mean time to detection (MTTD) by 50%",
+        "Mentored junior engineers and established infrastructure best practices across multiple development teams"
+      ]
+    },
+    "metro": {
+      "title": "DevOps Engineer",
+      "company": "Metro Systems Romania",
+      "location": "Bucharest, Romania", 
+      "period": "Oct 2021 - Nov 2022",
+      "achievements": [
+        "Designed and implemented CI/CD pipelines using Azure DevOps, reducing deployment time from hours to minutes",
+        "Automated infrastructure provisioning with Terraform and ARM templates, eliminating manual configuration errors",
+        "Established container orchestration strategies using Kubernetes, improving application scalability and reliability",
+        "Reduced production incidents by 25% through proactive monitoring and automated remediation scripts"
+      ]
+    },
+    "altex": {
+      "title": "System Administrator",
+      "company": "Altex Romania",
+      "location": "Bucharest, Romania",
+      "period": "Feb 2018 - Oct 2021", 
+      "achievements": [
+        "Managed Windows Server environments supporting 200+ retail locations nationwide",
+        "Implemented backup and disaster recovery solutions, achieving 99.9% data availability SLA",
+        "Optimized network infrastructure and security protocols, reducing security incidents by 60%",
+        "Led server consolidation projects that reduced hardware costs by 35% while improving performance"
+      ]
+    },
+    "brd": {
+      "title": "IT Support Specialist",
+      "company": "BRD Groupe Société Générale",
+      "location": "Bucharest, Romania",
+      "period": "Jan 2017 - Feb 2018",
+      "achievements": [
+        "Provided technical support for banking applications and infrastructure serving 1000+ employees",
+        "Streamlined incident management processes, reducing average resolution time by 40%",
+        "Contributed to cybersecurity initiatives and compliance audits in the regulated banking environment",
+        "Developed automation scripts for routine maintenance tasks, improving operational efficiency"
+      ]
+    }
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "subtitle": "The tools and technologies I use to build reliable infrastructure",
+    "cloud": "Cloud Platforms",
+    "automation": "Automation & IaC",
+    "monitoring": "Monitoring & Observability",
+    "cicd": "CI/CD & Version Control"
+  },
+  "education": {
+    "title": "Education & Certifications",
+    "subtitle": "Academic background and professional development",
+    "education": "Education",
+    "certifications": "Training & Certifications",
+    "degree": "Bachelor of Engineering",
+    "field": "Industrial Engineering",
+    "university": "University Politehnica Bucharest",
+    "period": "2012 – 2016"
+  },
+  "blog": {
+    "title": "Latest Articles",
+    "subtitle": "Insights and experiences from the world of cloud infrastructure and DevOps",
+    "readMore": "Read more",
+    "viewAll": "View All Articles",
+    "category": "Category",
+    "readTime": "min read"
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "subtitle": "Have a project in mind? Let's discuss how we can build something amazing together.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "What's this about?",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project or question...",
+      "send": "Send Message",
+      "sending": "Sending..."
+    },
+    "info": {
+      "email": "Email",
+      "location": "Location",
+      "social": "Social"
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "nameMin": "Name must be at least 2 characters",
+      "emailRequired": "Email is required", 
+      "emailInvalid": "Please enter a valid email address",
+      "subjectRequired": "Subject is required",
+      "subjectMin": "Subject must be at least 5 characters",
+      "messageRequired": "Message is required",
+      "messageMin": "Message must be at least 10 characters"
+    },
+    "toast": {
+      "success": "Message sent successfully! I'll get back to you soon.",
+      "error": "Failed to send message. Please try again.",
+      "spam": "Spam detected. Please try again."
+    }
+  },
+  "footer": {
+    "about": "About",
+    "aboutText": "Building reliable cloud infrastructure with passion and precision.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "social": "Social",
+    "getInTouch": "Get in Touch",
+    "email": "Email",
+    "location": "Location",
+    "copyright": "© {{year}} Ionut Zaman. All rights reserved.",
+    "buildStatus": "Built with ❤️ using React, TypeScript & Tailwind CSS"
+  },
+  "blogPost": {
+    "backToHome": "Back to Home",
+    "backToBlog": "Back to Blog",
+    "readTime": "{{minutes}} min read"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Oops! Page not found",
+    "cta": "Return to Home"
+  }
+}

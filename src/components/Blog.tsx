@@ -12,40 +12,40 @@ export function Blog() {
       title: "Post Deployment: Monitoring and Error Tracking",
       excerpt: "Learn how to set up effective monitoring and error tracking post-deployment to maintain stable production environments and reduce downtime.",
       date: "August 17, 2025",
-      readTime: "9 min read",
+      readTime: "15 min read",
       category: "DevOps",
-      image: "https://images.unsplash.com/photo-1591696331114-ef848d2c0a58?w=800&h=400&fit=crop&crop=entropy&auto=format",
+      image: "/lovable-uploads/c1178383-bd7a-40e1-aaba-c8fad01d0123.png",
       slug: "/blog/post-deployment-monitoring",
       featured: true
     },
     {
       id: 2,
-      title: "Database Setup: MongoDB",
+      title: "Database Setup: MongoDB – Lessons from My Projects",
       excerpt: "Step-by-step guide on setting up MongoDB for development and production, including indexing, replication, and security best practices.",
       date: "August 16, 2025",
       readTime: "7 min read",
       category: "Database",
-      image: "https://images.unsplash.com/photo-1581090700227-6a04a4b1789f?w=600&h=400&fit=crop&crop=entropy&auto=format",
+      image: "/lovable-uploads/aa9dab4a-1c28-4a0e-a6b6-3715a9725d8d.png",
       slug: "/blog/mongodb-setup"
     },
     {
       id: 3,
       title: "How to Build a Serverless Website with reCAPTCHA on AWS",
-      excerpt: "A practical guide to deploying a fully serverless website using AWS Lambda, API Gateway, S3, and integrating Google reCAPTCHA for security.",
+      excerpt: "Serverless architectures are game changers for developers who want fast deployment, automatic scaling, and minimal infrastructure overhead.",
       date: "August 15, 2025",
-      readTime: "12 min read",
+      readTime: "13 min read",
       category: "Cloud Infrastructure",
-      image: "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=600&h=400&fit=crop&crop=entropy&auto=format",
+      image: "/lovable-uploads/c561fe0a-dba4-46c4-bc12-60f7d1ae6f5b.png",
       slug: "/blog/serverless-website-recaptcha"
     },
     {
       id: 4,
-      title: "Create an OpenVPN Server in Seconds",
-      excerpt: "Quickly set up a secure OpenVPN server on any cloud provider to safely connect remote teams and ensure encrypted communication.",
+      title: "Deploy a Secure OpenVPN Server in Minutes: Step-by-Step Guide",
+      excerpt: "Secure remote access is a must in modern infrastructures—whether for remote teams, personal labs, or connecting multiple office sites.",
       date: "August 16, 2025",
-      readTime: "8 min read",
+      readTime: "10 min read",
       category: "Networking",
-      image: "https://images.unsplash.com/photo-1558898410-773aee6e22b0?w=600&h=400&fit=crop&crop=entropy&auto=format",
+      image: "/lovable-uploads/de9e7292-3c71-4a96-a5fb-1ff3991f7846.png",
       slug: "/blog/openvpn-server-setup"
     },
     {
@@ -55,7 +55,7 @@ export function Blog() {
       date: "August 17, 2025",
       readTime: "6 min read",
       category: "Linux",
-      image: "https://images.unsplash.com/photo-1612831455548-769c57c35c90?w=600&h=400&fit=crop&crop=entropy&auto=format",
+      image: "/lovable-uploads/e98ddacc-29c4-4915-9c1c-3025e3925c7b.png",
       slug: "/blog/linux-acl-management"
     }
   ]
@@ -63,14 +63,12 @@ export function Blog() {
   const featuredPost = blogPosts.find(post => post.featured)
   const otherPosts = blogPosts.filter(post => !post.featured)
 
-  // Framer Motion variants
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: i => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" }
-    })
+  // Simple animation without variants
+  const animationProps = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.6 }
   }
 
   return (
@@ -89,25 +87,26 @@ export function Blog() {
           <motion.article 
             className="surface-card overflow-hidden mb-12 group cursor-pointer rounded-xl shadow-lg transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
             onClick={() => navigate(featuredPost.slug)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={0}
-            variants={cardVariants}
+            {...animationProps}
           >
             <div className="relative aspect-[16/7] overflow-hidden">
               <img
                 src={featuredPost.image}
                 alt={featuredPost.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+                onError={(e) => {
+                  e.currentTarget.src = '/placeholder.svg';
+                }}
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-sm p-6 text-white">
                 <span className="cloud-badge bg-white/30 text-white">{featuredPost.category}</span>
                 <h3 className="text-3xl font-bold mt-2">{featuredPost.title}</h3>
                 <p className="mt-2 text-lg">{featuredPost.excerpt}</p>
                 <Button 
                   variant="outline" 
-                  className="mt-4 text-white border-white hover:bg-white hover:text-black"
+                  className="mt-4 bg-transparent text-white border-white/80 hover:bg-white hover:text-black focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/10"
                   onClick={(e) => {
                     e.stopPropagation()
                     navigate(featuredPost.slug)
@@ -122,29 +121,34 @@ export function Blog() {
         )}
 
         {/* Grid of other posts */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {otherPosts.map((post, index) => (
             <motion.article 
               key={post.id}
-              className="surface-card overflow-hidden group cursor-pointer rounded-lg shadow-md transform transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              custom={index + 1} // stagger after featured post
-              variants={cardVariants}
+              className="bg-card/95 border border-border overflow-hidden group cursor-pointer rounded-xl shadow-md transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              {...animationProps}
+              transition={{ ...animationProps.transition, delay: (index + 1) * 0.1 }}
               onClick={() => navigate(post.slug)}
+              tabIndex={0}
+              role="button"
+              aria-label={`Read article: ${post.title}`}
             >
               <div className="aspect-video overflow-hidden">
                 <img
                   src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                  onError={(e) => {
+                    e.currentTarget.src = '/placeholder.svg';
+                  }}
                 />
               </div>
               
-              <div className="p-4 space-y-3">
-                <div className="flex items-center justify-between text-sm text-muted-foreground">
-                  <span className="cloud-badge">{post.category}</span>
+              <div className="p-6 space-y-4">
+                <div className="flex items-center justify-between text-sm text-muted-foreground/80">
+                  <span className="px-3 py-1 bg-primary/15 text-primary font-medium rounded-full text-xs">{post.category}</span>
                   <div className="flex items-center space-x-3">
                     <span className="flex items-center space-x-1">
                       <Calendar className="h-4 w-4" />
@@ -157,11 +161,11 @@ export function Blog() {
                   </div>
                 </div>
 
-                <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                   {post.title}
                 </h3>
                 
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-foreground/70 leading-relaxed">
                   {post.excerpt}
                 </p>
 
@@ -183,7 +187,10 @@ export function Blog() {
 
         {/* View All Button */}
         <div className="text-center mt-12">
-          <Button className="btn-outline">
+          <Button 
+            className="btn-outline"
+            onClick={() => navigate('/blog')}
+          >
             View All Articles
           </Button>
         </div>

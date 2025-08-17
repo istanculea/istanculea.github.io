@@ -1,0 +1,172 @@
+{
+  "nav": {
+    "about": "Profil",
+    "experience": "Experiență",
+    "skills": "Abilități",
+    "education": "Educație",
+    "blog": "Blog",
+    "getInTouch": "Să Lucrăm Împreună"
+  },
+  "hero": {
+    "badge1": "Specialist Cloud",
+    "badge2": "Inginer DevOps",
+    "name": "Ionut Zaman",
+    "title": "Inginer Cloud & Operațiuni construind infrastructură de încredere cu grijă și precizie",
+    "description": "Pasionat de crearea soluțiilor cloud scalabile și sigure care împuternicesc echipele și încântă utilizatorii. În prezent arhitectez medii cloud hibride la Electronic Arts.",
+    "location": "Locație",
+    "email": "Email",
+    "downloadCV": "Descărcare CV"
+  },
+  "about": {
+    "title": "Profil",
+    "subtitle": "Inginer Cloud & Operațiuni construind infrastructură de încredere cu grijă și precizie",
+    "paragraph1": "Sunt un Inginer Cloud & Operațiuni pasionat cu peste 7 ani de experiență practică în construirea, gestionarea și automatizarea infrastructurii scalabile pe Azure și AWS. În prezent la Electronic Arts, mă specializez în medii cloud hibride și fiabilitatea platformelor care mențin echipele productive și utilizatorii fericiți.",
+    "paragraph2": "Abordarea mea combină expertiza tehnică profundă cu grija genuină pentru oamenii care folosesc aceste sisteme. Fie că reduc incidentele cu 25% sau rezolv puzzle-uri complexe de infrastructură, cred că cele mai bune soluții sunt atât robuste, cât și elegante.",
+    "paragraph3": "Când nu optimizez infrastructura cloud, mă vei găsi experimentând cu gadget-uri smart home, imprimând prototipuri amuzante 3D, sau explorând cele mai noi tehnologii cloud.",
+    "highlights": {
+      "experience": "7+ Ani Experiență",
+      "cloud": "Expert Multi-Cloud",
+      "automation": "Specialist Automatizare",
+      "reliability": "Fiabilitate Platformă"
+    },
+    "coreSkills": "Abilități Principale",
+    "certifications": "Certificări",
+    "careerJourney": "Parcurs Profesional"
+  },
+  "experience": {
+    "title": "Experiență Profesională",
+    "subtitle": "Construind și scalând infrastructură în diferite industrii și tehnologii",
+    "ea": {
+      "title": "Inginer Cloud & Operațiuni",
+      "company": "Electronic Arts",
+      "location": "București, România",
+      "period": "Nov 2022 - Prezent",
+      "achievements": [
+        "Am arhitectat soluții cloud hibride combinând infrastructura on-premise cu serviciile Azure, îmbunătățind scalabilitatea și reducând overhead-ul operațional cu 30%",
+        "Am condus migrarea sistemelor legacy către arhitecturi cloud-native, rezultând în 40% reducere de costuri și performanță îmbunătățită",
+        "Am implementat sisteme cuprinzătoare de monitorizare și alertare, reducând timpul mediu de detectare (MTTD) cu 50%",
+        "Am mentorat ingineri juniori și am stabilit cele mai bune practici de infrastructură în multiple echipe de dezvoltare"
+      ]
+    },
+    "metro": {
+      "title": "Inginer DevOps",
+      "company": "Metro Systems Romania",
+      "location": "București, România",
+      "period": "Oct 2021 - Nov 2022",
+      "achievements": [
+        "Am proiectat și implementat pipeline-uri CI/CD folosind Azure DevOps, reducând timpul de deployment de la ore la minute",
+        "Am automatizat aprovizionarea infrastructurii cu Terraform și template-uri ARM, eliminând erorile de configurare manuală",
+        "Am stabilit strategii de orchestrare containere folosind Kubernetes, îmbunătățind scalabilitatea și fiabilitatea aplicațiilor",
+        "Am redus incidentele de producție cu 25% prin monitorizare proactivă și scripturi de remediere automatizată"
+      ]
+    },
+    "altex": {
+      "title": "Administrator de Sistem",
+      "company": "Altex Romania",
+      "location": "București, România",
+      "period": "Feb 2018 - Oct 2021",
+      "achievements": [
+        "Am gestionat medii Windows Server susținând 200+ locații retail la nivel național",
+        "Am implementat soluții de backup și recuperare în caz de dezastru, atingând 99.9% disponibilitate date SLA",
+        "Am optimizat infrastructura de rețea și protocoalele de securitate, reducând incidentele de securitate cu 60%",
+        "Am condus proiecte de consolidare servere care au redus costurile hardware cu 35% îmbunătățind în același timp performanța"
+      ]
+    },
+    "brd": {
+      "title": "Specialist Suport IT",
+      "company": "BRD Groupe Société Générale",
+      "location": "București, România",
+      "period": "Ian 2017 - Feb 2018",
+      "achievements": [
+        "Am oferit suport tehnic pentru aplicații bancare și infrastructură servind 1000+ angajați",
+        "Am eficientizat procesele de gestionare incidente, reducând timpul mediu de rezolvare cu 40%",
+        "Am contribuit la inițiative de cybersecuritate și audituri de conformitate în mediul bancar reglementat",
+        "Am dezvoltat scripturi de automatizare pentru sarcini de mentenanță rutiniere, îmbunătățind eficiența operațională"
+      ]
+    }
+  },
+  "skills": {
+    "title": "Abilități & Tehnologii",
+    "subtitle": "Instrumentele și tehnologiile pe care le folosesc pentru a construi infrastructură de încredere",
+    "cloud": "Platforme Cloud",
+    "automation": "Automatizare & IaC",
+    "monitoring": "Monitorizare & Observabilitate",
+    "cicd": "CI/CD & Control Versiuni"
+  },
+  "education": {
+    "title": "Educație & Certificări",
+    "subtitle": "Pregătirea academică și dezvoltarea profesională",
+    "education": "Educație",
+    "certifications": "Pregătire & Certificări",
+    "degree": "Licență în Inginerie",
+    "field": "Inginerie Industrială",
+    "university": "Universitatea Politehnica București",
+    "period": "2012 – 2016"
+  },
+  "blog": {
+    "title": "Articole Recente",
+    "subtitle": "Perspective și experiențe din lumea infrastructurii cloud și DevOps",
+    "readMore": "Citește mai mult",
+    "viewAll": "Vezi Toate Articolele",
+    "category": "Categorie",
+    "readTime": "min citire"
+  },
+  "contact": {
+    "title": "Să Lucrăm Împreună",
+    "subtitle": "Ai un proiect în minte? Să discutăm cum putem construi ceva extraordinar împreună.",
+    "form": {
+      "name": "Nume",
+      "namePlaceholder": "Numele tău",
+      "email": "Email",
+      "emailPlaceholder": "email.tau@exemplu.com",
+      "subject": "Subiect",
+      "subjectPlaceholder": "Despre ce este vorba?",
+      "message": "Mesaj",
+      "messagePlaceholder": "Spune-mi despre proiectul sau întrebarea ta...",
+      "send": "Trimite Mesaj",
+      "sending": "Se trimite..."
+    },
+    "info": {
+      "email": "Email",
+      "location": "Locație",
+      "social": "Social"
+    },
+    "validation": {
+      "nameRequired": "Numele este obligatoriu",
+      "nameMin": "Numele trebuie să aibă cel puțin 2 caractere",
+      "emailRequired": "Email-ul este obligatoriu",
+      "emailInvalid": "Te rog să introduci o adresă de email validă",
+      "subjectRequired": "Subiectul este obligatoriu",
+      "subjectMin": "Subiectul trebuie să aibă cel puțin 5 caractere",
+      "messageRequired": "Mesajul este obligatoriu",
+      "messageMin": "Mesajul trebuie să aibă cel puțin 10 caractere"
+    },
+    "toast": {
+      "success": "Mesaj trimis cu succes! Îți voi răspunde în curând.",
+      "error": "Eroare la trimiterea mesajului. Te rog să încerci din nou.",
+      "spam": "Spam detectat. Te rog să încerci din nou."
+    }
+  },
+  "footer": {
+    "about": "Despre",
+    "aboutText": "Construind infrastructură cloud de încredere cu pasiune și precizie.",
+    "quickLinks": "Linkuri Rapide",
+    "contact": "Contact",
+    "social": "Social",
+    "getInTouch": "Să Lucrăm Împreună",
+    "email": "Email",
+    "location": "Locație",
+    "copyright": "© {{year}} Ionut Zaman. Toate drepturile rezervate.",
+    "buildStatus": "Construit cu ❤️ folosind React, TypeScript & Tailwind CSS"
+  },
+  "blogPost": {
+    "backToHome": "Înapoi la Început",
+    "backToBlog": "Înapoi la Blog",
+    "readTime": "{{minutes}} min citire"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "Oops! Pagină negăsită",
+    "cta": "Înapoi la Început"
+  }
+}

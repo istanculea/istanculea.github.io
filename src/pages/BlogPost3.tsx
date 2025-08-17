@@ -2,139 +2,193 @@ import { ArrowLeft, Calendar, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useNavigate } from "react-router-dom"
 
-export default function BlogPostK8s() {
+export default function PostServerlessRecaptcha() {
   const navigate = useNavigate()
 
   return (
     <div className="min-h-screen bg-background">
       <article className="container max-w-4xl mx-auto px-6 py-20">
-        <Button 
-          variant="ghost" 
-          onClick={() => navigate('/')}
-          className="mb-8 group"
-        >
-          <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-          Back to Home
-        </Button>
+        <div className="mb-8 flex space-x-4">
+          <Button 
+            variant="ghost" 
+            onClick={() => navigate('/')}
+            className="group"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
+            Back to Home
+          </Button>
+
+          <Button 
+            variant="ghost" 
+            onClick={() => navigate('/blog')}
+            className="group"
+          >
+            <ArrowLeft className="mr-2 h-4 w-4 rotate-180 transition-transform group-hover:translate-x-1" />
+            Back to Blog
+          </Button>
+        </div>
 
         <header className="mb-12 space-y-6">
           <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-            <span className="cloud-badge">Kubernetes</span>
+            <span className="cloud-badge">Serverless</span>
             <span className="flex items-center space-x-1">
               <Calendar className="h-4 w-4" />
-              <span>February 15, 2024</span>
+              <span>August 16, 2025</span>
             </span>
             <span className="flex items-center space-x-1">
               <Clock className="h-4 w-4" />
-              <span>12 min read</span>
+              <span>13 min read</span>
             </span>
           </div>
           
           <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
-            Kubernetes at Scale: Observability, Security, and Efficiency
+            How to Build a Serverless Website with reCAPTCHA on AWS
           </h1>
           
           <p className="text-xl text-muted-foreground">
-            Insights from running large Kubernetes clusters, with Grafana dashboards for monitoring, Prometheus metrics for observability, 
-            and strategies for security, autoscaling, and disaster recovery.
+            Serverless architectures are game changers for developers who want fast deployment, automatic scaling, and minimal infrastructure overhead. Recently, I built a serverless website that integrates Google reCAPTCHA to prevent spam and abuse, and the experience reinforced some key lessons about architecture, security, and observability.
           </p>
         </header>
 
         <div className="aspect-video mb-12 overflow-hidden rounded-lg">
           <img
-            src="https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&h=500&fit=crop&crop=entropy&auto=format"
-            alt="Kubernetes Container Orchestration"
-            className="w-full h-full object-cover"
+            src="/lovable-uploads/c561fe0a-dba4-46c4-bc12-60f7d1ae6f5b.png"
+            alt="AWS Serverless Architecture with Lambda and reCAPTCHA"
+            className="w-full h-full object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 1024px"
+            loading="lazy"
+            decoding="async"
+            onError={(e) => {
+              e.currentTarget.src = '/placeholder.svg';
+            }}
           />
         </div>
 
-        <div className="prose prose-lg max-w-none">
-          <h2>From Docker to Distributed Complexity</h2>
+        <div className="prose prose-lg max-w-none dark:prose-invert">
           <p>
-            Running a few containers is easy. Managing hundreds across regions, ensuring uptime, autoscaling, and security—now that’s a challenge. 
-            Kubernetes offers power, but without structured observability and process, it quickly becomes overwhelming.
+            In this post, I'll share the full journey, from initial planning to production deployment, including real-world challenges, AWS-specific tips, and things I wish I'd known at the start.
           </p>
 
-          <h2>Cluster Layout and Strategy</h2>
-          <ul>
-            <li><strong>Production:</strong> Multi-region, HA, monitored closely.</li>
-            <li><strong>Staging:</strong> Mirror of production for realistic testing.</li>
-            <li><strong>Development:</strong> Isolated sandbox for experimentation.</li>
-            <li><strong>CI/CD:</strong> Dedicated cluster to prevent build noise from affecting apps.</li>
-          </ul>
-
-          <h2>Security as a Core Principle</h2>
+          <h2>Why Serverless? My Motivation</h2>
           <p>
-            Security cannot be an afterthought. Key practices:
+            When I first approached this project, the goal was simple: deploy a website quickly, make it scalable, and avoid managing servers. In the past, I had spent countless hours patching servers, resizing EC2 instances, or troubleshooting Nginx configurations—tasks that don't add value for end users.
+          </p>
+          <p>
+            Serverless solves these pain points:
           </p>
           <ul>
-            <li><strong>Network policies:</strong> Only allow necessary traffic; block lateral movement.</li>
-            <li><strong>RBAC:</strong> Strict role-based access for users and service accounts.</li>
-            <li><strong>Container hygiene:</strong> No root users, read-only filesystems, explicit capability drops, enforced resource limits.</li>
-          </ul>
-
-          <h2>Observability with Grafana & Prometheus</h2>
-          <p>
-            We made visibility a priority. Dashboards were designed for different audiences:
-          </p>
-          <ul>
-            <li><strong>Node Health Panel:</strong> CPU, memory, disk I/O, and pod resource usage.</li>
-            <li><strong>Cluster State Panel:</strong> Pod crashes, deployment status, node availability.</li>
-            <li><strong>Autoscaling Panel:</strong> Horizontal and vertical pod autoscaling metrics, including custom business metrics.</li>
-            <li><strong>Application Metrics:</strong> Response times, queue lengths, error rates.</li>
-            <li><strong>Business KPIs Panel:</strong> Revenue-impacting metrics, throughput, and transaction success rates.</li>
+            <li>AWS Lambda runs your code on-demand, without provisioning servers.</li>
+            <li>Amazon S3 hosts static assets reliably and cost-effectively.</li>
+            <li>API Gateway handles routing and request validation automatically.</li>
           </ul>
           <p>
-            Alerts were set on thresholds to reduce noise, with critical issues routed to Slack and Ops teams.
+            From experience, this architecture allows me to focus on code quality, UX, and security rather than operations. It also reduces operational overhead while providing automatic scaling during traffic spikes.
           </p>
 
-          <h2>Resource Optimization</h2>
+          <h2>Planning the Architecture: Lessons Learned</h2>
           <p>
-            Kubernetes efficiency is ongoing work:
+            Before writing any code, I spent time mapping the architecture:
           </p>
           <ul>
-            <li><strong>Vertical Pod Autoscaler:</strong> Right-sized containers based on real usage.</li>
-            <li><strong>Horizontal Pod Autoscaler:</strong> Scales services dynamically on custom metrics.</li>
-            <li><strong>Optimized images & caching:</strong> Reduced container startup times by 30%.</li>
+            <li>Static website hosted on S3, delivered via CloudFront for global, low-latency access.</li>
+            <li>Lambda functions behind API Gateway handle form submissions, contact forms, or other dynamic interactions.</li>
+            <li>Integration with Google reCAPTCHA v3 to validate user actions and prevent spam.</li>
+            <li>DynamoDB as a serverless database to store validated inputs securely.</li>
           </ul>
-
-          <h2>Disaster Recovery Planning</h2>
-          <ul>
-            <li><strong>Cluster state:</strong> Daily etcd backups.</li>
-            <li><strong>Volumes & applications:</strong> Snapshots, GitOps for configs.</li>
-            <li><strong>Multi-region deployment:</strong> Failover ensured uninterrupted service during outages.</li>
-          </ul>
-
-          <h2>Results</h2>
-          <ul>
-            <li>Reduced wasted resources by 50% through smarter scheduling and autoscaling.</li>
-            <li>99.99% uptime on critical services.</li>
-            <li>Zero-downtime deployments became standard.</li>
-            <li>Faster incident response thanks to Grafana dashboards and alerting.</li>
-          </ul>
-
-          <h2>Lessons Learned</h2>
-          <ul>
-            <li>Define proper resource requests and limits; don’t guess.</li>
-            <li>Implement health checks early and test them regularly.</li>
-            <li>Plan storage and networking with long-term cluster growth in mind.</li>
-            <li>Security must be built in from day one.</li>
-            <li>Metrics, dashboards, and alerts are critical for scaling and reliability.</li>
-          </ul>
-
-          <h2>Next Steps</h2>
-          <ul>
-            <li>Service mesh (Istio) for observability and security.</li>
-            <li>Custom schedulers for workload optimization.</li>
-            <li>ML for predictive scaling and capacity planning.</li>
-            <li>Advanced admission controllers for policy enforcement.</li>
-          </ul>
-
-          <h2>Bottom Line</h2>
           <p>
-            Kubernetes requires discipline, monitoring, and continuous iteration. With the right observability stack, 
-            security, and resource management, it becomes a reliable foundation for large-scale applications. 
-            The goal isn’t to run Kubernetes—it’s to run your workloads efficiently, securely, and predictably.
+            From previous deployments, I learned that planning upfront prevents operational headaches. For instance, integrating reCAPTCHA later caused extra code refactoring and delayed deployments. Adding it at the start simplified workflows and reduced spam from day one.
+          </p>
+
+          <h2>Step-by-Step Implementation: From Personal Experience</h2>
+          
+          <h3>1. Hosting Static Assets with S3 and CloudFront</h3>
+          <p>
+            I configured S3 buckets with static website hosting, uploaded HTML/CSS/JS files, and restricted public access.
+          </p>
+          <p>
+            CloudFront distribution ensured low-latency delivery worldwide. I also set up HTTPS with ACM certificates to secure traffic.
+          </p>
+          <p>
+            <strong>Lesson learned:</strong> Always test CloudFront invalidation, especially after frequent updates—bypassing stale cached files is a common pitfall.
+          </p>
+
+          <h3>2. Handling Backend Logic with Lambda & API Gateway</h3>
+          <p>
+            Each form submission triggers a Lambda function via API Gateway.
+          </p>
+          <p>
+            I structured Lambda functions as small, single-purpose units, making debugging and scaling easier.
+          </p>
+          <p>
+            <strong>Challenges I faced:</strong> cold starts during initial testing. I mitigated this by enabling provisioned concurrency for critical endpoints.
+          </p>
+
+          <h3>3. Integrating Google reCAPTCHA</h3>
+          <p>
+            I used reCAPTCHA v3, which evaluates user interactions and provides a risk score.
+          </p>
+          <p>
+            On the backend, Lambda validates the token with Google's API before storing data in DynamoDB.
+          </p>
+          <p>
+            <strong>Lesson learned:</strong> always validate server-side, never rely solely on client-side validation—bots can bypass front-end scripts.
+          </p>
+
+          <h3>4. Storing Data in DynamoDB</h3>
+          <p>
+            I used DynamoDB for storing validated form submissions.
+          </p>
+          <p>
+            Configured on-demand capacity initially, then adjusted read/write capacities based on traffic.
+          </p>
+          <p>
+            <strong>Tips from personal experience:</strong> design partition keys carefully to avoid hot partitions, especially if certain forms receive heavy traffic.
+          </p>
+
+          <h2>Security Lessons: Real-World Takeaways</h2>
+          <p>
+            Security is often underestimated in serverless setups:
+          </p>
+          <ul>
+            <li><strong>S3 bucket policies:</strong> I restricted buckets to allow CloudFront only and denied all public access.</li>
+            <li><strong>IAM roles:</strong> Lambda functions ran with least privilege, preventing accidental access to other resources.</li>
+            <li><strong>Data encryption:</strong> DynamoDB and S3 encrypted sensitive data at rest; API Gateway and CloudFront ensured HTTPS in transit.</li>
+            <li><strong>Throttling:</strong> API Gateway request limits prevented misuse and protected Lambda from being overwhelmed.</li>
+          </ul>
+          <p>
+            From experience, skipping any of these steps can lead to subtle vulnerabilities, even in a serverless environment.
+          </p>
+
+          <h2>Observability and Performance</h2>
+          <p>
+            Monitoring serverless functions is different than traditional servers:
+          </p>
+          <ul>
+            <li>CloudWatch metrics track invocations, errors, and duration.</li>
+            <li>I added custom CloudWatch logs for Lambda to capture submission metadata, reCAPTCHA validation outcomes, and error traces.</li>
+          </ul>
+          <p>
+            <strong>Lesson learned:</strong> set alarms for high error rates or unusually long execution times—this caught a misconfigured reCAPTCHA secret before users were impacted.
+          </p>
+
+          <h2>Challenges I Encountered and Lessons Learned</h2>
+          <ul>
+            <li><strong>Cold starts in Lambda:</strong> Critical endpoints needed provisioned concurrency to avoid slow initial responses.</li>
+            <li><strong>ReCAPTCHA validation edge cases:</strong> Users with browser privacy restrictions sometimes scored low; I implemented fallback checks.</li>
+            <li><strong>Caching & CloudFront:</strong> Early deployments had stale cached pages; invalidation scripts solved this problem.</li>
+            <li><strong>Serverless observability:</strong> Without proper logging and metrics, debugging failures in distributed serverless systems is painful—plan logging early.</li>
+          </ul>
+
+          <h2>Key Takeaways from Real Deployments</h2>
+          <ul>
+            <li>Serverless simplifies scaling, but operational discipline is still required: monitoring, logging, and IAM policies matter.</li>
+            <li>Integrate security early, including reCAPTCHA, HTTPS, and encryption.</li>
+            <li>Automation saves time: S3 deployments, Lambda updates, and CloudFront invalidations should all be scripted.</li>
+            <li>Observability is critical: Metrics, logs, and alarms are your first line of defense against silent failures.</li>
+            <li>Plan for edge cases: Cold starts, API throttling, and reCAPTCHA exceptions can affect real users.</li>
+          </ul>
+          <p>
+            Deploying a serverless website isn't just about removing servers—it's about building a scalable, secure, and maintainable system that can grow with your users. From my experience, attention to detail, automation, and proactive observability turn serverless from a convenient technology into a reliable production-ready platform.
           </p>
         </div>
       </article>

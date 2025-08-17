@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self';" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self';" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), gyroscope=(), accelerometer=(), magnetometer=()" />
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Ionuț Stănculea - Cloud Infrastructure & Operations Engineer</title>
     <meta name="description" content="Cloud Infrastructure & Operations Engineer with 7+ years experience on Azure and AWS. Specializing in Infrastructure as Code, CI/CD optimization, and scalable cloud solutions. Currently at Electronic Arts." />
     <meta name="author" content="Ionuț Stănculea" />
@@ -15,21 +21,24 @@
     <meta property="og:url" content="https://ionut-stanculea.dev" />
     <meta property="og:title" content="Ionuț Stănculea - Cloud Infrastructure & Operations Engineer" />
     <meta property="og:description" content="Cloud Infrastructure & Operations Engineer with 7+ years experience on Azure and AWS. Specializing in Infrastructure as Code and scalable cloud solutions." />
-    <meta property="og:image" content="https://ionut-stanculea.dev/og-image.jpg" />
+    <meta property="og:image" content="https://ionut-stanculea.dev/assets/ionut-new-portrait.jpg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://ionut-stanculea.dev" />
     <meta property="twitter:title" content="Ionuț Stănculea - Cloud Infrastructure & Operations Engineer" />
     <meta property="twitter:description" content="Cloud Infrastructure & Operations Engineer with 7+ years experience on Azure and AWS. Specializing in Infrastructure as Code and scalable cloud solutions." />
-    <meta property="twitter:image" content="https://ionut-stanculea.dev/og-image.jpg" />
+    <meta property="twitter:image" content="https://ionut-stanculea.dev/assets/ionut-new-portrait.jpg" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   </head>
 
   <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

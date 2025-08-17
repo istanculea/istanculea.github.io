@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import { Mail, MapPin, Phone, Github, Linkedin, Twitter, Send } from "lucide-react"
+import { Mail, MapPin, Github, Linkedin, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -11,6 +11,7 @@ import { useToast } from "@/hooks/use-toast"
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
   email: z.string().email("Please enter a valid email address").max(255, "Email must be less than 255 characters"),
+  subject: z.string().min(3, "Subject must be at least 3 characters").max(150, "Subject must be less than 150 characters"),
   message: z.string().min(10, "Message must be at least 10 characters").max(2000, "Message must be less than 2000 characters"),
   honeypot: z.string().optional()
 })
@@ -39,7 +40,7 @@ export function Contact() {
     
     toast({
       title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
+      description: "Thanks! I'll get back to you within 24 hours.",
     })
     
     reset()
@@ -54,34 +55,23 @@ export function Contact() {
       href: "mailto:stanculea.ionut.93@gmail.com"
     },
     {
-      icon: <Phone className="h-5 w-5" />,
-      label: "Phone", 
-      value: "(+40) 775 547 311",
-      href: "tel:+40775547311"
-    },
-    {
       icon: <MapPin className="h-5 w-5" />,
       label: "Location",
-      value: "Bucharest, Romania",
+      value: "Remote / Europe",
       href: "#"
     }
   ]
 
   const socialLinks = [
     {
-      icon: <Github className="h-5 w-5" />,
-      label: "GitHub",
-      href: "https://github.com/ionut-stanculea"
-    },
-    {
       icon: <Linkedin className="h-5 w-5" />,
       label: "LinkedIn", 
       href: "https://linkedin.com/in/ionut-stanculea"
     },
     {
-      icon: <Twitter className="h-5 w-5" />,
-      label: "Twitter",
-      href: "https://twitter.com/ionut_stanculea"
+      icon: <Github className="h-5 w-5" />,
+      label: "GitHub",
+      href: "https://github.com/ionut-stanculea"
     }
   ]
 
@@ -89,9 +79,9 @@ export function Contact() {
     <section id="contact" className="py-20 px-6 bg-surface">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold">Let's Connect</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold">Let's Connect!</h2>
           <p className="text-xl text-muted-foreground">
-            Open to new opportunities and exciting cloud infrastructure projects
+            Open to new opportunities and exciting cloud infrastructure projects.
           </p>
         </div>
 
@@ -130,6 +120,17 @@ export function Contact() {
                 />
                 {errors.email && (
                   <p className="text-destructive text-sm mt-1">{errors.email.message}</p>
+                )}
+              </div>
+
+              <div>
+                <Input
+                  placeholder="Subject"
+                  {...register("subject")}
+                  className={errors.subject ? "border-destructive" : ""}
+                />
+                {errors.subject && (
+                  <p className="text-destructive text-sm mt-1">{errors.subject.message}</p>
                 )}
               </div>
 
@@ -197,15 +198,6 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="surface-card p-6">
-              <h4 className="font-semibold mb-3">Let's collaborate!</h4>
-              <p className="text-muted-foreground leading-relaxed">
-                I'm always interested in challenging cloud infrastructure projects 
-                and DevOps transformations. Whether you need help with Azure migrations, 
-                Kubernetes deployments, or CI/CD optimization, I'd love to discuss how 
-                we can work together.
-              </p>
-            </div>
 
           </div>
         </div>

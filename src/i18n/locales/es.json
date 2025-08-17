@@ -1,0 +1,172 @@
+{
+  "nav": {
+    "about": "Perfil",
+    "experience": "Experiencia",
+    "skills": "Habilidades",
+    "education": "Formación",
+    "blog": "Blog",
+    "getInTouch": "Contactar"
+  },
+  "hero": {
+    "badge1": "Especialista en Cloud",
+    "badge2": "Ingeniero DevOps",
+    "name": "Ionut Zaman",
+    "title": "Ingeniero Cloud & Operaciones construyendo infraestructura confiable con cuidado y precisión",
+    "description": "Apasionado por crear soluciones cloud escalables y seguras que empoderan equipos y deleitan usuarios. Actualmente arquitectando entornos cloud híbridos en Electronic Arts.",
+    "location": "Ubicación",
+    "email": "Correo",
+    "downloadCV": "Descargar CV"
+  },
+  "about": {
+    "title": "Perfil",
+    "subtitle": "Ingeniero Cloud & Operaciones construyendo infraestructura confiable con cuidado y precisión",
+    "paragraph1": "Soy un Ingeniero Cloud & Operaciones apasionado con más de 7 años de experiencia práctica construyendo, gestionando y automatizando infraestructura escalable en Azure y AWS. Actualmente en Electronic Arts, me especializo en entornos cloud híbridos y confiabilidad de plataformas que mantienen a los equipos productivos y a los usuarios felices.",
+    "paragraph2": "Mi enfoque combina experiencia técnica profunda con genuino cuidado por las personas que usan estos sistemas. Ya sea reduciendo incidentes en un 25% o resolviendo complejos rompecabezas de infraestructura, creo que las mejores soluciones son tanto robustas como elegantes.",
+    "paragraph3": "Cuando no estoy optimizando infraestructura cloud, me encontrarás trasteando con gadgets de hogar inteligente, imprimiendo prototipos divertidos en 3D, o explorando las últimas tecnologías cloud.",
+    "highlights": {
+      "experience": "7+ Años de Experiencia",
+      "cloud": "Experto Multi-Cloud",
+      "automation": "Especialista en Automatización",
+      "reliability": "Confiabilidad de Plataforma"
+    },
+    "coreSkills": "Habilidades Principales",
+    "certifications": "Certificaciones",
+    "careerJourney": "Trayectoria Profesional"
+  },
+  "experience": {
+    "title": "Experiencia Profesional",
+    "subtitle": "Construyendo y escalando infraestructura a través de diferentes industrias y tecnologías",
+    "ea": {
+      "title": "Ingeniero Cloud & Operaciones",
+      "company": "Electronic Arts",
+      "location": "Bucarest, Rumania",
+      "period": "Nov 2022 - Presente",
+      "achievements": [
+        "Arquitecté soluciones cloud híbridas combinando infraestructura on-premise con servicios Azure, mejorando escalabilidad y reduciendo sobrecarga operacional en 30%",
+        "Lideré la migración de sistemas legacy a arquitecturas cloud-native, resultando en 40% de reducción de costos y rendimiento mejorado",
+        "Implementé sistemas integrales de monitoreo y alertas, reduciendo tiempo medio de detección (MTTD) en 50%",
+        "Mentoré ingenieros junior y establecí mejores prácticas de infraestructura en múltiples equipos de desarrollo"
+      ]
+    },
+    "metro": {
+      "title": "Ingeniero DevOps",
+      "company": "Metro Systems Romania",
+      "location": "Bucarest, Rumania",
+      "period": "Oct 2021 - Nov 2022",
+      "achievements": [
+        "Diseñé e implementé pipelines CI/CD usando Azure DevOps, reduciendo tiempo de despliegue de horas a minutos",
+        "Automaticé aprovisionamiento de infraestructura con Terraform y plantillas ARM, eliminando errores de configuración manual",
+        "Establecí estrategias de orquestación de contenedores usando Kubernetes, mejorando escalabilidad y confiabilidad de aplicaciones",
+        "Reduje incidentes de producción en 25% através de monitoreo proactivo y scripts de remediación automatizada"
+      ]
+    },
+    "altex": {
+      "title": "Administrador de Sistemas",
+      "company": "Altex Romania",
+      "location": "Bucarest, Rumania",
+      "period": "Feb 2018 - Oct 2021",
+      "achievements": [
+        "Gestioné entornos Windows Server soportando 200+ ubicaciones retail a nivel nacional",
+        "Implementé soluciones de backup y recuperación ante desastres, logrando 99.9% de disponibilidad de datos SLA",
+        "Optimicé infraestructura de red y protocolos de seguridad, reduciendo incidentes de seguridad en 60%",
+        "Lideré proyectos de consolidación de servidores que redujeron costos de hardware en 35% mientras mejoraban rendimiento"
+      ]
+    },
+    "brd": {
+      "title": "Especialista en Soporte IT",
+      "company": "BRD Groupe Société Générale",
+      "location": "Bucarest, Rumania",
+      "period": "Ene 2017 - Feb 2018",
+      "achievements": [
+        "Proporcioné soporte técnico para aplicaciones bancarias e infraestructura sirviendo 1000+ empleados",
+        "Optimicé procesos de gestión de incidentes, reduciendo tiempo promedio de resolución en 40%",
+        "Contribuí a iniciativas de ciberseguridad y auditorías de cumplimiento en el entorno bancario regulado",
+        "Desarrollé scripts de automatización para tareas de mantenimiento rutinarias, mejorando eficiencia operacional"
+      ]
+    }
+  },
+  "skills": {
+    "title": "Habilidades & Tecnologías",
+    "subtitle": "Las herramientas y tecnologías que uso para construir infraestructura confiable",
+    "cloud": "Plataformas Cloud",
+    "automation": "Automatización & IaC",
+    "monitoring": "Monitoreo & Observabilidad",
+    "cicd": "CI/CD & Control de Versiones"
+  },
+  "education": {
+    "title": "Educación & Certificaciones",
+    "subtitle": "Formación académica y desarrollo profesional",
+    "education": "Educación",
+    "certifications": "Formación & Certificaciones",
+    "degree": "Licenciatura en Ingeniería",
+    "field": "Ingeniería Industrial",
+    "university": "Universidad Politécnica de Bucarest",
+    "period": "2012 – 2016"
+  },
+  "blog": {
+    "title": "Últimos Artículos",
+    "subtitle": "Perspectivas y experiencias del mundo de la infraestructura cloud y DevOps",
+    "readMore": "Leer más",
+    "viewAll": "Ver Todos los Artículos",
+    "category": "Categoría",
+    "readTime": "min lectura"
+  },
+  "contact": {
+    "title": "Trabajemos Juntos",
+    "subtitle": "¿Tienes un proyecto en mente? Hablemos sobre cómo podemos construir algo increíble juntos.",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre",
+      "email": "Correo",
+      "emailPlaceholder": "tu.correo@ejemplo.com",
+      "subject": "Asunto",
+      "subjectPlaceholder": "¿De qué se trata?",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntame sobre tu proyecto o pregunta...",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando..."
+    },
+    "info": {
+      "email": "Correo",
+      "location": "Ubicación",
+      "social": "Social"
+    },
+    "validation": {
+      "nameRequired": "El nombre es obligatorio",
+      "nameMin": "El nombre debe tener al menos 2 caracteres",
+      "emailRequired": "El correo es obligatorio",
+      "emailInvalid": "Por favor ingresa una dirección de correo válida",
+      "subjectRequired": "El asunto es obligatorio",
+      "subjectMin": "El asunto debe tener al menos 5 caracteres",
+      "messageRequired": "El mensaje es obligatorio",
+      "messageMin": "El mensaje debe tener al menos 10 caracteres"
+    },
+    "toast": {
+      "success": "¡Mensaje enviado exitosamente! Te responderé pronto.",
+      "error": "Error al enviar mensaje. Por favor intenta de nuevo.",
+      "spam": "Spam detectado. Por favor intenta de nuevo."
+    }
+  },
+  "footer": {
+    "about": "Acerca",
+    "aboutText": "Construyendo infraestructura cloud confiable con pasión y precisión.",
+    "quickLinks": "Enlaces Rápidos",
+    "contact": "Contacto",
+    "social": "Social",
+    "getInTouch": "Contactar",
+    "email": "Correo",
+    "location": "Ubicación",
+    "copyright": "© {{year}} Ionut Zaman. Todos los derechos reservados.",
+    "buildStatus": "Construido con ❤️ usando React, TypeScript & Tailwind CSS"
+  },
+  "blogPost": {
+    "backToHome": "Volver al Inicio",
+    "backToBlog": "Volver al Blog",
+    "readTime": "{{minutes}} min lectura"
+  },
+  "notFound": {
+    "title": "404",
+    "subtitle": "¡Oops! Página no encontrada",
+    "cta": "Volver al Inicio"
+  }
+}

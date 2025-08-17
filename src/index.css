@@ -4,28 +4,47 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Accessibility Styles */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  z-index: 1000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
 /* Cloud Infrastructure Engineer Portfolio Design System */
 
 @layer base {
   :root {
     /* Core Colors */
-    --background: 255 255 100%;
+    --background: 0 0% 100%;
     --foreground: 203 23% 12%;
 
     /* Card & Surface */
-    --card: 255 255 100%;
+    --card: 0 0% 100%;
     --card-foreground: 203 23% 12%;
     --surface: 210 25% 97%;
 
     /* Brand Colors - Cloud/Tech inspired */
     --primary: 200 98% 39%;
-    --primary-foreground: 255 255 100%;
+    --primary-foreground: 0 0% 100%;
     --primary-light: 200 100% 85%;
     --primary-dark: 200 98% 25%;
 
     /* Accent Colors - Azure/AWS inspired */
     --accent: 217 91% 60%;
-    --accent-foreground: 255 255 100%;
+    --accent-foreground: 0 0% 100%;
     --accent-light: 217 91% 90%;
 
     /* Semantic Colors */
@@ -43,11 +62,11 @@
     --success: 142 71% 45%;
     --warning: 38 92% 50%;
     --destructive: 0 84% 60%;
-    --destructive-foreground: 255 255 100%;
+    --destructive-foreground: 0 0% 100%;
 
     /* Tech-focused Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(200 98% 39%), hsl(217 91% 60%));
-    --gradient-surface: linear-gradient(180deg, hsl(255 255 100%), hsl(210 25% 97%));
+    --gradient-surface: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 25% 97%));
     --gradient-hero: linear-gradient(135deg, hsl(200 98% 39% / 0.08), hsl(217 91% 60% / 0.08));
     --gradient-tech: linear-gradient(90deg, hsl(200 98% 39% / 0.15), hsl(217 91% 60% / 0.15), hsl(142 71% 45% / 0.15));
 
@@ -220,6 +239,68 @@
     background: linear-gradient(var(--background), var(--background)) padding-box,
                 var(--gradient-primary) border-box;
     border: 2px solid transparent;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+
+  .hover-shine {
+    @apply relative overflow-hidden;
+  }
+
+  .hover-shine::before {
+    content: '';
+    @apply absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent transform skew-x-12 transition-all duration-700;
+  }
+
+  .hover-shine:hover::before {
+    @apply left-full;
+  }
+
+  .dark .glass-card {
+    @apply bg-black/20 border-white/5;
+  }
+
+  /* Navigation utilities */
+  .nav-link {
+    @apply relative px-4 py-2 text-foreground hover:text-primary font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 w-0 h-0.5 bg-primary transition-all duration-300 origin-center;
+    transform: translateX(-50%);
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .nav-link--active {
+    @apply text-primary;
+  }
+
+  .nav-link--active::after {
+    @apply w-full;
+  }
+
+  /* Header transition */
+  .header-transition {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .nav-link::after,
+    .header-transition,
+    .hover-shine::before {
+      transition: none;
+    }
+    
+    .nav-link:hover::after {
+      transition: none;
+    }
   }
 }
 

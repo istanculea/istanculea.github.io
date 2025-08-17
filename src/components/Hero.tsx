@@ -4,7 +4,7 @@ import portraitImg from "/lovable-uploads/63e2620a-0d4a-482f-82b4-7df585ec4907.p
 
 export function Hero() {
   return (
-    <section className="min-h-screen surface-hero flex items-center justify-center px-6 py-12">
+    <section id="home" className="min-h-screen surface-hero flex items-center justify-center px-6 py-12">
       <div className="container max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -31,12 +31,15 @@ export function Hero() {
             <div className="flex items-center space-x-3 text-sm text-muted-foreground">
               <span className="flex items-center space-x-1">
                 <span>📍</span>
-                <span>Bucharest, Romania</span>
+                <span>Remote / Europe</span>
               </span>
-              <span className="flex items-center space-x-1">
+              <a 
+                href="mailto:stanculea.ionut.93@gmail.com"
+                className="flex items-center space-x-1 hover:text-primary transition-colors"
+              >
                 <span>✉️</span>
                 <span>stanculea.ionut.93@gmail.com</span>
-              </span>
+              </a>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
