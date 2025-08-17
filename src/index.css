@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Cloud Infrastructure Engineer Portfolio Design System */
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --background: 255 255 100%;
+    --foreground: 203 23% 12%;
+
+    /* Card & Surface */
+    --card: 255 255 100%;
+    --card-foreground: 203 23% 12%;
+    --surface: 210 25% 97%;
+
+    /* Brand Colors - Cloud/Tech inspired */
+    --primary: 200 98% 39%;
+    --primary-foreground: 255 255 100%;
+    --primary-light: 200 100% 85%;
+    --primary-dark: 200 98% 25%;
+
+    /* Accent Colors - Azure/AWS inspired */
+    --accent: 217 91% 60%;
+    --accent-foreground: 255 255 100%;
+    --accent-light: 217 91% 90%;
+
+    /* Semantic Colors */
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 203 23% 12%;
+    --muted: 210 15% 95%;
+    --muted-foreground: 203 12% 45%;
+
+    /* Interactive */
+    --border: 210 25% 90%;
+    --input: 210 25% 90%;
+    --ring: 200 98% 39%;
+
+    /* Success/Warning/Error */
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 255 255 100%;
+
+    /* Tech-focused Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(200 98% 39%), hsl(217 91% 60%));
+    --gradient-surface: linear-gradient(180deg, hsl(255 255 100%), hsl(210 25% 97%));
+    --gradient-hero: linear-gradient(135deg, hsl(200 98% 39% / 0.08), hsl(217 91% 60% / 0.08));
+    --gradient-tech: linear-gradient(90deg, hsl(200 98% 39% / 0.15), hsl(217 91% 60% / 0.15), hsl(142 71% 45% / 0.15));
+
+    /* Enhanced Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(203 23% 12% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(203 23% 12% / 0.1), 0 2px 4px -1px hsl(203 23% 12% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(203 23% 12% / 0.1), 0 4px 6px -2px hsl(203 23% 12% / 0.05);
+    --shadow-glow: 0 0 25px hsl(200 98% 39% / 0.25);
+    --shadow-tech: 0 8px 32px hsl(200 98% 39% / 0.12);
+
+    /* Animation */
+    --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 12px;
+  }
+
+  .dark {
+    /* Core Colors */
+    --background: 203 23% 4%;
+    --foreground: 210 25% 95%;
+
+    /* Card & Surface */
+    --card: 203 23% 6%;
+    --card-foreground: 210 25% 95%;
+    --surface: 203 23% 8%;
+
+    /* Brand Colors - Cloud/Tech inspired */
+    --primary: 200 98% 50%;
+    --primary-foreground: 203 23% 4%;
+    --primary-light: 200 100% 85%;
+    --primary-dark: 200 98% 35%;
+
+    /* Accent Colors - Azure/AWS inspired */
+    --accent: 217 91% 65%;
+    --accent-foreground: 203 23% 4%;
+    --accent-light: 217 91% 90%;
+
+    /* Semantic Colors */
+    --secondary: 203 23% 12%;
+    --secondary-foreground: 210 25% 95%;
+    --muted: 203 23% 10%;
+    --muted-foreground: 210 15% 65%;
+
+    /* Interactive */
+    --border: 203 23% 18%;
+    --input: 203 23% 18%;
+    --ring: 200 98% 50%;
+
+    /* Success/Warning/Error */
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 25% 95%;
+
+    /* Tech-focused Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(200 98% 50%), hsl(217 91% 65%));
+    --gradient-surface: linear-gradient(180deg, hsl(203 23% 4%), hsl(203 23% 8%));
+    --gradient-hero: linear-gradient(135deg, hsl(200 98% 50% / 0.1), hsl(217 91% 65% / 0.1));
+    --gradient-tech: linear-gradient(90deg, hsl(200 98% 50% / 0.15), hsl(217 91% 65% / 0.15), hsl(142 71% 45% / 0.15));
+
+    /* Enhanced Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(203 23% 2% / 0.5);
+    --shadow-md: 0 4px 6px -1px hsl(203 23% 2% / 0.3), 0 2px 4px -1px hsl(203 23% 2% / 0.2);
+    --shadow-lg: 0 10px 15px -3px hsl(203 23% 2% / 0.3), 0 4px 6px -2px hsl(203 23% 2% / 0.2);
+    --shadow-glow: 0 0 25px hsl(200 98% 50% / 0.3);
+    --shadow-tech: 0 8px 32px hsl(200 98% 50% / 0.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+    transition: var(--transition-smooth);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Button Variants */
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium px-8 py-3 rounded-xl;
+    @apply shadow-lg hover:shadow-glow transition-all duration-300 transform hover:scale-105;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary bg-transparent font-medium px-8 py-3 rounded-xl;
+    @apply hover:bg-primary hover:text-primary-foreground transition-all duration-300;
+  }
+
+  .btn-ghost {
+    @apply text-foreground hover:bg-secondary font-medium px-6 py-2 rounded-lg;
+    @apply transition-all duration-200;
+  }
+
+  /* Surface Variants */
+  .surface-card {
+    @apply bg-card border border-border rounded-2xl shadow-md hover:shadow-tech;
+    @apply transition-all duration-300;
+  }
+
+  .surface-hero {
+    @apply bg-gradient-to-br from-background via-surface to-background;
+    position: relative;
+  }
+
+  .surface-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-tech);
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  /* Animation Classes */
+  .animate-fade-up {
+    @apply opacity-0 translate-y-6;
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    @apply opacity-0 scale-95;
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Skill Badge */
+  .skill-badge {
+    @apply bg-primary-light text-primary-dark px-4 py-2 rounded-full text-sm font-medium;
+    @apply hover:scale-105 transition-transform duration-200 border border-primary/20;
+  }
+
+  /* Dark mode variants */
+  .dark .skill-badge {
+    @apply bg-primary/20 text-primary border-primary/30;
+  }
+
+  /* Cloud/DevOps specific badges */
+  .cloud-badge {
+    @apply bg-gradient-to-r from-primary/20 to-accent/20 text-primary border border-primary/30;
+    @apply px-3 py-1 rounded-md text-xs font-semibold uppercase tracking-wide;
+  }
+
+  .cert-badge {
+    @apply bg-success/20 text-success border border-success/30;
+    @apply px-3 py-1 rounded-md text-xs font-semibold;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .border-gradient {
+    background: linear-gradient(var(--background), var(--background)) padding-box,
+                var(--gradient-primary) border-box;
+    border: 2px solid transparent;
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
