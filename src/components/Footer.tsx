@@ -2,6 +2,7 @@ import { Mail, MapPin, Linkedin, Github, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTranslation } from "react-i18next"
 import { pathWithLang } from "@/lib/langPath"
+import { openConsentPreferences } from "@/lib/consent"
 
 export function Footer() {
   const { t } = useTranslation()
@@ -92,6 +93,20 @@ export function Footer() {
                 </button>
               ))}
             </nav>
+            <div className="flex flex-col space-y-2 text-left">
+              <a className="text-muted-foreground hover:text-primary transition-colors text-sm" href="/privacy">
+                Privacy
+              </a>
+              <a className="text-muted-foreground hover:text-primary transition-colors text-sm" href="/legal">
+                Legal
+              </a>
+              <button
+                onClick={openConsentPreferences}
+                className="text-muted-foreground hover:text-primary transition-colors text-sm text-left hover:translate-x-1 transition-transform duration-200"
+              >
+                Change consent
+              </button>
+            </div>
           </div>
 
           {/* Contact */}
