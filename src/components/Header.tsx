@@ -126,7 +126,7 @@ export function Header() {
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`text-sm font-medium text-muted-foreground hover:text-foreground transition-colors ${
+                className={`text-sm font-medium text-muted-foreground hover:text-foreground transition-colors link-underline ${
                   activeSection === item.href.slice(1) ? 'text-foreground underline underline-offset-8' : ''
                 }`}
               >
@@ -137,7 +137,7 @@ export function Header() {
             <NavLink
               to="/blog"
               className={({ isActive }) =>
-                `text-sm font-medium flex items-center gap-2 transition-colors ${
+                `text-sm font-medium flex items-center gap-2 transition-colors link-underline ${
                   isActive ? 'text-foreground underline underline-offset-8' : 'text-muted-foreground hover:text-foreground'
                 }`
               }
@@ -216,7 +216,7 @@ export function Header() {
                     scrollToSection(item.href)
                     setIsMenuOpen(false)
                   }}
-                  className="px-4 py-2 text-foreground hover:text-primary hover:bg-secondary/50 transition-all duration-200 font-medium text-left rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  className="px-4 py-2 text-foreground hover:text-primary hover:bg-secondary/50 transition-all duration-200 font-medium text-left rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
                   {item.label}
                 </button>

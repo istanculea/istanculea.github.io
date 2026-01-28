@@ -9,12 +9,12 @@ export function Hero() {
     <section id="home" className="relative min-h-[80vh] flex items-center justify-center px-6 py-16 md:py-24 overflow-hidden bg-background">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-y-0 left-1/2 w-px bg-gradient-to-b from-transparent via-border to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,0,0,0.03),_transparent_45%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_hsl(var(--accent)/0.08),_transparent_45%)]"></div>
       </div>
 
       <div className="container relative z-10">
-        <div className="max-w-3xl mx-auto text-center space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-white/80 shadow-sm">
+        <div className="max-w-3xl mx-auto text-center space-y-8 hero-entrance">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-sm font-medium">
             <Sparkles className="h-4 w-4 text-primary" />
             <span className="text-sm font-medium text-foreground">{t('hero.badge')}</span>
           </div>

@@ -1,8 +1,8 @@
+import { CSSProperties } from "react"
 import { Calendar, Clock, ArrowRight, NotebookPen } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useNavigate } from "react-router-dom"
 import { useTranslation } from "react-i18next"
-import { motion } from "framer-motion"
 
 export function Blog() {
   const navigate = useNavigate()
@@ -65,18 +65,10 @@ export function Blog() {
   const featuredPost = blogPosts.find(post => post.featured)
   const otherPosts = blogPosts.filter(post => !post.featured)
 
-  // Simple animation without variants
-  const animationProps = {
-    initial: { opacity: 0, y: 30 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.6 }
-  }
-
   return (
-    <section id="blog" className="py-24 px-6">
+    <section id="blog" className="py-24 px-6" data-reveal>
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center space-y-3 mb-16">
+        <div className="text-center space-y-3 mb-16" data-reveal-item>
           <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3">
             <NotebookPen className="h-8 w-8 text-primary" />
             {t('blog.title')}
@@ -88,10 +80,11 @@ export function Blog() {
 
         {/* Featured Post */}
         {featuredPost && (
-          <motion.article 
-            className="rounded-xl border border-border overflow-hidden mb-12 group cursor-pointer bg-card/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+          <article 
+            className="rounded-xl border border-border overflow-hidden mb-12 group cursor-pointer bg-card/80 transition-all duration-300 card-interactive"
             onClick={() => navigate(featuredPost.slug)}
-            {...animationProps}
+            data-reveal-item
+            style={{ "--reveal-delay": "120ms" } as CSSProperties}
           >
             <div className="relative aspect-[16/7] overflow-hidden">
               <img
@@ -104,7 +97,7 @@ export function Blog() {
                   e.currentTarget.src = '/placeholder.svg';
                 }}
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-6 text-white space-y-3">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/45 to-transparent p-6 text-white space-y-3">
                 <span className="inline-flex px-3 py-1 text-xs font-medium rounded-full bg-white/15">{featuredPost.category}</span>
                 <h3 className="text-2xl font-semibold">{featuredPost.title}</h3>
                 <p className="text-sm text-white/80">{featuredPost.excerpt}</p>
@@ -121,21 +114,21 @@ export function Blog() {
                 </Button>
               </div>
             </div>
-          </motion.article>
+          </article>
         )}
 
         {/* Grid of other posts */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {otherPosts.map((post, index) => (
-            <motion.article 
+            <article 
               key={post.id}
-              className="bg-card/80 border border-border overflow-hidden group cursor-pointer rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-              {...animationProps}
-              transition={{ ...animationProps.transition, delay: (index + 1) * 0.1 }}
+              className="bg-card/80 border border-border overflow-hidden group cursor-pointer rounded-xl transition-all duration-300 card-interactive focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               onClick={() => navigate(post.slug)}
               tabIndex={0}
               role="button"
               aria-label={`Read article: ${post.title}`}
+              data-reveal-item
+              style={{ "--reveal-delay": `${(index + 1) * 90}ms` } as CSSProperties}
             >
               <div className="aspect-video overflow-hidden">
                 <img
@@ -175,7 +168,7 @@ export function Blog() {
 
                 <Button 
                   variant="ghost" 
-                  className="group/btn p-0 h-auto font-medium text-primary hover:text-primary-dark text-sm"
+                  className="group/btn p-0 h-auto font-medium text-primary text-sm"
                   onClick={(e) => {
                     e.stopPropagation()
                     navigate(post.slug)
@@ -185,12 +178,12 @@ export function Blog() {
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                 </Button>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-12" data-reveal-item style={{ "--reveal-delay": "200ms" } as CSSProperties}>
           <Button 
             variant="outline"
             onClick={() => navigate('/blog')}

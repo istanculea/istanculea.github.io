@@ -1,3 +1,4 @@
+import { CSSProperties } from "react"
 import { 
   Cloud, 
   GitBranch, 
@@ -80,11 +81,11 @@ export function Skills() {
   ]
 
   return (
-    <section id="skills" className="py-24 px-6 bg-surface relative overflow-hidden">
-      <div className="container max-w-6xl mx-auto relative space-y-14">
+    <section id="skills" className="py-24 px-6 bg-surface relative overflow-hidden" data-reveal>
+      <div className="container max-w-6xl mx-auto relative space-y-12">
         <div className="space-y-6">
-          <div className="text-center space-y-3">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-white/70 text-primary">
+          <div className="text-center space-y-3" data-reveal-item>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-primary">
               <Sparkles className="h-4 w-4" />
               <span className="text-sm font-medium">Core Capabilities</span>
             </div>
@@ -97,11 +98,13 @@ export function Skills() {
             </p>
           </div>
           
-          <div className="grid gap-5 md:grid-cols-2">
-            {technicalSkills.map((category) => (
+          <div className="grid gap-4 md:grid-cols-2" data-reveal-item style={{ "--reveal-delay": "100ms" } as CSSProperties}>
+            {technicalSkills.map((category, index) => (
               <div 
                 key={category.category}
-                className="rounded-xl border border-border bg-card/70 p-6"
+                className="rounded-xl border border-border bg-card/70 p-6 card-interactive"
+                data-reveal-item
+                style={{ "--reveal-delay": `${index * 80}ms` } as CSSProperties}
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="p-2 bg-primary/10 rounded-lg text-primary">
@@ -126,8 +129,8 @@ export function Skills() {
         </div>
 
         <div className="space-y-6">
-          <div className="text-center space-y-2">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-white/70 text-accent">
+          <div className="text-center space-y-2" data-reveal-item style={{ "--reveal-delay": "120ms" } as CSSProperties}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-accent">
               <Languages className="h-4 w-4" />
               <span className="text-sm font-medium">Communication</span>
             </div>
@@ -137,7 +140,7 @@ export function Skills() {
             </p>
           </div>
           
-          <div className="rounded-xl border border-border bg-card/70 p-8">
+          <div className="rounded-xl border border-border bg-card/70 p-8 card-interactive" data-reveal-item style={{ "--reveal-delay": "200ms" } as CSSProperties}>
             <div className="grid gap-6 sm:grid-cols-2">
               {languageSkills.map((lang) => (
                 <div 
@@ -148,7 +151,7 @@ export function Skills() {
                     <span className="font-semibold text-foreground">{lang.language}</span>
                     <span className="text-sm text-muted-foreground">{lang.level}</span>
                   </div>
-                  <Progress value={lang.percentage} className="h-2" />
+                  <Progress value={lang.percentage} className="h-2 bg-muted" />
                 </div>
               ))}
             </div>
@@ -156,8 +159,8 @@ export function Skills() {
         </div>
 
         <div className="space-y-6">
-          <div className="text-center space-y-2">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-white/70 text-red-500">
+          <div className="text-center space-y-2" data-reveal-item style={{ "--reveal-delay": "240ms" } as CSSProperties}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-accent">
               <Heart className="h-4 w-4" />
               <span className="text-sm font-medium">Personal</span>
             </div>
@@ -167,7 +170,7 @@ export function Skills() {
             </p>
           </div>
           
-          <div className="rounded-xl border border-border bg-card/70 p-8">
+          <div className="rounded-xl border border-border bg-card/70 p-8 card-interactive" data-reveal-item style={{ "--reveal-delay": "300ms" } as CSSProperties}>
             <div className="flex flex-wrap justify-center gap-3">
               {interests.map((interest) => (
                 <Badge 
@@ -182,9 +185,9 @@ export function Skills() {
           </div>
         </div>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center" data-reveal-item style={{ "--reveal-delay": "360ms" } as CSSProperties}>
           <button
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-border hover:border-primary/60 transition-colors bg-background/70"
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-border hover:border-primary/60 transition-colors bg-background/70 min-h-11"
             onClick={() => {
               const target = document.getElementById('education')
               target?.scrollIntoView({ behavior: 'smooth' })

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { CSSProperties, useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
@@ -79,18 +79,18 @@ export function Contact() {
   ]
 
   return (
-    <section id="contact" className="py-24 px-6 bg-surface">
+    <section id="contact" className="py-24 px-6 bg-surface" data-reveal>
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center space-y-3 mb-16">
+        <div className="text-center space-y-3 mb-16" data-reveal-item>
           <h2 className="text-3xl md:text-4xl font-bold">{t('contact.title')}</h2>
           <p className="text-lg text-muted-foreground">
             {t('contact.subtitle')}
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10">
+        <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="rounded-xl border border-border bg-card/70 p-8">
+          <div className="rounded-xl border border-border bg-card/70 p-8 card-interactive" data-reveal-item style={{ "--reveal-delay": "120ms" } as CSSProperties}>
             <h3 className="text-xl font-semibold mb-6">{t('contact.form.send')}</h3>
             
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -161,7 +161,7 @@ export function Contact() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div className="space-y-8" data-reveal-item style={{ "--reveal-delay": "200ms" } as CSSProperties}>
             <div>
               <h3 className="text-xl font-semibold mb-6">{t('footer.contact')}</h3>
               <div className="space-y-4">
@@ -169,7 +169,7 @@ export function Contact() {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="flex items-center space-x-4 p-4 rounded-xl border border-border bg-card/60 hover:border-primary/50 transition-colors group"
+                    className="flex items-center space-x-4 p-4 rounded-xl border border-border bg-card/60 transition-colors group card-interactive min-h-11"
                   >
                     <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                       {item.icon}
@@ -192,7 +192,7 @@ export function Contact() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 border border-border rounded-xl text-primary hover:bg-primary hover:text-primary-foreground transition-all"
+                    className="p-3 border border-border rounded-xl text-primary hover:bg-primary hover:text-primary-foreground transition-all min-h-11 min-w-[44px] flex items-center justify-center"
                     aria-label={link.label}
                   >
                     {link.icon}
