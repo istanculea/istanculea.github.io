@@ -61,9 +61,7 @@
     --success: 142 70% 45%;
     --warning: 38 92% 50%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
@@ -133,10 +131,12 @@
 
 .animate-float {
   animation: float 8s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-pulse-glow {
   animation: pulse-glow 4s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 .animate-fade-up {
@@ -146,4 +146,20 @@
 .animate-shimmer {
   background-size: 200% auto;
   animation: shimmer 3s linear infinite;
+}
+
+/* Respect user's reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-gradient,
+  .animate-float,
+  .animate-pulse-glow,
+  .animate-fade-up,
+  .animate-shimmer {
+    animation: none;
+  }
+  
+  .animate-fade-up {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

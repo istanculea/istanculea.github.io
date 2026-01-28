@@ -23,7 +23,7 @@ export function Hero() {
         {/* Centered, text-focused content */}
         <div className="text-center space-y-8">
           <div className="space-y-6 animate-fade-up">
-            {/* Elegant badge with shimmer effect */}
+            {/* Elegant badge with gradient effect */}
             <div className="flex justify-center" style={{ animationDelay: '0.1s' }}>
               <span className="inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold bg-gradient-to-r from-primary/15 via-accent/10 to-primary/15 text-primary border border-primary/25 rounded-full backdrop-blur-md shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 hover:border-primary/40 transition-all duration-500 cursor-default">
                 <Sparkles className="h-4 w-4 text-accent animate-pulse" />
@@ -31,15 +31,15 @@ export function Hero() {
               </span>
             </div>
             
-            <p className="text-xl text-muted-foreground font-medium tracking-wide" style={{ animationDelay: '0.2s' }}>Hello, I'm</p>
+            <p className="text-xl text-muted-foreground font-medium tracking-wide animate-fade-up" style={{ animationDelay: '0.2s' }}>Hello, I'm</p>
             
             {/* Name with vibrant gradient */}
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight bg-gradient-to-r from-violet-600 via-fuchsia-500 via-pink-500 to-violet-600 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto] drop-shadow-sm" style={{ animationDelay: '0.3s' }}>
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight bg-gradient-to-r from-violet-600 via-fuchsia-500 via-pink-500 to-violet-600 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto] drop-shadow-sm animate-fade-up" style={{ animationDelay: '0.3s' }}>
               {t('hero.name')}
             </h1>
             
             {/* Subtitle with elegant styling */}
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light max-w-3xl mx-auto leading-relaxed" style={{ animationDelay: '0.4s' }}>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-light max-w-3xl mx-auto leading-relaxed animate-fade-up" style={{ animationDelay: '0.4s' }}>
               <span className="bg-gradient-to-r from-foreground/90 via-foreground/70 to-foreground/90 bg-clip-text text-transparent">
                 {t('hero.title')}
               </span>
