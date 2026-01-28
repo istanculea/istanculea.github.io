@@ -1,4 +1,4 @@
-import { ArrowDown, Download, ExternalLink } from "lucide-react"
+import { ArrowDown, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTranslation } from "react-i18next"
 import portraitImg from "/lovable-uploads/63e2620a-0d4a-482f-82b4-7df585ec4907.png"

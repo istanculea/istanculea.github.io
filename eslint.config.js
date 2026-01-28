@@ -16,6 +16,19 @@ export default [
     ignores: ["dist"],
   },
   {
+    files: ["**/*.{js,mjs,cjs}"],
+    languageOptions: {
+      ecmaVersion: 2020,
+      sourceType: "module",
+      globals: {
+        ...globals.node,
+      },
+    },
+    rules: {
+      "no-unused-vars": "off",
+    },
+  },
+  {
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       parser: tsParser,
@@ -24,7 +37,10 @@ export default [
         sourceType: "module",
         ecmaFeatures: { jsx: true },
       },
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
     },
     plugins: {
       "react-hooks": reactHooks,
@@ -38,6 +54,7 @@ export default [
         { allowConstantExport: true },
       ],
       "@typescript-eslint/no-unused-vars": "off",
+      "no-unused-vars": "off",
     },
   },
 ];
