@@ -37,7 +37,6 @@ export default [
         "warn",
         { allowConstantExport: true },
       ],
-      // keep your intended rule overrides:
       "@typescript-eslint/no-unused-vars": "off",
     },
   },
