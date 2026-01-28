@@ -59,7 +59,7 @@ const App = () => (
       <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
         <TooltipProvider>
           <Toaster />
-          <BrowserRouter>
+          <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
             <Routes>
               {/* Routes without language prefix (default English) */}
               <Route path="/" element={<LanguageGuard><Index /></LanguageGuard>} />
