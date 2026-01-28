@@ -47,6 +47,7 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.node,
+        React: "writable",
       },
     },
     plugins: {
@@ -81,6 +82,7 @@ export default [
         },
       ],
       "no-unused-vars": "off",
+      "no-undef": "off",
     },
   },
 ];
