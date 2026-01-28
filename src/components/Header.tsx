@@ -3,6 +3,7 @@ import { Menu, X, PenLine } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "./ThemeToggle"
 import { NavLink, useLocation } from "react-router-dom"
+import { LanguageToggle } from "./LanguageToggle"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -160,6 +161,7 @@ export function Header() {
               Get in Touch
             </Button>
             
+            <LanguageToggle />
             <ThemeToggle />
             
             {/* Mobile menu button */}
@@ -198,6 +200,11 @@ export function Header() {
               >
                 Get in Touch
               </Button>
+            </div>
+            
+            <div className="flex items-center justify-between mb-4">
+              <LanguageToggle />
+              <ThemeToggle />
             </div>
             
             {/* Section Links */}

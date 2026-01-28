@@ -1,0 +1,176 @@
+{
+  "nav": {
+    "about": "Profilo",
+    "experience": "Esperienza",
+    "skills": "Competenze",
+    "education": "Formazione",
+    "blog": "Blog",
+    "getInTouch": "Contatti"
+  },
+  "hero": {
+    "badge1": "Specialista Cloud",
+    "badge2": "Ingegnere DevOps",
+    "badge": "Ingegnere Cloud Operations",
+    "name": "Ionuț Stănculea",
+    "title": "Ingegnere Cloud & Operations che costruisce infrastrutture affidabili con cura e precisione",
+    "description": "Appassionato di creare soluzioni cloud scalabili e sicure che potenziano i team e soddisfano gli utenti. Attualmente progetto ambienti cloud ibridi in Electronic Arts.",
+    "location": "Posizione",
+    "email": "Email",
+    "downloadCV": "Scarica CV",
+    "learnMore": "Scopri di più su di me"
+  },
+  "about": {
+    "title": "Profilo",
+    "badge": "Chi sono",
+    "subtitle": "Ingegnere Cloud & Operations che costruisce infrastrutture affidabili con cura e precisione",
+    "paragraph1": "Sono un Ingegnere Cloud & Operations con oltre 5 anni di esperienza pratica nella costruzione, gestione e automazione di infrastrutture scalabili in Azure e AWS. Attualmente in Electronic Arts, sono specializzato in ambienti cloud ibridi e affidabilità delle piattaforme che mantengono i team produttivi e gli utenti soddisfatti.",
+    "paragraph2": "Il mio approccio combina una profonda esperienza tecnica con una genuina attenzione per le persone che utilizzano questi sistemi. Che si tratti di ridurre gli incidenti del 25% o di risolvere complessi problemi di infrastruttura, credo che le migliori soluzioni siano robuste ed eleganti.",
+    "paragraph3": "Quando non ottimizzo l'infrastruttura cloud, mi trovi a sperimentare con gadget per la casa intelligente, stampare prototipi 3D divertenti o esplorare le ultime tecnologie cloud.",
+    "highlights": {
+      "experience": "5+ Anni di Esperienza",
+      "cloud": "Esperto Multi-Cloud",
+      "automation": "Specialista Automazione",
+      "reliability": "Affidabilità della Piattaforma"
+    },
+    "coreSkills": "Competenze chiave",
+    "certifications": "Certificazioni",
+    "careerJourney": "Percorso professionale"
+  },
+  "experience": {
+    "title": "Esperienza Professionale",
+    "subtitle": "Costruire e scalare infrastrutture in diversi settori e tecnologie",
+    "ea": {
+      "title": "Ingegnere Cloud Operations",
+      "company": "Electronic Arts",
+      "location": "Bucarest, Romania",
+      "period": "Ott 2021 - Presente",
+      "achievements": [
+        "Gestito e ottimizzato infrastrutture cloud ibride combinando sistemi on-premise con servizi AWS e Azure",
+        "Implementato pipeline CI/CD e automazione dell'infrastruttura con Terraform e Jenkins",
+        "Monitorata la salute e le prestazioni del sistema usando Grafana e Prometheus, riducendo i tempi di risposta agli incidenti",
+        "Collaborato con i team di sviluppo per garantire deployment affidabili e stabilità della piattaforma"
+      ]
+    },
+    "autodesk": {
+      "title": "Senior Quality Assurance Analyst",
+      "company": "Autodesk",
+      "location": "Bucarest, Romania",
+      "period": "Nov 2019 - Gen 2021",
+      "achievements": [
+        "Guidato gli sforzi di assurance qualità per prodotti software enterprise",
+        "Sviluppato e mantenuto framework di test automatizzati con Selenium",
+        "Collaborato con team cross-funzionali per identificare e risolvere difetti software",
+        "Mentorato analisti QA junior e definito best practice di testing"
+      ]
+    },
+    "altenLead": {
+      "title": "Team Lead Support",
+      "company": "ALTEN",
+      "location": "Bucarest, Romania",
+      "period": "Mar 2019 - Nov 2019",
+      "achievements": [
+        "Guidato un team di ingegneri di supporto fornendo assistenza tecnica a clienti enterprise",
+        "Ottimizzato processi di supporto migliorando i tempi di risoluzione dei ticket",
+        "Coordinato con i team di sviluppo per scalare e risolvere problemi tecnici complessi",
+        "Formati i membri del team su nuove tecnologie e procedure di supporto"
+      ]
+    },
+    "altenEngineer": {
+      "title": "Ingegnere di Supporto",
+      "company": "ALTEN",
+      "location": "Bucarest, Romania",
+      "period": "Ott 2016 - Mar 2019",
+      "achievements": [
+        "Fornito supporto tecnico per applicazioni software enterprise",
+        "Diagnosticato e risolto problemi tecnici complessi per i clienti",
+        "Creato documentazione tecnica e articoli di knowledge base",
+        "Collaborato con i team di sviluppo per migliorare la qualità del prodotto"
+      ]
+    },
+    "expleo": {
+      "title": "Ingegnere Progettazione Meccanica (Part-time)",
+      "company": "Expleo Group",
+      "location": "Bucarest, Romania",
+      "period": "Mag 2016 - Set 2019",
+      "achievements": [
+        "Creato progetti meccanici usando CATIA V5 e AutoCAD",
+        "Collaborato con team di ingegneria su progetti di sviluppo prodotto",
+        "Preparato documentazione tecnica e specifiche di progettazione"
+      ]
+    }
+  },
+  "skills": {
+    "title": "Competenze & Tecnologie",
+    "subtitle": "Strumenti e tecnologie che utilizzo per costruire infrastrutture affidabili",
+    "cloud": "Piattaforme Cloud",
+    "automation": "Container & Orchestrazione",
+    "monitoring": "Monitoring & Logging",
+    "cicd": "CI/CD"
+  },
+  "education": {
+    "title": "Formazione & Certificazioni",
+    "subtitle": "Formazione accademica e sviluppo professionale",
+    "education": "Formazione",
+    "certifications": "Formazione & Certificazioni",
+    "degree": "Laurea in Ingegneria",
+    "field": "Ingegneria Industriale",
+    "university": "Università Politecnica di Bucarest",
+    "period": "2012 – 2016"
+  },
+  "blog": {
+    "title": "Ultimi Articoli",
+    "subtitle": "Approfondimenti e esperienze dal mondo del cloud e DevOps",
+    "readMore": "Leggi di più",
+    "viewAll": "Vedi tutti gli articoli",
+    "category": "Categoria",
+    "readTime": "min lettura"
+  },
+  "contact": {
+    "title": "Lavoriamo insieme",
+    "subtitle": "Hai un progetto in mente? Parliamo di come possiamo costruire qualcosa di straordinario insieme.",
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "Il tuo nome",
+      "email": "Email",
+      "emailPlaceholder": "tuo.email@esempio.com",
+      "subject": "Oggetto",
+      "subjectPlaceholder": "Di cosa si tratta?",
+      "message": "Messaggio",
+      "messagePlaceholder": "Raccontami del tuo progetto o domanda...",
+      "send": "Invia Messaggio",
+      "sending": "Invio..."
+    },
+    "info": {
+      "email": "Email",
+      "location": "Posizione",
+      "social": "Social"
+    },
+    "validation": {
+      "nameRequired": "Il nome è obbligatorio",
+      "nameMin": "Il nome deve avere almeno 2 caratteri",
+      "emailRequired": "L'email è obbligatoria",
+      "emailInvalid": "Inserisci un indirizzo email valido",
+      "subjectRequired": "L'oggetto è obbligatorio",
+      "subjectMin": "L'oggetto deve avere almeno 5 caratteri",
+      "messageRequired": "Il messaggio è obbligatorio",
+      "messageMin": "Il messaggio deve avere almeno 10 caratteri"
+    },
+    "toast": {
+      "success": "Messaggio inviato con successo! Ti risponderò presto.",
+      "error": "Errore nell'invio del messaggio. Per favore riprova."
+    }
+  },
+  "footer": {
+    "aboutText": "Ingegnere Cloud & Operations dedicato a costruire infrastrutture affidabili. Collaboriamo per creare soluzioni scalabili che funzionano.",
+    "getInTouch": "Contattami",
+    "quickLinks": "Link Rapidi",
+    "contact": "Contatti",
+    "social": "Social",
+    "copyright": "© {{year}} Ionuț Stănculea. Tutti i diritti riservati.",
+    "buildStatus": "Costruito con passione per l'affidabilità e le persone"
+  },
+  "contactForm": {
+    "success": "Messaggio inviato con successo!",
+    "error": "Si è verificato un errore. Riprova."
+  }
+}

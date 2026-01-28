@@ -1,4 +1,5 @@
-import { Building2, Calendar, MapPin } from "lucide-react"
+import { Building2, Calendar, MapPin, Briefcase, ArrowDown } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import { useTranslation } from "react-i18next"
 
 export function Experience() {
@@ -46,7 +47,10 @@ export function Experience() {
     <section id="experience" className="py-20 px-6 bg-background">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold">{t('experience.title')}</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold flex items-center justify-center gap-3">
+            <Briefcase className="h-8 w-8 text-primary" />
+            {t('experience.title')}
+          </h2>
           <p className="text-xl text-muted-foreground">
             {t('experience.subtitle')}
           </p>
@@ -89,6 +93,20 @@ export function Experience() {
               </ul>
             </div>
           ))}
+        </div>
+
+        <div className="flex justify-center mt-12">
+          <Button
+            variant="outline"
+            className="group"
+            onClick={() => {
+              const target = document.getElementById('skills')
+              target?.scrollIntoView({ behavior: 'smooth' })
+            }}
+          >
+            {t('nav.skills')}
+            <ArrowDown className="h-4 w-4 ml-2 transition-transform group-hover:translate-y-0.5" />
+          </Button>
         </div>
       </div>
     </section>

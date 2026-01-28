@@ -8,7 +8,9 @@ import {
   Settings,
   Languages,
   Heart,
-  Sparkles
+  Sparkles,
+  Wrench,
+  ArrowDown
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
@@ -91,7 +93,10 @@ export function Skills() {
               <Sparkles className="h-4 w-4" />
               <span className="text-sm font-medium">Core Capabilities</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">{t('skills.title')}</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold flex items-center justify-center gap-3">
+              <Wrench className="h-8 w-8 text-primary" />
+              {t('skills.title')}
+            </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               {t('skills.subtitle')}
             </p>
@@ -185,6 +190,19 @@ export function Skills() {
               ))}
             </div>
           </div>
+        </div>
+
+        <div className="flex justify-center">
+          <button
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-border hover:border-primary/60 transition-colors bg-background/70"
+            onClick={() => {
+              const target = document.getElementById('education')
+              target?.scrollIntoView({ behavior: 'smooth' })
+            }}
+          >
+            {t('nav.education')}
+            <ArrowDown className="h-4 w-4" />
+          </button>
         </div>
 
       </div>

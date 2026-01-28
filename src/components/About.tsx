@@ -1,4 +1,4 @@
-import { Zap, Cloud, Wrench, Users, Activity, CheckCircle, MapPin, Heart, Award, Sparkles, Code2 } from "lucide-react"
+import { Zap, Cloud, Wrench, Users, Activity, CheckCircle, MapPin, Heart, Award, Sparkles, Code2, UserRound, ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useTranslation } from "react-i18next"
@@ -29,14 +29,14 @@ export function About() {
       <div className="container max-w-6xl mx-auto">
         {/* Section Header with Badge */}
         <div className="text-center space-y-4 mb-16 animate-fade-up">
-          {/* Section badge with sparkle icon */}
           <div className="flex justify-center mb-6">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium bg-gradient-to-r from-primary/10 to-accent/10 text-primary border border-primary/20 rounded-full backdrop-blur-sm">
               <Sparkles className="h-4 w-4" />
               {t('about.badge')}
             </span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold">
+          <h2 className="text-4xl lg:text-5xl font-bold flex items-center justify-center gap-3">
+            <UserRound className="h-8 w-8 text-primary" />
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">{t('about.title')}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -144,8 +144,8 @@ export function About() {
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <MapPin className="h-5 w-5 mr-2 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
-                <span className="relative z-10">{t('about.careerJourney')}</span>
+                <ArrowDown className="h-5 w-5 mr-2 relative z-10 transition-transform duration-300 group-hover:translate-y-0.5" />
+                <span className="relative z-10">{t('nav.experience')}</span>
               </Button>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import { Calendar, Clock, ArrowRight } from "lucide-react"
+import { Calendar, Clock, ArrowRight, NotebookPen } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useNavigate } from "react-router-dom"
 import { useTranslation } from "react-i18next"
@@ -78,7 +78,10 @@ export function Blog() {
       <div className="container max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold">{t('blog.title')}</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold flex items-center justify-center gap-3">
+            <NotebookPen className="h-8 w-8 text-primary" />
+            {t('blog.title')}
+          </h2>
           <p className="text-xl text-muted-foreground">
             {t('blog.subtitle')}
           </p>
