@@ -40,6 +40,17 @@
 
   <body>
     <div id="root"></div>
+    <script>
+      // Simple SPA redirect: send all 404s to the SPA shell while preserving the path
+      const redirect = sessionStorage.getItem('spa-redirect');
+      if (!redirect) {
+        sessionStorage.setItem('spa-redirect', 'true');
+        const target = location.pathname.replace(/^\\/404\\.html/, '') + location.search + location.hash;
+        location.replace(target || '/');
+      } else {
+        sessionStorage.removeItem('spa-redirect');
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
