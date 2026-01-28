@@ -62,7 +62,7 @@ export default function PostLinuxACL() {
           />
         </div>
         
-        <div className="prose prose-lg max-w-none dark:prose-invert space-y-8">
+        <div className="prose prose-xl max-w-none dark:prose-invert space-y-8">
           <div>
             <h2 className="text-2xl font-bold mb-4">Why ACLs?</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">

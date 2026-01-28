@@ -64,7 +64,7 @@ export default function PostDatabaseMongoDB() {
           />
         </div>
 
-        <div className="prose prose-lg max-w-none dark:prose-invert">
+        <div className="prose prose-xl max-w-none dark:prose-invert">
           <h2>Why MongoDB?</h2>
           <p>
             MongoDB's document model makes it incredibly flexible for rapidly changing data structures. I often choose it when building APIs that evolve quickly, or when relationships between entities are sparse. Its scalability, replication features, and strong community support make it reliable for production workloads.

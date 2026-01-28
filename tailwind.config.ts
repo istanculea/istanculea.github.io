@@ -21,6 +21,122 @@ export default {
 			fontFamily: {
 				'inter': ['Inter', 'sans-serif'],
 			},
+			typography: {
+				DEFAULT: {
+					css: {
+						maxWidth: 'none',
+						color: 'inherit',
+						a: {
+							color: 'hsl(var(--primary))',
+							'&:hover': {
+								color: 'hsl(var(--primary-dark))',
+							},
+						},
+						strong: {
+							color: 'inherit',
+							fontWeight: '600',
+						},
+						h1: {
+							color: 'inherit',
+							fontWeight: '700',
+							lineHeight: '1.2',
+						},
+						h2: {
+							color: 'inherit',
+							fontWeight: '700',
+							lineHeight: '1.3',
+							marginTop: '2em',
+							marginBottom: '1em',
+						},
+						h3: {
+							color: 'inherit',
+							fontWeight: '600',
+							lineHeight: '1.4',
+							marginTop: '1.6em',
+							marginBottom: '0.8em',
+						},
+						p: {
+							marginTop: '1.5em',
+							marginBottom: '1.5em',
+							lineHeight: '1.8',
+						},
+						ul: {
+							marginTop: '1.5em',
+							marginBottom: '1.5em',
+						},
+						li: {
+							marginTop: '0.75em',
+							marginBottom: '0.75em',
+						},
+						'ul > li': {
+							paddingLeft: '0.5em',
+						},
+						code: {
+							color: 'inherit',
+							backgroundColor: 'hsl(var(--muted))',
+							padding: '0.2em 0.4em',
+							borderRadius: '0.25rem',
+							fontWeight: '500',
+						},
+						'code::before': {
+							content: '""',
+						},
+						'code::after': {
+							content: '""',
+						},
+					},
+				},
+				lg: {
+					css: {
+						fontSize: '1.125rem',
+						lineHeight: '1.8',
+						p: {
+							marginTop: '1.5em',
+							marginBottom: '1.5em',
+							lineHeight: '1.9',
+						},
+						h2: {
+							fontSize: '1.75em',
+							marginTop: '2em',
+							marginBottom: '1em',
+						},
+						h3: {
+							fontSize: '1.375em',
+							marginTop: '1.6em',
+							marginBottom: '0.8em',
+						},
+						li: {
+							marginTop: '0.75em',
+							marginBottom: '0.75em',
+						},
+					},
+				},
+				xl: {
+					css: {
+						fontSize: '1.25rem',
+						lineHeight: '1.9',
+						p: {
+							marginTop: '1.6em',
+							marginBottom: '1.6em',
+							lineHeight: '2',
+						},
+						h2: {
+							fontSize: '2em',
+							marginTop: '2.2em',
+							marginBottom: '1em',
+						},
+						h3: {
+							fontSize: '1.5em',
+							marginTop: '1.8em',
+							marginBottom: '0.9em',
+						},
+						li: {
+							marginTop: '0.8em',
+							marginBottom: '0.8em',
+						},
+					},
+				},
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -98,5 +214,8 @@ export default {
 			},
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [
+		require("tailwindcss-animate"),
+		require("@tailwindcss/typography"),
+	],
 } satisfies Config;

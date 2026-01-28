@@ -64,7 +64,7 @@ export default function PostOpenVPNSetup() {
           />
         </div>
 
-        <div className="prose prose-lg max-w-none dark:prose-invert">
+        <div className="prose prose-xl max-w-none dark:prose-invert">
           <p>
             In this post, I'll share a step-by-step approach to set up a functional OpenVPN server, covering provisioning, certificate management, firewall rules, client onboarding, and essential security practices.
           </p>
