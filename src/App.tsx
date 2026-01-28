@@ -74,12 +74,8 @@ const App = () => (
             <Route path="/:lang" element={<LanguageGuard><Index /></LanguageGuard>} />
             <Route path="/:lang/blog" element={<LanguageGuard><BlogIndex /></LanguageGuard>} />
             <Route path="/:lang/blog/post-deployment-monitoring" element={<LanguageGuard><BlogPost1 /></LanguageGuard>} />
-            <Route path="/:lang/blog/mongodb-setup" element={<LanguageGuard><BlogPost2 /></LanguageGuard>} />
-            <Route path="/:lang/blog/serverless-website-recaptcha" element={<LanguageGuard><BlogPost3 /></LanguageGuard>} />
-            <Route path="/:lang/blog/openvpn-server-setup" element={<LanguageGuard><BlogPost4 /></LanguageGuard>} />
-            <Route path="/:lang/blog/linux-acl-management" element={<LanguageGuard><PostLinuxACL /></LanguageGuard>} />
-            
-            {/* Catch-all 404 */}
+
+            {/* Catch-all */}
             <Route path="*" element={<LanguageGuard><NotFound /></LanguageGuard>} />
           </Routes>
         </BrowserRouter>
@@ -87,17 +83,5 @@ const App = () => (
     </ThemeProvider>
   </QueryClientProvider>
 );
-// Inside App.jsx
-function App() {
-  return (
-    <>
-      {/* Navigation or Header would go here */}
-      <main id="main-content" tabIndex="-1">
-        {/* Your primary page content */}
-        <h1>Welcome to my site</h1>
-      </main>
-    </>
-  )
-}
 
 export default App;
