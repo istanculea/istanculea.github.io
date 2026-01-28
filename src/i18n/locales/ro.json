@@ -10,15 +10,18 @@
   "hero": {
     "badge1": "Specialist Cloud",
     "badge2": "Inginer DevOps",
+    "badge": "Inginer Operațiuni Cloud",
     "name": "Ionuț Stănculea",
     "title": "Inginer Cloud & Operațiuni construind infrastructură de încredere cu grijă și precizie",
     "description": "Pasionat de crearea soluțiilor cloud scalabile și sigure care împuternicesc echipele și încântă utilizatorii. În prezent arhitectez medii cloud hibride la Electronic Arts.",
     "location": "Locație",
     "email": "Email",
-    "downloadCV": "Descărcare CV"
+    "downloadCV": "Descărcare CV",
+    "learnMore": "Află Mai Multe Despre Mine"
   },
   "about": {
     "title": "Profil",
+    "badge": "Despre Mine",
     "subtitle": "Inginer Cloud & Operațiuni construind infrastructură de încredere cu grijă și precizie",
     "paragraph1": "Sunt un Inginer Cloud & Operațiuni pasionat cu peste 5 ani de experiență practică în construirea, gestionarea și automatizarea infrastructurii scalabile pe Azure și AWS. În prezent la Electronic Arts, mă specializez în medii cloud hibride și fiabilitatea platformelor care mențin echipele productive și utilizatorii fericiți.",
     "paragraph2": "Abordarea mea combină expertiza tehnică profundă cu grija genuină pentru oamenii care folosesc aceste sisteme. Fie că reduc incidentele cu 25% sau rezolv puzzle-uri complexe de infrastructură, cred că cele mai bune soluții sunt atât robuste, cât și elegante.",

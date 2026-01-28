@@ -33,7 +33,7 @@ export function About() {
           <div className="flex justify-center mb-6">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium bg-gradient-to-r from-primary/10 to-accent/10 text-primary border border-primary/20 rounded-full backdrop-blur-sm">
               <Sparkles className="h-4 w-4" />
-              About Me
+              {t('about.badge')}
             </span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold">

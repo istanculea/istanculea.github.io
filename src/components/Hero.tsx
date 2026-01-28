@@ -21,7 +21,7 @@ export function Hero() {
             {/* Single badge */}
             <div className="flex justify-center">
               <span className="inline-flex items-center px-4 py-1.5 text-sm font-medium bg-gradient-to-r from-primary/10 to-accent/10 text-primary border border-primary/20 rounded-full backdrop-blur-sm">
-                Cloud Operations Engineer
+                {t('hero.badge')}
               </span>
             </div>
             
@@ -47,6 +47,7 @@ export function Hero() {
             <a 
               href="mailto:stanculea.ionut.93@gmail.com"
               className="inline-flex items-center gap-2 px-4 py-2 bg-background/50 backdrop-blur-sm border border-border rounded-full text-muted-foreground hover:border-primary/50 hover:text-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
+              aria-label="Contact via email"
             >
               <span>✉️</span>
               <span>{t('hero.email')}</span>
@@ -77,7 +78,7 @@ export function Hero() {
                 aboutSection?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              Learn More About Me
+              {t('hero.learnMore')}
               <ChevronDown className="ml-2 h-5 w-5 transition-transform group-hover:translate-y-0.5" />
             </Button>
           </div>

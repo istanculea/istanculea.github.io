@@ -10,15 +10,18 @@
   "hero": {
     "badge1": "Cloud Specialist",
     "badge2": "DevOps Engineer",
+    "badge": "Cloud Operations Engineer",
     "name": "Ionuț Stănculea",
     "title": "Cloud & Operations Engineer building reliable infrastructure with care and precision",
     "description": "Passionate about creating scalable, secure cloud solutions that empower teams and delight users. Currently architecting hybrid cloud environments at Electronic Arts.",
     "location": "Location",
     "email": "Email",
-    "downloadCV": "Download CV"
+    "downloadCV": "Download CV",
+    "learnMore": "Learn More About Me"
   },
   "about": {
     "title": "Profile",
+    "badge": "About Me",
     "subtitle": "Cloud & Operations Engineer building reliable infrastructure with care and precision",
     "paragraph1": "I'm a passionate Cloud & Operations Engineer with over 5 years of hands-on experience building, managing, and automating scalable infrastructure on Azure and AWS. Currently at Electronic Arts, I specialize in hybrid cloud environments and platform reliability that keeps teams productive and users happy.",
     "paragraph2": "My approach combines deep technical expertise with genuine care for the people using these systems. Whether it's reducing incidents by 25% or solving complex infrastructure puzzles, I believe the best solutions are both robust and elegant.",
