@@ -40,3 +40,19 @@
 .read-the-docs {
   color: #888;
 }
+/* Hide the link off-screen by default */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  z-index: 100;
+  transition: top 0.3s; /* Optional: smooth slide-in effect */
+}
+
+/* Show it only when it is focused via the Tab key */
+.skip-link:focus {
+  top: 0;
+}
