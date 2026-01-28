@@ -60,12 +60,12 @@ export function Footer() {
   }
 
   return (
-    <footer className="py-16 px-6 border-t border-border bg-muted/20">
+    <footer className="py-16 px-6 border-t border-border bg-muted/30">
       <div className="container max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           {/* About */}
           <div className="space-y-4">
-            <div className="text-2xl font-bold text-gradient">Ionuț Stănculea</div>
+            <div className="text-2xl font-semibold text-foreground">Ionuț Stănculea</div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               {t('footer.aboutText')}
             </p>
@@ -87,7 +87,7 @@ export function Footer() {
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-muted-foreground hover:text-primary transition-colors text-left text-sm hover:translate-x-1 transition-transform duration-200"
+                  className="text-muted-foreground hover:text-foreground transition-colors text-left text-sm hover:translate-x-1 transition-transform duration-200"
                 >
                   {link.name}
                 </button>

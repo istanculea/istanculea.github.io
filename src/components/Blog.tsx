@@ -74,15 +74,14 @@ export function Blog() {
   }
 
   return (
-    <section id="blog" className="py-20 px-6">
+    <section id="blog" className="py-24 px-6">
       <div className="container max-w-6xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold flex items-center justify-center gap-3">
+        <div className="text-center space-y-3 mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3">
             <NotebookPen className="h-8 w-8 text-primary" />
             {t('blog.title')}
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-lg text-muted-foreground">
             {t('blog.subtitle')}
           </p>
         </div>
@@ -90,7 +89,7 @@ export function Blog() {
         {/* Featured Post */}
         {featuredPost && (
           <motion.article 
-            className="surface-card overflow-hidden mb-12 group cursor-pointer rounded-xl shadow-lg transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+            className="rounded-xl border border-border overflow-hidden mb-12 group cursor-pointer bg-card/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
             onClick={() => navigate(featuredPost.slug)}
             {...animationProps}
           >
@@ -105,13 +104,13 @@ export function Blog() {
                   e.currentTarget.src = '/placeholder.svg';
                 }}
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent backdrop-blur-sm p-6 text-white">
-                <span className="cloud-badge bg-white/30 text-white">{featuredPost.category}</span>
-                <h3 className="text-3xl font-bold mt-2">{featuredPost.title}</h3>
-                <p className="mt-2 text-lg">{featuredPost.excerpt}</p>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-6 text-white space-y-3">
+                <span className="inline-flex px-3 py-1 text-xs font-medium rounded-full bg-white/15">{featuredPost.category}</span>
+                <h3 className="text-2xl font-semibold">{featuredPost.title}</h3>
+                <p className="text-sm text-white/80">{featuredPost.excerpt}</p>
                 <Button 
                   variant="outline" 
-                  className="mt-4 bg-transparent text-white border-white/80 hover:bg-white hover:text-black focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/10"
+                  className="mt-2 bg-transparent text-white border-white/60 hover:bg-white hover:text-black"
                   onClick={(e) => {
                     e.stopPropagation()
                     navigate(featuredPost.slug)
@@ -130,7 +129,7 @@ export function Blog() {
           {otherPosts.map((post, index) => (
             <motion.article 
               key={post.id}
-              className="bg-card/95 border border-border overflow-hidden group cursor-pointer rounded-xl shadow-md transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              className="bg-card/80 border border-border overflow-hidden group cursor-pointer rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               {...animationProps}
               transition={{ ...animationProps.transition, delay: (index + 1) * 0.1 }}
               onClick={() => navigate(post.slug)}
@@ -152,25 +151,25 @@ export function Blog() {
               </div>
               
               <div className="p-6 space-y-4">
-                <div className="flex items-center justify-between text-sm text-muted-foreground/80">
-                  <span className="px-3 py-1 bg-primary/15 text-primary font-medium rounded-full text-xs">{post.category}</span>
-                  <div className="flex items-center space-x-3">
-                    <span className="flex items-center space-x-1">
+                <div className="flex items-center justify-between text-xs text-muted-foreground">
+                  <span className="px-3 py-1 bg-primary/10 text-primary font-medium rounded-full">{post.category}</span>
+                  <div className="flex items-center gap-3">
+                    <span className="flex items-center gap-1">
                       <Calendar className="h-4 w-4" />
                       <span>{post.date}</span>
                     </span>
-                    <span className="flex items-center space-x-1">
+                    <span className="flex items-center gap-1">
                       <Clock className="h-4 w-4" />
                       <span>{post.readTime}</span>
                     </span>
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
                   {post.title}
                 </h3>
                 
-                <p className="text-foreground/70 leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed text-sm">
                   {post.excerpt}
                 </p>
 
@@ -193,7 +192,7 @@ export function Blog() {
         {/* View All Button */}
         <div className="text-center mt-12">
           <Button 
-            className="btn-outline"
+            variant="outline"
             onClick={() => navigate('/blog')}
           >
             {t('blog.viewAll')}

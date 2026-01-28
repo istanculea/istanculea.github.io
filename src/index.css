@@ -4,32 +4,42 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 210 11% 15%;
+    --background: 210 25% 98%;
+    --foreground: 216 21% 16%;
     --card: 0 0% 100%;
-    --card-foreground: 210 11% 15%;
+    --card-foreground: 216 21% 16%;
     --popover: 0 0% 100%;
-    --popover-foreground: 210 11% 15%;
-    --primary: 195 98% 39%;
+    --popover-foreground: 216 21% 16%;
+    --primary: 221 63% 53%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 195 98% 50%;
-    --primary-dark: 195 98% 32%;
+    --primary-light: 221 63% 60%;
+    --primary-dark: 221 63% 45%;
     --secondary: 210 20% 96%;
-    --secondary-foreground: 210 11% 15%;
-    --muted: 210 20% 96%;
-    --muted-foreground: 210 11% 45%;
-    --accent: 160 84% 39%;
+    --secondary-foreground: 216 21% 16%;
+    --muted: 214 32% 94%;
+    --muted-foreground: 215 16% 45%;
+    --accent: 200 98% 39%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 160 84% 50%;
-    --destructive: 0 84.2% 60.2%;
+    --accent-light: 200 98% 48%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 195 98% 39%;
+    --border: 214 20% 85%;
+    --input: 214 20% 85%;
+    --ring: 221 63% 53%;
     --radius: 0.75rem;
-    --surface: 210 20% 98%;
-    --success: 142 76% 36%;
+    --surface: 210 24% 97%;
+    --success: 142 58% 42%;
     --warning: 38 92% 50%;
+
+    /* spacing scale */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-7: 48px;
+    --space-8: 64px;
   }
 
   .dark {
@@ -66,6 +76,28 @@
 
   body {
     @apply bg-background text-foreground font-inter antialiased;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-foreground;
+    letter-spacing: -0.02em;
+  }
+
+  h1 { font-size: clamp(2.25rem, 3vw, 3rem); line-height: 1.1; }
+  h2 { font-size: clamp(1.75rem, 2.4vw, 2.4rem); line-height: 1.2; }
+  h3 { font-size: clamp(1.35rem, 1.8vw, 1.8rem); line-height: 1.3; }
+  p { font-size: 1rem; line-height: 1.8; color: hsl(var(--muted-foreground)); }
+
+  .container {
+    max-width: 1120px;
+    padding-inline: 16px;
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-inline: 24px;
+    }
   }
 }
 
