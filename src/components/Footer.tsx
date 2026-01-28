@@ -1,16 +1,19 @@
 import { Mail, MapPin, Linkedin, Github, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useTranslation } from "react-i18next"
+import { pathWithLang } from "@/lib/langPath"
 
 export function Footer() {
+  const { t } = useTranslation()
   const currentYear = new Date().getFullYear()
 
   const quickLinks = [
-    { name: "About", href: "#about" },
-    { name: "Experience", href: "#experience" },
-    { name: "Skills", href: "#skills" },
-    { name: "Learning", href: "#education" },
-    { name: "Blog", href: "/blog" },
-    { name: "Get in Touch", href: "#contact" },
+    { name: t('nav.about'), href: "#about" },
+    { name: t('nav.experience'), href: "#experience" },
+    { name: t('nav.skills'), href: "#skills" },
+    { name: t('nav.education'), href: "#education" },
+    { name: t('nav.blog'), href: pathWithLang("/blog") },
+    { name: t('nav.getInTouch'), href: "#contact" },
   ]
 
   const socialLinks = [
@@ -27,15 +30,15 @@ export function Footer() {
   ]
 
   const scrollToSection = (href: string) => {
-    if (href === "/blog") {
-      window.location.href = "/blog"
+    if (href.includes("/blog")) {
+      window.location.href = href
       return
     }
     
     if (href.startsWith('#')) {
       // Check if we're not on the home page
-      if (window.location.pathname !== '/') {
-        window.location.href = `/${href}`
+      if (!window.location.pathname.includes('#') && window.location.pathname !== '/' && !window.location.pathname.match(/^\/(es|ro)$/)) {
+        window.location.href = pathWithLang(`/${href}`)
         return
       }
       
@@ -63,21 +66,21 @@ export function Footer() {
           <div className="space-y-4">
             <div className="text-2xl font-bold text-gradient">Ionuț Stănculea</div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Cloud Infrastructure Engineer passionate about building scalable, automated solutions that drive business growth and innovation.
+              {t('footer.aboutText')}
             </p>
             <Button 
               variant="cta"
               className="w-full sm:w-auto"
               onClick={() => scrollToSection('#contact')}
             >
-              Get in Touch
+              {t('footer.getInTouch')}
               <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Quick Links</h3>
+            <h3 className="font-semibold text-foreground">{t('footer.quickLinks')}</h3>
             <nav className="flex flex-col space-y-2">
               {quickLinks.map((link) => (
                 <button
@@ -93,7 +96,7 @@ export function Footer() {
 
           {/* Contact */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Contact</h3>
+            <h3 className="font-semibold text-foreground">{t('footer.contact')}</h3>
             <div className="space-y-3">
               <a 
                 href="mailto:stanculea.ionut.93@gmail.com"
@@ -111,7 +114,7 @@ export function Footer() {
 
           {/* Social */}
           <div className="space-y-4">
-            <h3 className="font-semibold text-foreground">Connect</h3>
+            <h3 className="font-semibold text-foreground">{t('footer.social')}</h3>
             <div className="flex flex-col space-y-3">
               {socialLinks.map((social) => {
                 const Icon = social.icon
@@ -136,10 +139,10 @@ export function Footer() {
         <div className="pt-8 border-t border-border">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
             <p className="text-muted-foreground text-sm">
-              © {currentYear} Ionuț Stănculea. All rights reserved.
+              {t('footer.copyright', { year: currentYear })}
             </p>
             <p className="text-sm text-muted-foreground">
-              Built with ☁️ and ⚡ automation
+              {t('footer.buildStatus')}
             </p>
           </div>
         </div>

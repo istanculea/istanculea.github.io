@@ -10,7 +10,7 @@
   "hero": {
     "badge1": "Specialist Cloud",
     "badge2": "Inginer DevOps",
-    "name": "Ionut Zaman",
+    "name": "Ionuț Stănculea",
     "title": "Inginer Cloud & Operațiuni construind infrastructură de încredere cu grijă și precizie",
     "description": "Pasionat de crearea soluțiilor cloud scalabile și sigure care împuternicesc echipele și încântă utilizatorii. În prezent arhitectez medii cloud hibride la Electronic Arts.",
     "location": "Locație",
@@ -20,11 +20,11 @@
   "about": {
     "title": "Profil",
     "subtitle": "Inginer Cloud & Operațiuni construind infrastructură de încredere cu grijă și precizie",
-    "paragraph1": "Sunt un Inginer Cloud & Operațiuni pasionat cu peste 7 ani de experiență practică în construirea, gestionarea și automatizarea infrastructurii scalabile pe Azure și AWS. În prezent la Electronic Arts, mă specializez în medii cloud hibride și fiabilitatea platformelor care mențin echipele productive și utilizatorii fericiți.",
+    "paragraph1": "Sunt un Inginer Cloud & Operațiuni pasionat cu peste 5 ani de experiență practică în construirea, gestionarea și automatizarea infrastructurii scalabile pe Azure și AWS. În prezent la Electronic Arts, mă specializez în medii cloud hibride și fiabilitatea platformelor care mențin echipele productive și utilizatorii fericiți.",
     "paragraph2": "Abordarea mea combină expertiza tehnică profundă cu grija genuină pentru oamenii care folosesc aceste sisteme. Fie că reduc incidentele cu 25% sau rezolv puzzle-uri complexe de infrastructură, cred că cele mai bune soluții sunt atât robuste, cât și elegante.",
     "paragraph3": "Când nu optimizez infrastructura cloud, mă vei găsi experimentând cu gadget-uri smart home, imprimând prototipuri amuzante 3D, sau explorând cele mai noi tehnologii cloud.",
     "highlights": {
-      "experience": "7+ Ani Experiență",
+      "experience": "5+ Ani Experiență",
       "cloud": "Expert Multi-Cloud",
       "automation": "Specialist Automatizare",
       "reliability": "Fiabilitate Platformă"
@@ -37,51 +37,62 @@
     "title": "Experiență Profesională",
     "subtitle": "Construind și scalând infrastructură în diferite industrii și tehnologii",
     "ea": {
-      "title": "Inginer Cloud & Operațiuni",
+      "title": "Inginer Cloud Operations",
       "company": "Electronic Arts",
       "location": "București, România",
-      "period": "Nov 2022 - Prezent",
+      "period": "Oct 2021 - Prezent",
       "achievements": [
-        "Am arhitectat soluții cloud hibride combinând infrastructura on-premise cu serviciile Azure, îmbunătățind scalabilitatea și reducând overhead-ul operațional cu 30%",
-        "Am condus migrarea sistemelor legacy către arhitecturi cloud-native, rezultând în 40% reducere de costuri și performanță îmbunătățită",
-        "Am implementat sisteme cuprinzătoare de monitorizare și alertare, reducând timpul mediu de detectare (MTTD) cu 50%",
-        "Am mentorat ingineri juniori și am stabilit cele mai bune practici de infrastructură în multiple echipe de dezvoltare"
+        "Am gestionat și optimizat infrastructura cloud hibridă combinând sistemele on-premise cu serviciile AWS și Azure",
+        "Am implementat pipeline-uri CI/CD și automatizare a infrastructurii folosind Terraform și Jenkins",
+        "Am monitorizat sănătatea și performanța sistemului folosind Grafana și Prometheus, reducând timpul de răspuns la incidente",
+        "Am colaborat cu echipele de dezvoltare pentru a asigura deployment-uri fiabile și stabilitatea platformei"
       ]
     },
-    "metro": {
-      "title": "Inginer DevOps",
-      "company": "Metro Systems Romania",
+    "autodesk": {
+      "title": "Analist Senior Quality Assurance",
+      "company": "Autodesk",
       "location": "București, România",
-      "period": "Oct 2021 - Nov 2022",
+      "period": "Nov 2019 - Ian 2021",
       "achievements": [
-        "Am proiectat și implementat pipeline-uri CI/CD folosind Azure DevOps, reducând timpul de deployment de la ore la minute",
-        "Am automatizat aprovizionarea infrastructurii cu Terraform și template-uri ARM, eliminând erorile de configurare manuală",
-        "Am stabilit strategii de orchestrare containere folosind Kubernetes, îmbunătățind scalabilitatea și fiabilitatea aplicațiilor",
-        "Am redus incidentele de producție cu 25% prin monitorizare proactivă și scripturi de remediere automatizată"
+        "Am condus eforturile de asigurare a calității pentru produse software enterprise",
+        "Am dezvoltat și menținut framework-uri de testare automatizată folosind Selenium",
+        "Am colaborat cu echipe cross-funcționale pentru a identifica și rezolva defectele software",
+        "Am mentorat analiști QA juniori și am stabilit cele mai bune practici de testare"
       ]
     },
-    "altex": {
-      "title": "Administrator de Sistem",
-      "company": "Altex Romania",
+    "altenLead": {
+      "title": "Team Lead Suport",
+      "company": "ALTEN",
       "location": "București, România",
-      "period": "Feb 2018 - Oct 2021",
+      "period": "Mar 2019 - Nov 2019",
       "achievements": [
-        "Am gestionat medii Windows Server susținând 200+ locații retail la nivel național",
-        "Am implementat soluții de backup și recuperare în caz de dezastru, atingând 99.9% disponibilitate date SLA",
-        "Am optimizat infrastructura de rețea și protocoalele de securitate, reducând incidentele de securitate cu 60%",
-        "Am condus proiecte de consolidare servere care au redus costurile hardware cu 35% îmbunătățind în același timp performanța"
+        "Am condus o echipă de ingineri de suport oferind asistență tehnică pentru clienți enterprise",
+        "Am eficientizat procesele de suport și am îmbunătățit timpii de rezolvare a ticket-urilor",
+        "Am coordonat cu echipele de dezvoltare pentru a escalada și rezolva probleme tehnice complexe",
+        "Am instruit membrii echipei pe noi tehnologii și proceduri de suport"
       ]
     },
-    "brd": {
-      "title": "Specialist Suport IT",
-      "company": "BRD Groupe Société Générale",
+    "altenEngineer": {
+      "title": "Inginer Suport",
+      "company": "ALTEN",
       "location": "București, România",
-      "period": "Ian 2017 - Feb 2018",
+      "period": "Oct 2016 - Mar 2019",
       "achievements": [
-        "Am oferit suport tehnic pentru aplicații bancare și infrastructură servind 1000+ angajați",
-        "Am eficientizat procesele de gestionare incidente, reducând timpul mediu de rezolvare cu 40%",
-        "Am contribuit la inițiative de cybersecuritate și audituri de conformitate în mediul bancar reglementat",
-        "Am dezvoltat scripturi de automatizare pentru sarcini de mentenanță rutiniere, îmbunătățind eficiența operațională"
+        "Am oferit suport tehnic pentru aplicații software enterprise",
+        "Am diagnosticat și rezolvat probleme tehnice complexe pentru clienți",
+        "Am creat documentație tehnică și articole de bază de cunoștințe",
+        "Am colaborat cu echipele de dezvoltare pentru a îmbunătăți calitatea produselor"
+      ]
+    },
+    "expleo": {
+      "title": "Inginer Design Mecanic (Part-time)",
+      "company": "Expleo Group",
+      "location": "București, România",
+      "period": "Mai 2016 - Sep 2019",
+      "achievements": [
+        "Am creat designuri mecanice folosind CATIA V5 și AutoCAD",
+        "Am colaborat cu echipele de inginerie pe proiecte de dezvoltare a produselor",
+        "Am pregătit documentație tehnică și specificații de design"
       ]
     }
   },
@@ -89,9 +100,9 @@
     "title": "Abilități & Tehnologii",
     "subtitle": "Instrumentele și tehnologiile pe care le folosesc pentru a construi infrastructură de încredere",
     "cloud": "Platforme Cloud",
-    "automation": "Automatizare & IaC",
-    "monitoring": "Monitorizare & Observabilitate",
-    "cicd": "CI/CD & Control Versiuni"
+    "automation": "Containere & Orchestrare",
+    "monitoring": "Monitorizare & Logging",
+    "cicd": "CI/CD"
   },
   "education": {
     "title": "Educație & Certificări",
@@ -156,7 +167,7 @@
     "getInTouch": "Să Lucrăm Împreună",
     "email": "Email",
     "location": "Locație",
-    "copyright": "© {{year}} Ionut Zaman. Toate drepturile rezervate.",
+    "copyright": "© {{year}} Ionuț Stănculea. Toate drepturile rezervate.",
     "buildStatus": "Construit cu ❤️ folosind React, TypeScript & Tailwind CSS"
   },
   "blogPost": {

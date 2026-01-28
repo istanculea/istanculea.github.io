@@ -7,20 +7,23 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
+import { useTranslation } from "react-i18next"
 
-const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
-  email: z.string().email("Please enter a valid email address").max(255, "Email must be less than 255 characters"),
-  subject: z.string().min(3, "Subject must be at least 3 characters").max(150, "Subject must be less than 150 characters"),
-  message: z.string().min(10, "Message must be at least 10 characters").max(2000, "Message must be less than 2000 characters"),
+const buildContactSchema = (t: any) => z.object({
+  name: z.string().min(2, t('contact.validation.nameMin')).max(100, "Name must be less than 100 characters"),
+  email: z.string().email(t('contact.validation.emailInvalid')).max(255, "Email must be less than 255 characters"),
+  subject: z.string().min(3, t('contact.validation.subjectMin')).max(150, "Subject must be less than 150 characters"),
+  message: z.string().min(10, t('contact.validation.messageMin')).max(2000, "Message must be less than 2000 characters"),
   honeypot: z.string().optional()
 })
 
-type ContactForm = z.infer<typeof contactSchema>
-
 export function Contact() {
+  const { t } = useTranslation()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const { toast } = useToast()
+  
+  const contactSchema = buildContactSchema(t)
+  type ContactForm = z.infer<typeof contactSchema>
   
   const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactForm>({
     resolver: zodResolver(contactSchema)
@@ -39,7 +42,7 @@ export function Contact() {
     await new Promise(resolve => setTimeout(resolve, 1000))
     
     toast({
-      title: "Message sent!",
+      title: t('contact.toast.success'),
       description: "Thanks! I'll get back to you within 24 hours.",
     })
     
@@ -50,13 +53,13 @@ export function Contact() {
   const contactInfo = [
     {
       icon: <Mail className="h-5 w-5" />,
-      label: "Email",
+      label: t('contact.info.email'),
       value: "stanculea.ionut.93@gmail.com",
       href: "mailto:stanculea.ionut.93@gmail.com"
     },
     {
       icon: <MapPin className="h-5 w-5" />,
-      label: "Location",
+      label: t('contact.info.location'),
       value: "Remote / Europe",
       href: "#"
     }
@@ -79,16 +82,16 @@ export function Contact() {
     <section id="contact" className="py-20 px-6 bg-surface">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold">Let's Connect!</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold">{t('contact.title')}</h2>
           <p className="text-xl text-muted-foreground">
-            Open to new opportunities and exciting cloud infrastructure projects.
+            {t('contact.subtitle')}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="surface-card p-8">
-            <h3 className="text-2xl font-semibold mb-6">Send me a message</h3>
+            <h3 className="text-2xl font-semibold mb-6">{t('contact.form.send')}</h3>
             
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               {/* Honeypot field for spam protection */}
@@ -102,7 +105,7 @@ export function Contact() {
               
               <div>
                 <Input
-                  placeholder="Your Name"
+                  placeholder={t('contact.form.namePlaceholder')}
                   {...register("name")}
                   className={errors.name ? "border-destructive" : ""}
                 />
@@ -114,7 +117,7 @@ export function Contact() {
               <div>
                 <Input
                   type="email"
-                  placeholder="Your Email"
+                  placeholder={t('contact.form.emailPlaceholder')}
                   {...register("email")}
                   className={errors.email ? "border-destructive" : ""}
                 />
@@ -125,7 +128,7 @@ export function Contact() {
 
               <div>
                 <Input
-                  placeholder="Subject"
+                  placeholder={t('contact.form.subjectPlaceholder')}
                   {...register("subject")}
                   className={errors.subject ? "border-destructive" : ""}
                 />
@@ -136,7 +139,7 @@ export function Contact() {
 
               <div>
                 <Textarea
-                  placeholder="Your Message"
+                  placeholder={t('contact.form.messagePlaceholder')}
                   rows={5}
                   {...register("message")}
                   className={errors.message ? "border-destructive" : ""}
@@ -151,7 +154,7 @@ export function Contact() {
                 className="btn-hero w-full group"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? t('contact.form.sending') : t('contact.form.send')}
                 <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </form>
@@ -160,7 +163,7 @@ export function Contact() {
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-semibold mb-6">{t('contact.info.contact')}</h3>
               <div className="space-y-4">
                 {contactInfo.map((item) => (
                   <a
@@ -181,7 +184,7 @@ export function Contact() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Professional Network</h3>
+              <h3 className="text-2xl font-semibold mb-6">{t('contact.info.social')}</h3>
               <div className="flex space-x-4">
                 {socialLinks.map((link) => (
                   <a

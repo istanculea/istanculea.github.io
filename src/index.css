@@ -27,55 +27,61 @@
 
 @layer base {
   :root {
-    /* Core Colors */
+    /* Core Colors - Clean white base with sophisticated foreground */
     --background: 0 0% 100%;
-    --foreground: 203 23% 12%;
+    --foreground: 220 25% 15%;
 
-    /* Card & Surface */
+    /* Card & Surface - Subtle gray variations for depth */
     --card: 0 0% 100%;
-    --card-foreground: 203 23% 12%;
-    --surface: 210 25% 97%;
+    --card-foreground: 220 25% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 15%;
+    --surface: 220 15% 98%;
 
-    /* Brand Colors - Cloud/Tech inspired */
-    --primary: 200 98% 39%;
+    /* Brand Colors - Azure Blue palette */
+    --primary: 200 85% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 200 100% 85%;
-    --primary-dark: 200 98% 25%;
+    --primary-light: 200 85% 88%;
+    --primary-dark: 200 85% 30%;
 
-    /* Accent Colors - Azure/AWS inspired */
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 100%;
-    --accent-light: 217 91% 90%;
+    /* Accent Colors - Electric Cyan */
+    --accent: 185 90% 60%;
+    --accent-foreground: 220 25% 15%;
+    --accent-light: 185 90% 92%;
 
-    /* Semantic Colors */
-    --secondary: 210 20% 94%;
-    --secondary-foreground: 203 23% 12%;
-    --muted: 210 15% 95%;
-    --muted-foreground: 203 12% 45%;
+    /* Semantic Colors - Light theme foundation */
+    --card: 220 15% 98%;
+    --card-foreground: 220 25% 8%;
+    --popover: 220 15% 98%;
+    --popover-foreground: 220 25% 8%;
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 220 25% 15%;
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 15% 50%;
 
-    /* Interactive */
-    --border: 210 25% 90%;
-    --input: 210 25% 90%;
-    --ring: 200 98% 39%;
+    /* Interactive - Consistent with brand palette */
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 200 85% 45%;
 
-    /* Success/Warning/Error */
-    --success: 142 71% 45%;
-    --warning: 38 92% 50%;
-    --destructive: 0 84% 60%;
+    /* Success/Warning/Error - Vibrant but harmonious */
+    --success: 145 75% 42%;
+    --warning: 40 95% 55%;
+    --destructive: 358 85% 58%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Tech-focused Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(200 98% 39%), hsl(217 91% 60%));
-    --gradient-surface: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 25% 97%));
-    --gradient-hero: linear-gradient(135deg, hsl(200 98% 39% / 0.08), hsl(217 91% 60% / 0.08));
-    --gradient-tech: linear-gradient(90deg, hsl(200 98% 39% / 0.15), hsl(217 91% 60% / 0.15), hsl(142 71% 45% / 0.15));
+    /* Enhanced Gradients - Azure to Electric Cyan */
+    --gradient-primary: linear-gradient(135deg, hsl(200 85% 45%), hsl(185 90% 60%));
+    --gradient-surface: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 15% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(200 85% 45% / 0.08), hsl(185 90% 60% / 0.08));
+    --gradient-tech: linear-gradient(90deg, hsl(200 85% 45% / 0.15), hsl(185 90% 60% / 0.15), hsl(145 75% 42% / 0.15));
 
-    /* Enhanced Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(203 23% 12% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(203 23% 12% / 0.1), 0 2px 4px -1px hsl(203 23% 12% / 0.06);
-    --shadow-lg: 0 10px 15px -3px hsl(203 23% 12% / 0.1), 0 4px 6px -2px hsl(203 23% 12% / 0.05);
-    --shadow-glow: 0 0 25px hsl(200 98% 39% / 0.25);
-    --shadow-tech: 0 8px 32px hsl(200 98% 39% / 0.12);
+    /* Sophisticated Shadows - Using primary colors for glow effects */
+    --shadow-sm: 0 1px 2px 0 hsl(220 25% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 25% 15% / 0.1), 0 2px 4px -1px hsl(220 25% 15% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(220 25% 15% / 0.1), 0 4px 6px -2px hsl(220 25% 15% / 0.05);
+    --shadow-glow: 0 0 30px hsl(200 85% 45% / 0.3);
+    --shadow-tech: 0 8px 32px hsl(200 85% 45% / 0.15);
 
     /* Animation */
     --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -85,55 +91,57 @@
   }
 
   .dark {
-    /* Core Colors */
-    --background: 203 23% 4%;
-    --foreground: 210 25% 95%;
+    /* Core Colors - Deep midnight blue base */
+    --background: 220 25% 6%;
+    --foreground: 220 15% 92%;
 
-    /* Card & Surface */
-    --card: 203 23% 6%;
-    --card-foreground: 210 25% 95%;
-    --surface: 203 23% 8%;
+    /* Card & Surface - Layered darkness for depth */
+    --card: 220 25% 8%;
+    --card-foreground: 220 15% 92%;
+    --popover: 220 25% 8%;
+    --popover-foreground: 220 15% 92%;
+    --surface: 220 25% 10%;
 
-    /* Brand Colors - Cloud/Tech inspired */
-    --primary: 200 98% 50%;
-    --primary-foreground: 203 23% 4%;
-    --primary-light: 200 100% 85%;
-    --primary-dark: 200 98% 35%;
+    /* Brand Colors - Brighter Azure for dark theme */
+    --primary: 200 85% 55%;
+    --primary-foreground: 220 25% 6%;
+    --primary-light: 200 85% 88%;
+    --primary-dark: 200 85% 35%;
 
-    /* Accent Colors - Azure/AWS inspired */
-    --accent: 217 91% 65%;
-    --accent-foreground: 203 23% 4%;
-    --accent-light: 217 91% 90%;
+    /* Accent Colors - Vibrant Electric Cyan */
+    --accent: 185 90% 65%;
+    --accent-foreground: 220 25% 6%;
+    --accent-light: 185 90% 92%;
 
-    /* Semantic Colors */
-    --secondary: 203 23% 12%;
-    --secondary-foreground: 210 25% 95%;
-    --muted: 203 23% 10%;
-    --muted-foreground: 210 15% 65%;
+    /* Semantic Colors - Dark theme semantics */
+    --secondary: 220 25% 15%;
+    --secondary-foreground: 220 15% 92%;
+    --muted: 220 25% 12%;
+    --muted-foreground: 220 15% 65%;
 
-    /* Interactive */
-    --border: 203 23% 18%;
-    --input: 203 23% 18%;
-    --ring: 200 98% 50%;
+    /* Interactive - Enhanced contrast for dark mode */
+    --border: 220 25% 20%;
+    --input: 220 25% 20%;
+    --ring: 200 85% 55%;
 
-    /* Success/Warning/Error */
-    --success: 142 71% 45%;
-    --warning: 38 92% 50%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 25% 95%;
+    /* Success/Warning/Error - Bright but harmonious */
+    --success: 145 75% 48%;
+    --warning: 40 95% 60%;
+    --destructive: 358 85% 65%;
+    --destructive-foreground: 220 15% 92%;
 
-    /* Tech-focused Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(200 98% 50%), hsl(217 91% 65%));
-    --gradient-surface: linear-gradient(180deg, hsl(203 23% 4%), hsl(203 23% 8%));
-    --gradient-hero: linear-gradient(135deg, hsl(200 98% 50% / 0.1), hsl(217 91% 65% / 0.1));
-    --gradient-tech: linear-gradient(90deg, hsl(200 98% 50% / 0.15), hsl(217 91% 65% / 0.15), hsl(142 71% 45% / 0.15));
+    /* Dark Theme Gradients - Vibrant but not overwhelming */
+    --gradient-primary: linear-gradient(135deg, hsl(200 85% 55%), hsl(185 90% 65%));
+    --gradient-surface: linear-gradient(180deg, hsl(220 25% 6%), hsl(220 25% 10%));
+    --gradient-hero: linear-gradient(135deg, hsl(200 85% 55% / 0.12), hsl(185 90% 65% / 0.12));
+    --gradient-tech: linear-gradient(90deg, hsl(200 85% 55% / 0.18), hsl(185 90% 65% / 0.18), hsl(145 75% 48% / 0.18));
 
-    /* Enhanced Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(203 23% 2% / 0.5);
-    --shadow-md: 0 4px 6px -1px hsl(203 23% 2% / 0.3), 0 2px 4px -1px hsl(203 23% 2% / 0.2);
-    --shadow-lg: 0 10px 15px -3px hsl(203 23% 2% / 0.3), 0 4px 6px -2px hsl(203 23% 2% / 0.2);
-    --shadow-glow: 0 0 25px hsl(200 98% 50% / 0.3);
-    --shadow-tech: 0 8px 32px hsl(200 98% 50% / 0.15);
+    /* Enhanced Dark Shadows - Deeper and more dramatic */
+    --shadow-sm: 0 1px 2px 0 hsl(220 25% 2% / 0.6);
+    --shadow-md: 0 4px 6px -1px hsl(220 25% 2% / 0.4), 0 2px 4px -1px hsl(220 25% 2% / 0.3);
+    --shadow-lg: 0 10px 15px -3px hsl(220 25% 2% / 0.4), 0 4px 6px -2px hsl(220 25% 2% / 0.3);
+    --shadow-glow: 0 0 35px hsl(200 85% 55% / 0.4);
+    --shadow-tech: 0 8px 32px hsl(200 85% 55% / 0.2);
   }
 }
 
@@ -235,14 +243,57 @@
     @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
   }
 
+  .text-gradient-enhanced {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary)));
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 8s ease-in-out infinite;
+    will-change: background-position;
+  }
+
   .border-gradient {
     background: linear-gradient(var(--background), var(--background)) padding-box,
                 var(--gradient-primary) border-box;
     border: 2px solid transparent;
   }
 
+  .border-gradient-animated {
+    background: linear-gradient(var(--background), var(--background)) padding-box,
+                linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--primary))) border-box;
+    border: 2px solid transparent;
+    background-size: 300% 300%;
+    animation: gradientBorder 6s ease infinite;
+    will-change: background-position;
+  }
+
   .glass-card {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+    @apply backdrop-blur-sm border border-white/10 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-card-premium {
+    @apply backdrop-blur-md border border-white/20 rounded-xl shadow-lg hover:shadow-glow;
+    @apply transition-all duration-500 hover:scale-[1.02] hover:border-white/30;
+    background: rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-card-premium:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .glass-card-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gradient-primary);
+    opacity: 0.6;
   }
 
   .hover-shine {
@@ -258,8 +309,47 @@
     @apply left-full;
   }
 
+  .hover-glow {
+    @apply relative transition-all duration-500;
+  }
+
+  .hover-glow:hover {
+    filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.4));
+  }
+
+  .pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+  }
+
+  .floating-element {
+    animation: float 6s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  /* Accessibility - Respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .text-gradient-enhanced,
+    .border-gradient-animated,
+    .pulse-glow,
+    .floating-element,
+    .animate-float,
+    .animate-pulse {
+      animation: none !important;
+    }
+    
+    .hover-glow:hover,
+    .glass-card-premium:hover {
+      transform: none !important;
+      filter: none !important;
+    }
+  }
+
   .dark .glass-card {
     @apply bg-black/20 border-white/5;
+  }
+
+  .dark .glass-card-premium {
+    @apply bg-black/30 border-white/10 hover:bg-black/40 hover:border-white/20;
   }
 
   /* Navigation utilities */
@@ -324,5 +414,32 @@
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradientBorder {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px hsl(var(--primary) / 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px hsl(var(--primary) / 0.6));
   }
 }

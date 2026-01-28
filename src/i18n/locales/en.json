@@ -10,7 +10,7 @@
   "hero": {
     "badge1": "Cloud Specialist",
     "badge2": "DevOps Engineer",
-    "name": "Ionut Zaman",
+    "name": "Ionuț Stănculea",
     "title": "Cloud & Operations Engineer building reliable infrastructure with care and precision",
     "description": "Passionate about creating scalable, secure cloud solutions that empower teams and delight users. Currently architecting hybrid cloud environments at Electronic Arts.",
     "location": "Location",
@@ -20,11 +20,11 @@
   "about": {
     "title": "Profile",
     "subtitle": "Cloud & Operations Engineer building reliable infrastructure with care and precision",
-    "paragraph1": "I'm a passionate Cloud & Operations Engineer with over 7 years of hands-on experience building, managing, and automating scalable infrastructure on Azure and AWS. Currently at Electronic Arts, I specialize in hybrid cloud environments and platform reliability that keeps teams productive and users happy.",
+    "paragraph1": "I'm a passionate Cloud & Operations Engineer with over 5 years of hands-on experience building, managing, and automating scalable infrastructure on Azure and AWS. Currently at Electronic Arts, I specialize in hybrid cloud environments and platform reliability that keeps teams productive and users happy.",
     "paragraph2": "My approach combines deep technical expertise with genuine care for the people using these systems. Whether it's reducing incidents by 25% or solving complex infrastructure puzzles, I believe the best solutions are both robust and elegant.",
     "paragraph3": "When I'm not optimizing cloud infrastructure, you'll find me tinkering with smart home gadgets, 3D printing fun prototypes, or exploring the latest cloud technologies.",
     "highlights": {
-      "experience": "7+ Years Experience",
+      "experience": "5+ Years Experience",
       "cloud": "Multi-Cloud Expert",
       "automation": "Automation Specialist",
       "reliability": "Platform Reliability"
@@ -37,51 +37,62 @@
     "title": "Professional Experience",
     "subtitle": "Building and scaling infrastructure across different industries and technologies",
     "ea": {
-      "title": "Cloud & Operations Engineer",
+      "title": "Cloud Operations Engineer",
       "company": "Electronic Arts",
       "location": "Bucharest, Romania",
-      "period": "Nov 2022 - Present",
+      "period": "Oct 2021 - Present",
       "achievements": [
-        "Architected hybrid cloud solutions combining on-premises infrastructure with Azure services, improving scalability and reducing operational overhead by 30%",
-        "Led the migration of legacy systems to cloud-native architectures, resulting in 40% cost reduction and enhanced performance",
-        "Implemented comprehensive monitoring and alerting systems, reducing mean time to detection (MTTD) by 50%",
-        "Mentored junior engineers and established infrastructure best practices across multiple development teams"
+        "Managed and optimized hybrid cloud infrastructure combining on-premises systems with AWS and Azure services",
+        "Implemented CI/CD pipelines and infrastructure automation using Terraform and Jenkins",
+        "Monitored system health and performance using Grafana and Prometheus, reducing incident response time",
+        "Collaborated with development teams to ensure reliable deployments and platform stability"
       ]
     },
-    "metro": {
-      "title": "DevOps Engineer",
-      "company": "Metro Systems Romania",
-      "location": "Bucharest, Romania", 
-      "period": "Oct 2021 - Nov 2022",
-      "achievements": [
-        "Designed and implemented CI/CD pipelines using Azure DevOps, reducing deployment time from hours to minutes",
-        "Automated infrastructure provisioning with Terraform and ARM templates, eliminating manual configuration errors",
-        "Established container orchestration strategies using Kubernetes, improving application scalability and reliability",
-        "Reduced production incidents by 25% through proactive monitoring and automated remediation scripts"
-      ]
-    },
-    "altex": {
-      "title": "System Administrator",
-      "company": "Altex Romania",
+    "autodesk": {
+      "title": "Senior Quality Assurance Analyst",
+      "company": "Autodesk",
       "location": "Bucharest, Romania",
-      "period": "Feb 2018 - Oct 2021", 
+      "period": "Nov 2019 - Jan 2021",
       "achievements": [
-        "Managed Windows Server environments supporting 200+ retail locations nationwide",
-        "Implemented backup and disaster recovery solutions, achieving 99.9% data availability SLA",
-        "Optimized network infrastructure and security protocols, reducing security incidents by 60%",
-        "Led server consolidation projects that reduced hardware costs by 35% while improving performance"
+        "Led quality assurance efforts for enterprise software products",
+        "Developed and maintained automated testing frameworks using Selenium",
+        "Collaborated with cross-functional teams to identify and resolve software defects",
+        "Mentored junior QA analysts and established testing best practices"
       ]
     },
-    "brd": {
-      "title": "IT Support Specialist",
-      "company": "BRD Groupe Société Générale",
+    "altenLead": {
+      "title": "Support Team Lead",
+      "company": "ALTEN",
       "location": "Bucharest, Romania",
-      "period": "Jan 2017 - Feb 2018",
+      "period": "Mar 2019 - Nov 2019",
       "achievements": [
-        "Provided technical support for banking applications and infrastructure serving 1000+ employees",
-        "Streamlined incident management processes, reducing average resolution time by 40%",
-        "Contributed to cybersecurity initiatives and compliance audits in the regulated banking environment",
-        "Developed automation scripts for routine maintenance tasks, improving operational efficiency"
+        "Led a team of support engineers providing technical assistance for enterprise clients",
+        "Streamlined support processes and improved ticket resolution times",
+        "Coordinated with development teams to escalate and resolve complex technical issues",
+        "Trained team members on new technologies and support procedures"
+      ]
+    },
+    "altenEngineer": {
+      "title": "Support Engineer",
+      "company": "ALTEN",
+      "location": "Bucharest, Romania",
+      "period": "Oct 2016 - Mar 2019",
+      "achievements": [
+        "Provided technical support for enterprise software applications",
+        "Diagnosed and resolved complex technical issues for clients",
+        "Created technical documentation and knowledge base articles",
+        "Collaborated with development teams to improve product quality"
+      ]
+    },
+    "expleo": {
+      "title": "Mechanical Design Engineer (Part-time)",
+      "company": "Expleo Group",
+      "location": "Bucharest, Romania",
+      "period": "May 2016 - Sep 2019",
+      "achievements": [
+        "Created mechanical designs using CATIA V5 and AutoCAD",
+        "Collaborated with engineering teams on product development projects",
+        "Prepared technical documentation and design specifications"
       ]
     }
   },
@@ -89,9 +100,9 @@
     "title": "Skills & Technologies",
     "subtitle": "The tools and technologies I use to build reliable infrastructure",
     "cloud": "Cloud Platforms",
-    "automation": "Automation & IaC",
-    "monitoring": "Monitoring & Observability",
-    "cicd": "CI/CD & Version Control"
+    "automation": "Containers & Orchestration",
+    "monitoring": "Monitoring & Logging",
+    "cicd": "CI/CD"
   },
   "education": {
     "title": "Education & Certifications",
@@ -156,7 +167,7 @@
     "getInTouch": "Get in Touch",
     "email": "Email",
     "location": "Location",
-    "copyright": "© {{year}} Ionut Zaman. All rights reserved.",
+    "copyright": "© {{year}} Ionuț Stănculea. All rights reserved.",
     "buildStatus": "Built with ❤️ using React, TypeScript & Tailwind CSS"
   },
   "blogPost": {

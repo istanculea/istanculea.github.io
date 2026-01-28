@@ -1,10 +1,12 @@
 import { Calendar, Clock, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useNavigate } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 import { motion } from "framer-motion"
 
 export function Blog() {
   const navigate = useNavigate()
+  const { t } = useTranslation()
   
   const blogPosts = [
     {
@@ -76,9 +78,9 @@ export function Blog() {
       <div className="container max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold">Technical Insights</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold">{t('blog.title')}</h2>
           <p className="text-xl text-muted-foreground">
-            Sharing knowledge on cloud infrastructure and DevOps practices
+            {t('blog.subtitle')}
           </p>
         </div>
 
@@ -112,7 +114,7 @@ export function Blog() {
                     navigate(featuredPost.slug)
                   }}
                 >
-                  Read more
+                  {t('blog.readMore')}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
@@ -177,7 +179,7 @@ export function Blog() {
                     navigate(post.slug)
                   }}
                 >
-                  Read more
+                  {t('blog.readMore')}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                 </Button>
               </div>
@@ -191,7 +193,7 @@ export function Blog() {
             className="btn-outline"
             onClick={() => navigate('/blog')}
           >
-            View All Articles
+            {t('blog.viewAll')}
           </Button>
         </div>
       </div>

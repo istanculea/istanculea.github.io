@@ -12,33 +12,41 @@ import {
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
+import { useTranslation } from "react-i18next"
 
 export function Skills() {
+  const { t } = useTranslation()
+  
   const technicalSkills = [
     {
-      category: "Cloud Platforms",
+      category: t('skills.cloud'),
       icon: <Cloud className="h-5 w-5" />,
       skills: ["AWS", "Azure"]
     },
     {
-      category: "CI/CD Tools", 
-      icon: <GitBranch className="h-5 w-5" />,
-      skills: ["GitLab CI", "Jenkins"]
-    },
-    {
-      category: "Containers & Orchestration",
-      icon: <Container className="h-5 w-5" />,
-      skills: ["Docker", "Kubernetes"]
-    },
-    {
-      category: "Monitoring & Logging",
-      icon: <BarChart3 className="h-5 w-5" />,
-      skills: ["Grafana"]
-    },
-    {
-      category: "Scripting & Automation",
+      category: "Infrastructure as Code",
       icon: <Terminal className="h-5 w-5" />,
-      skills: ["PowerShell", "Bash", "Python"]
+      skills: ["Terraform"]
+    },
+    {
+      category: t('skills.automation'),
+      icon: <Container className="h-5 w-5" />,
+      skills: ["Kubernetes", "Docker"]
+    },
+    {
+      category: t('skills.cicd'), 
+      icon: <GitBranch className="h-5 w-5" />,
+      skills: ["Jenkins", "GitHub Actions"]
+    },
+    {
+      category: t('skills.monitoring'),
+      icon: <BarChart3 className="h-5 w-5" />,
+      skills: ["Grafana", "Prometheus"]
+    },
+    {
+      category: "Scripting",
+      icon: <Terminal className="h-5 w-5" />,
+      skills: ["Bash", "PowerShell", "Python"]
     },
     {
       category: "Version Control",
@@ -48,20 +56,19 @@ export function Skills() {
     {
       category: "Databases",
       icon: <Database className="h-5 w-5" />,
-      skills: ["MySQL", "PostgreSQL"]
+      skills: ["PostgreSQL", "MySQL"]
     },
     {
       category: "Other Tools",
       icon: <Settings className="h-5 w-5" />,
-      skills: ["Jira", "Confluence", "Selenium", "CATIA V5", "Solid Edge", "AutoCAD"]
+      skills: ["Jira", "Confluence", "AutoCAD", "CATIA V5", "Revit"]
     }
   ]
 
   const languageSkills = [
     { language: "Romanian", level: "Native", percentage: 100 },
     { language: "English", level: "Proficient (C2)", percentage: 95 },
-    { language: "Spanish", level: "Intermediate (B1)", percentage: 70 },
-    { language: "Italian", level: "Basic (A2)", percentage: 45 }
+    { language: "Spanish", level: "Intermediate (B1)", percentage: 70 }
   ]
 
   const interests = [
@@ -84,9 +91,9 @@ export function Skills() {
               <Sparkles className="h-4 w-4" />
               <span className="text-sm font-medium">Core Capabilities</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold">Technical Skills</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold">{t('skills.title')}</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Hands-on with cloud, CI/CD, containers, and observability—delivering reliable, scalable systems.
+              {t('skills.subtitle')}
             </p>
           </div>
           

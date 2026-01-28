@@ -1,9 +1,12 @@
 import { Zap, Cloud, Wrench, Users, Activity, CheckCircle, MapPin, Heart, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { useTranslation } from "react-i18next"
 // Using the new uploaded portrait image
 
 export function About() {
+  const { t } = useTranslation()
+  
   const chipHighlights = [
     { icon: Zap, text: "7+ years in IT Operations, QA, and Cloud Engineering" },
     { icon: Cloud, text: "AWS, Azure, CI/CD, Terraform, Docker, Kubernetes" },
@@ -28,10 +31,10 @@ export function About() {
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16 animate-fade-up">
           <h2 className="text-4xl lg:text-5xl font-bold">
-            <span className="text-gradient">Profile</span>
+            <span className="text-gradient">{t('about.title')}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Cloud & Operations Engineer building reliable infrastructure with care and precision
+            {t('about.subtitle')}
           </p>
         </div>
 
@@ -42,22 +45,16 @@ export function About() {
             {/* Summary */}
             <div className="space-y-6">
               <p className="text-lg leading-relaxed text-foreground">
-                I'm a passionate <strong>Cloud & Operations Engineer</strong> with over 7 years 
-                of hands-on experience building, managing, and automating scalable infrastructure 
-                on Azure and AWS. Currently at Electronic Arts, I specialize in hybrid cloud 
-                environments and platform reliability that keeps teams productive and users happy.
+                {t('about.paragraph1')}
               </p>
               
               <p className="text-lg leading-relaxed text-foreground">
-                My approach combines deep technical expertise with genuine care for the people 
-                using these systems. Whether it's reducing incidents by 25% or solving complex 
-                infrastructure puzzles, I believe the best solutions are both robust and elegant.
+                {t('about.paragraph2')}
               </p>
 
               <p className="text-lg leading-relaxed text-foreground flex items-center gap-2">
                 <Heart className="h-5 w-5 text-primary" />
-                When I'm not optimizing cloud infrastructure, you'll find me tinkering with smart 
-                home gadgets, 3D printing fun prototypes, or exploring the latest cloud technologies.
+                {t('about.paragraph3')}
               </p>
             </div>
 
@@ -69,7 +66,7 @@ export function About() {
                   return (
                     <div 
                       key={index}
-                      className="surface-card flex items-center gap-3 p-3 rounded-lg hover:scale-[1.02] transition-transform duration-200"
+                      className="glass-card-premium flex items-center gap-3 p-3 rounded-lg"
                       style={{ animationDelay: `${index * 50}ms` }}
                     >
                       <IconComponent className="h-4 w-4 text-muted-foreground flex-shrink-0" />
@@ -82,7 +79,7 @@ export function About() {
 
             {/* Core Skills */}
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-foreground">Core Skills</h3>
+              <h3 className="text-xl font-semibold text-foreground">{t('about.coreSkills')}</h3>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill) => (
                   <Badge key={skill} className="skill-badge">
@@ -94,7 +91,7 @@ export function About() {
 
             {/* Certifications */}
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-foreground">Certifications</h3>
+              <h3 className="text-xl font-semibold text-foreground">{t('about.certifications')}</h3>
               <div className="space-y-2">
                 {certifications.map((cert) => (
                   <div key={cert} className="flex items-center space-x-3">
@@ -117,7 +114,7 @@ export function About() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <MapPin className="h-4 w-4 mr-2 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
-                <span className="relative z-10">Career Journey</span>
+                <span className="relative z-10">{t('about.careerJourney')}</span>
               </Button>
             </div>
           </div>

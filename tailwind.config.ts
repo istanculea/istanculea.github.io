@@ -96,70 +96,7 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
 			},
-			typography: {
-				DEFAULT: {
-					css: {
-						// High contrast for readability
-						color: 'hsl(var(--foreground))',
-						strong: {
-							color: 'hsl(var(--foreground))',
-							fontWeight: '600',
-						},
-						'h1, h2, h3, h4, h5, h6': {
-							color: 'hsl(var(--foreground))',
-						},
-						p: {
-							color: 'hsl(var(--foreground))',
-						},
-						li: {
-							color: 'hsl(var(--foreground))',
-						},
-						'ul li': {
-							color: 'hsl(var(--foreground))',
-						},
-						'ol li': {
-							color: 'hsl(var(--foreground))',
-						},
-						code: {
-							color: 'hsl(var(--foreground))',
-							backgroundColor: 'hsl(var(--muted))',
-							padding: '0.125rem 0.25rem',
-							borderRadius: '0.25rem',
-							fontWeight: '500',
-						},
-						'code::before': {
-							content: 'none',
-						},
-						'code::after': {
-							content: 'none',
-						},
-						pre: {
-							backgroundColor: 'hsl(var(--muted))',
-							color: 'hsl(var(--foreground))',
-							border: '1px solid hsl(var(--border))',
-						},
-						'pre code': {
-							backgroundColor: 'transparent',
-							color: 'inherit',
-						},
-						blockquote: {
-							color: 'hsl(var(--muted-foreground))',
-							borderLeftColor: 'hsl(var(--border))',
-						},
-						'th, td': {
-							borderColor: 'hsl(var(--border))',
-						},
-						th: {
-							backgroundColor: 'hsl(var(--muted))',
-							color: 'hsl(var(--foreground))',
-						},
-						td: {
-							color: 'hsl(var(--foreground))',
-						},
-					},
-				},
-			},
 		}
 	},
-	plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+	plugins: [require("tailwindcss-animate")],
 } satisfies Config;

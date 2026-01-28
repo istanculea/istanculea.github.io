@@ -1,4 +1,3 @@
-## Project info
 **Use your preferred IDE**
 
 If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
@@ -36,7 +35,9 @@ npm run dev
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
 ## What technologies are used for this project?
+
 This project is built with:
+
 - Vite
 - TypeScript
 - React

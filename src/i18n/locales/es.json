@@ -10,7 +10,7 @@
   "hero": {
     "badge1": "Especialista en Cloud",
     "badge2": "Ingeniero DevOps",
-    "name": "Ionut Zaman",
+    "name": "Ionuț Stănculea",
     "title": "Ingeniero Cloud & Operaciones construyendo infraestructura confiable con cuidado y precisión",
     "description": "Apasionado por crear soluciones cloud escalables y seguras que empoderan equipos y deleitan usuarios. Actualmente arquitectando entornos cloud híbridos en Electronic Arts.",
     "location": "Ubicación",
@@ -20,11 +20,11 @@
   "about": {
     "title": "Perfil",
     "subtitle": "Ingeniero Cloud & Operaciones construyendo infraestructura confiable con cuidado y precisión",
-    "paragraph1": "Soy un Ingeniero Cloud & Operaciones apasionado con más de 7 años de experiencia práctica construyendo, gestionando y automatizando infraestructura escalable en Azure y AWS. Actualmente en Electronic Arts, me especializo en entornos cloud híbridos y confiabilidad de plataformas que mantienen a los equipos productivos y a los usuarios felices.",
+    "paragraph1": "Soy un Ingeniero Cloud & Operaciones apasionado con más de 5 años de experiencia práctica construyendo, gestionando y automatizando infraestructura escalable en Azure y AWS. Actualmente en Electronic Arts, me especializo en entornos cloud híbridos y confiabilidad de plataformas que mantienen a los equipos productivos y a los usuarios felices.",
     "paragraph2": "Mi enfoque combina experiencia técnica profunda con genuino cuidado por las personas que usan estos sistemas. Ya sea reduciendo incidentes en un 25% o resolviendo complejos rompecabezas de infraestructura, creo que las mejores soluciones son tanto robustas como elegantes.",
     "paragraph3": "Cuando no estoy optimizando infraestructura cloud, me encontrarás trasteando con gadgets de hogar inteligente, imprimiendo prototipos divertidos en 3D, o explorando las últimas tecnologías cloud.",
     "highlights": {
-      "experience": "7+ Años de Experiencia",
+      "experience": "5+ Años de Experiencia",
       "cloud": "Experto Multi-Cloud",
       "automation": "Especialista en Automatización",
       "reliability": "Confiabilidad de Plataforma"
@@ -37,51 +37,62 @@
     "title": "Experiencia Profesional",
     "subtitle": "Construyendo y escalando infraestructura a través de diferentes industrias y tecnologías",
     "ea": {
-      "title": "Ingeniero Cloud & Operaciones",
+      "title": "Ingeniero Cloud Operations",
       "company": "Electronic Arts",
       "location": "Bucarest, Rumania",
-      "period": "Nov 2022 - Presente",
+      "period": "Oct 2021 - Presente",
       "achievements": [
-        "Arquitecté soluciones cloud híbridas combinando infraestructura on-premise con servicios Azure, mejorando escalabilidad y reduciendo sobrecarga operacional en 30%",
-        "Lideré la migración de sistemas legacy a arquitecturas cloud-native, resultando en 40% de reducción de costos y rendimiento mejorado",
-        "Implementé sistemas integrales de monitoreo y alertas, reduciendo tiempo medio de detección (MTTD) en 50%",
-        "Mentoré ingenieros junior y establecí mejores prácticas de infraestructura en múltiples equipos de desarrollo"
+        "Gestioné y optimicé infraestructura cloud híbrida combinando sistemas on-premise con servicios AWS y Azure",
+        "Implementé pipelines CI/CD y automatización de infraestructura usando Terraform y Jenkins",
+        "Monitoreé la salud y rendimiento del sistema usando Grafana y Prometheus, reduciendo el tiempo de respuesta a incidentes",
+        "Colaboré con equipos de desarrollo para asegurar despliegues confiables y estabilidad de la plataforma"
       ]
     },
-    "metro": {
-      "title": "Ingeniero DevOps",
-      "company": "Metro Systems Romania",
+    "autodesk": {
+      "title": "Analista Senior de Quality Assurance",
+      "company": "Autodesk",
       "location": "Bucarest, Rumania",
-      "period": "Oct 2021 - Nov 2022",
+      "period": "Nov 2019 - Ene 2021",
       "achievements": [
-        "Diseñé e implementé pipelines CI/CD usando Azure DevOps, reduciendo tiempo de despliegue de horas a minutos",
-        "Automaticé aprovisionamiento de infraestructura con Terraform y plantillas ARM, eliminando errores de configuración manual",
-        "Establecí estrategias de orquestación de contenedores usando Kubernetes, mejorando escalabilidad y confiabilidad de aplicaciones",
-        "Reduje incidentes de producción en 25% através de monitoreo proactivo y scripts de remediación automatizada"
+        "Lideré esfuerzos de aseguramiento de calidad para productos de software empresarial",
+        "Desarrollé y mantuve frameworks de pruebas automatizadas usando Selenium",
+        "Colaboré con equipos multifuncionales para identificar y resolver defectos de software",
+        "Mentoré analistas QA junior y establecí mejores prácticas de pruebas"
       ]
     },
-    "altex": {
-      "title": "Administrador de Sistemas",
-      "company": "Altex Romania",
+    "altenLead": {
+      "title": "Líder de Equipo de Soporte",
+      "company": "ALTEN",
       "location": "Bucarest, Rumania",
-      "period": "Feb 2018 - Oct 2021",
+      "period": "Mar 2019 - Nov 2019",
       "achievements": [
-        "Gestioné entornos Windows Server soportando 200+ ubicaciones retail a nivel nacional",
-        "Implementé soluciones de backup y recuperación ante desastres, logrando 99.9% de disponibilidad de datos SLA",
-        "Optimicé infraestructura de red y protocolos de seguridad, reduciendo incidentes de seguridad en 60%",
-        "Lideré proyectos de consolidación de servidores que redujeron costos de hardware en 35% mientras mejoraban rendimiento"
+        "Lideré un equipo de ingenieros de soporte proporcionando asistencia técnica para clientes empresariales",
+        "Optimicé procesos de soporte y mejoré tiempos de resolución de tickets",
+        "Coordiné con equipos de desarrollo para escalar y resolver problemas técnicos complejos",
+        "Entrené a miembros del equipo en nuevas tecnologías y procedimientos de soporte"
       ]
     },
-    "brd": {
-      "title": "Especialista en Soporte IT",
-      "company": "BRD Groupe Société Générale",
+    "altenEngineer": {
+      "title": "Ingeniero de Soporte",
+      "company": "ALTEN",
       "location": "Bucarest, Rumania",
-      "period": "Ene 2017 - Feb 2018",
+      "period": "Oct 2016 - Mar 2019",
       "achievements": [
-        "Proporcioné soporte técnico para aplicaciones bancarias e infraestructura sirviendo 1000+ empleados",
-        "Optimicé procesos de gestión de incidentes, reduciendo tiempo promedio de resolución en 40%",
-        "Contribuí a iniciativas de ciberseguridad y auditorías de cumplimiento en el entorno bancario regulado",
-        "Desarrollé scripts de automatización para tareas de mantenimiento rutinarias, mejorando eficiencia operacional"
+        "Proporcioné soporte técnico para aplicaciones de software empresarial",
+        "Diagnostiqué y resolví problemas técnicos complejos para clientes",
+        "Creé documentación técnica y artículos de base de conocimientos",
+        "Colaboré con equipos de desarrollo para mejorar la calidad del producto"
+      ]
+    },
+    "expleo": {
+      "title": "Ingeniero de Diseño Mecánico (Tiempo Parcial)",
+      "company": "Expleo Group",
+      "location": "Bucarest, Rumania",
+      "period": "May 2016 - Sep 2019",
+      "achievements": [
+        "Creé diseños mecánicos usando CATIA V5 y AutoCAD",
+        "Colaboré con equipos de ingeniería en proyectos de desarrollo de productos",
+        "Preparé documentación técnica y especificaciones de diseño"
       ]
     }
   },
@@ -89,9 +100,9 @@
     "title": "Habilidades & Tecnologías",
     "subtitle": "Las herramientas y tecnologías que uso para construir infraestructura confiable",
     "cloud": "Plataformas Cloud",
-    "automation": "Automatización & IaC",
-    "monitoring": "Monitoreo & Observabilidad",
-    "cicd": "CI/CD & Control de Versiones"
+    "automation": "Contenedores & Orquestación",
+    "monitoring": "Monitoreo & Logging",
+    "cicd": "CI/CD"
   },
   "education": {
     "title": "Educación & Certificaciones",
@@ -156,7 +167,7 @@
     "getInTouch": "Contactar",
     "email": "Correo",
     "location": "Ubicación",
-    "copyright": "© {{year}} Ionut Zaman. Todos los derechos reservados.",
+    "copyright": "© {{year}} Ionuț Stănculea. Todos los derechos reservados.",
     "buildStatus": "Construido con ❤️ usando React, TypeScript & Tailwind CSS"
   },
   "blogPost": {

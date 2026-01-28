@@ -1,9 +1,11 @@
 import { ArrowLeft, Calendar, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useNavigate } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 
 export default function PostDeploymentMonitoring() {
   const navigate = useNavigate()
+  const { t } = useTranslation()
 
   return (
     <div className="min-h-screen bg-background">
@@ -15,7 +17,7 @@ export default function PostDeploymentMonitoring() {
             className="group"
           >
             <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-            Back to Home
+            {t('blogPost.backToHome')}
           </Button>
 
           <Button 
@@ -24,7 +26,7 @@ export default function PostDeploymentMonitoring() {
             className="group"
           >
             <ArrowLeft className="mr-2 h-4 w-4 rotate-180 transition-transform group-hover:translate-x-1" />
-            Back to Blog
+            {t('blogPost.backToBlog')}
           </Button>
         </div>
 

@@ -1,23 +1,26 @@
 import { GraduationCap, Award, BookOpen } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 export function Education() {
+  const { t } = useTranslation()
+  
   const certifications = [
-    "Microsoft Azure Fundamentals (AZ-900)",
-    "Microsoft Azure Administrator Associate (AZ-104)",
-    "Test Automation Foundations",
-    "Agile Test Automation Training",
-    "Scrum: The Basics",
-    "Agile Requirements Foundations",
-    "Programming Foundations: Software Testing/QA"
+    "Agile Test Automation - Learning Tree International",
+    "API Testing Foundations - LinkedIn",
+    "Scrum: The Basics - LinkedIn",
+    "Scrum: Advanced - LinkedIn",
+    "Agile Requirements Foundations - LinkedIn",
+    "Business Analysis Foundations - LinkedIn",
+    "Programming Foundations: Software Testing/QA - LinkedIn"
   ]
 
   return (
     <section id="education" className="py-20 px-6 bg-surface">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold">Education & Certifications</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold">{t('education.title')}</h2>
           <p className="text-xl text-muted-foreground">
-            Academic background and professional development
+            {t('education.subtitle')}
           </p>
         </div>
 
@@ -28,17 +31,17 @@ export function Education() {
               <div className="p-3 bg-primary/10 rounded-xl text-primary">
                 <GraduationCap className="h-6 w-6" />
               </div>
-              <h3 className="text-2xl font-bold">Education</h3>
+              <h3 className="text-2xl font-bold">{t('education.education')}</h3>
             </div>
             
             <div className="space-y-4">
               <div>
-                <h4 className="text-xl font-semibold text-primary">Bachelor of Engineering</h4>
-                <p className="text-lg font-medium">Industrial Engineering</p>
-                <p className="text-muted-foreground">University Politehnica Bucharest</p>
+                <h4 className="text-xl font-semibold text-primary">{t('education.degree')}</h4>
+                <p className="text-lg font-medium">{t('education.field')}</p>
+                <p className="text-muted-foreground">{t('education.university')}</p>
                 <div className="flex items-center space-x-2 mt-2 text-muted-foreground">
                   <BookOpen className="h-4 w-4" />
-                  <span>2012 – 2016</span>
+                  <span>{t('education.period')}</span>
                 </div>
               </div>
             </div>
@@ -50,7 +53,7 @@ export function Education() {
               <div className="p-3 bg-primary/10 rounded-xl text-primary">
                 <Award className="h-6 w-6" />
               </div>
-              <h3 className="text-2xl font-bold">Training & Certifications</h3>
+              <h3 className="text-2xl font-bold">{t('education.certifications')}</h3>
             </div>
             
             <div className="space-y-3">
