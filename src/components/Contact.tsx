@@ -163,7 +163,7 @@ export function Contact() {
           {/* Contact Info */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">{t('contact.info.contact')}</h3>
+              <h3 className="text-2xl font-semibold mb-6">{t('footer.contact')}</h3>
               <div className="space-y-4">
                 {contactInfo.map((item) => (
                   <a
