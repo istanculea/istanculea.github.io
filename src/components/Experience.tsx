@@ -44,14 +44,14 @@ export function Experience() {
   ]
 
   return (
-    <section id="experience" className="py-20 px-6 bg-background">
+    <section id="experience" className="py-24 px-6 bg-background">
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold flex items-center justify-center gap-3">
+        <div className="text-center space-y-3 mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3">
             <Briefcase className="h-8 w-8 text-primary" />
             {t('experience.title')}
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-lg text-muted-foreground">
             {t('experience.subtitle')}
           </p>
         </div>
@@ -60,13 +60,13 @@ export function Experience() {
           {experiences.map((exp, index) => (
             <div 
               key={index}
-              className="surface-card p-8 hover:scale-[1.02] transition-all duration-300"
+              className="rounded-xl border border-border bg-card/70 p-7"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-6">
                 <div className="space-y-2">
-                  <h3 className="text-2xl font-bold text-primary">{exp.title}</h3>
-                  <div className="flex items-center space-x-4 text-muted-foreground">
+                  <h3 className="text-xl font-semibold text-foreground">{exp.title}</h3>
+                  <div className="flex flex-wrap items-center gap-3 text-muted-foreground text-sm">
                     <div className="flex items-center space-x-2">
                       <Building2 className="h-4 w-4" />
                       <span className="font-medium">{exp.company}</span>
@@ -77,7 +77,7 @@ export function Experience() {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center space-x-2 text-muted-foreground bg-surface/50 px-4 py-2 rounded-lg">
+                <div className="flex items-center space-x-2 text-muted-foreground bg-surface px-3 py-2 rounded-lg text-sm border border-border">
                   <Calendar className="h-4 w-4" />
                   <span className="font-medium">{exp.period}</span>
                 </div>
@@ -86,8 +86,8 @@ export function Experience() {
               <ul className="space-y-3">
                 {(exp.achievements as string[]).map((achievement, achIndex) => (
                   <li key={achIndex} className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <p className="text-muted-foreground leading-relaxed">{achievement}</p>
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <p className="text-muted-foreground leading-relaxed text-sm">{achievement}</p>
                   </li>
                 ))}
               </ul>
@@ -98,7 +98,7 @@ export function Experience() {
         <div className="flex justify-center mt-12">
           <Button
             variant="outline"
-            className="group"
+            className="group px-6"
             onClick={() => {
               const target = document.getElementById('skills')
               target?.scrollIntoView({ behavior: 'smooth' })

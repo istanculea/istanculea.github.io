@@ -115,19 +115,19 @@ export function Header() {
   return (
     <header className={`fixed top-0 w-full z-50 header-transition ${
       isScrolled 
-        ? 'bg-background/60 backdrop-blur-xl border-b border-border/40 py-2' 
-        : 'bg-background/95 backdrop-blur-md border-b border-border py-4'
+        ? 'bg-background/80 backdrop-blur-xl border-b border-border/60 py-3 shadow-sm' 
+        : 'bg-background/95 backdrop-blur-md border-b border-border/40 py-4'
     }`}>
-      <nav className="container mx-auto px-6">
+      <nav className="container">
         <div className="flex items-center justify-between">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`nav-link ${
-                  activeSection === item.href.slice(1) ? 'nav-link--active' : ''
+                className={`text-sm font-medium text-muted-foreground hover:text-foreground transition-colors ${
+                  activeSection === item.href.slice(1) ? 'text-foreground underline underline-offset-8' : ''
                 }`}
               >
                 {item.label}
@@ -137,8 +137,8 @@ export function Header() {
             <NavLink
               to="/blog"
               className={({ isActive }) =>
-                `nav-link flex items-center gap-2 ${
-                  isActive ? 'nav-link--active' : ''
+                `text-sm font-medium flex items-center gap-2 transition-colors ${
+                  isActive ? 'text-foreground underline underline-offset-8' : 'text-muted-foreground hover:text-foreground'
                 }`
               }
             >
@@ -148,7 +148,7 @@ export function Header() {
           </div>
 
           {/* Actions */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             <Button
               ref={ctaButtonRef}
               variant="cta"
@@ -156,7 +156,7 @@ export function Header() {
               onClick={handleGetInTouch}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
-              className="hidden md:inline-flex transition-transform duration-200"
+              className="hidden md:inline-flex transition-transform duration-200 px-4 h-10"
             >
               Get in Touch
             </Button>
