@@ -7,9 +7,11 @@
  * - eval() usage
  * - new Function() usage
  * - setTimeout/setInterval with string arguments
- * - dangerouslySetInnerHTML without proper sanitization
- * - Inline event handlers (onclick, onload, etc.)
+ * 
+ * @eslint-env node
  */
+
+/* eslint-env node */
 
 import { readFileSync } from 'fs';
 import { glob } from 'glob';
