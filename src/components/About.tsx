@@ -1,8 +1,7 @@
-import { Zap, Cloud, Wrench, Users, Activity, CheckCircle, MapPin, Heart, Award } from "lucide-react"
+import { Zap, Cloud, Wrench, Users, Activity, CheckCircle, MapPin, Heart, Award, Sparkles, Code2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useTranslation } from "react-i18next"
-// Using the new uploaded portrait image
 
 export function About() {
   const { t } = useTranslation()
@@ -28,10 +27,17 @@ export function About() {
   return (
     <section id="about" className="py-20 px-6 scroll-mt-20">
       <div className="container max-w-6xl mx-auto">
-        {/* Section Header */}
+        {/* Section Header with Badge */}
         <div className="text-center space-y-4 mb-16 animate-fade-up">
+          {/* Section badge with sparkle icon */}
+          <div className="flex justify-center mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 text-sm font-medium bg-gradient-to-r from-primary/10 to-accent/10 text-primary border border-primary/20 rounded-full backdrop-blur-sm">
+              <Sparkles className="h-4 w-4" />
+              {t('about.badge')}
+            </span>
+          </div>
           <h2 className="text-4xl lg:text-5xl font-bold">
-            <span className="text-gradient">{t('about.title')}</span>
+            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">{t('about.title')}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             {t('about.subtitle')}
@@ -58,70 +64,95 @@ export function About() {
               </p>
             </div>
 
-            {/* Key Highlights */}
+            {/* Key Highlights with improved cards */}
             <div className="space-y-4">
-              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                 {chipHighlights.map((highlight, index) => {
                   const IconComponent = highlight.icon
                   return (
                     <div 
                       key={index}
-                      className="glass-card-premium flex items-center gap-3 p-3 rounded-lg"
+                      className="group relative p-4 rounded-xl bg-gradient-to-br from-background to-muted/30 border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
                       style={{ animationDelay: `${index * 50}ms` }}
                     >
-                      <IconComponent className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                      <span className="text-sm leading-relaxed">{highlight.text}</span>
+                      {/* Icon box */}
+                      <div className="flex items-start gap-3">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <IconComponent className="h-5 w-5 text-primary" />
+                        </div>
+                        <span className="text-sm leading-relaxed pt-2">{highlight.text}</span>
+                      </div>
                     </div>
                   )
                 })}
               </div>
             </div>
 
-            {/* Core Skills */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-foreground">{t('about.coreSkills')}</h3>
+            {/* Core Skills in glass card */}
+            <div className="relative p-6 rounded-xl bg-gradient-to-br from-background to-muted/30 border border-border backdrop-blur-sm">
+              {/* Icon header */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+                  <Code2 className="h-5 w-5 text-primary" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground">{t('about.coreSkills')}</h3>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill) => (
-                  <Badge key={skill} className="skill-badge">
+                  <Badge 
+                    key={skill} 
+                    className="px-3 py-1 bg-gradient-to-r from-primary/10 to-accent/10 text-foreground border border-primary/20 hover:border-primary/50 hover:shadow-md transition-all duration-300"
+                  >
                     {skill}
                   </Badge>
                 ))}
               </div>
             </div>
 
-            {/* Certifications */}
+            {/* Certifications in styled cards */}
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-foreground">{t('about.certifications')}</h3>
-              <div className="space-y-2">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500/10 to-emerald-500/10 flex items-center justify-center">
+                  <Award className="h-5 w-5 text-green-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground">{t('about.certifications')}</h3>
+              </div>
+              <div className="space-y-3">
                 {certifications.map((cert) => (
-                  <div key={cert} className="flex items-center space-x-3">
-                    <Award className="h-4 w-4 text-success" />
-                    <span className="cert-badge">{cert}</span>
+                  <div 
+                    key={cert} 
+                    className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-br from-green-500/5 to-emerald-500/5 border border-green-500/20 hover:border-green-500/40 hover:shadow-lg hover:shadow-green-500/10 transition-all duration-300"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                      <Award className="h-4 w-4 text-green-600" />
+                    </div>
+                    <span className="text-sm font-medium">{cert}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* CTA */}
+            {/* CTA with larger size */}
             <div className="pt-4">
               <Button 
+                size="lg"
                 variant="outline"
-                className="relative overflow-hidden group border-primary/30 bg-gradient-to-r from-primary/5 to-accent/5 hover:from-primary/10 hover:to-accent/10 transition-all duration-300 hover-scale shadow-lg hover:shadow-xl hover:shadow-primary/20" 
+                className="relative overflow-hidden group border-primary/30 bg-gradient-to-r from-primary/5 to-accent/5 hover:from-primary/10 hover:to-accent/10 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/20" 
                 onClick={() => {
                   const experienceSection = document.getElementById('experience');
                   experienceSection?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <MapPin className="h-4 w-4 mr-2 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
+                <MapPin className="h-5 w-5 mr-2 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
                 <span className="relative z-10">{t('about.careerJourney')}</span>
               </Button>
             </div>
           </div>
 
-          {/* Right Column - Profile Image */}
+          {/* Right Column - Profile Image with sticky positioning */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative animate-scale-in">
+            <div className="lg:sticky lg:top-24 relative animate-scale-in">
               <div className="relative">
                 <img
                   src="/lovable-uploads/170f5004-9944-4459-b193-b8cca34127e6.png"
