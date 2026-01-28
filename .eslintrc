@@ -1,0 +1,1 @@
+{"env":{"browser":true,"node":true,"es6":true},"globals":{"console":"readonly","process":"readonly","__dirname":"readonly","React":"readonly","require":"readonly"},"rules":{"no-unused-vars":"warn","react-refresh/only-export-components":"warn","no-undef":"error","no-redeclare":"error"}}
