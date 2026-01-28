@@ -51,8 +51,3 @@
   z-index: 100;
   transition: top 0.3s; /* Optional: smooth slide-in effect */
 }
-
-/* Show it only when it is focused via the Tab key */
-.skip-link:focus {
-  top: 0;
-}
