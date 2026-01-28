@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Accessibility Styles */
 /* Accessible "skip to content" — visually hidden until focused */
 .skip-link {
   position: absolute;
@@ -36,6 +37,7 @@
   clip: auto;
   clip-path: none;
 }
+
 /* Cloud Infrastructure Engineer Portfolio Design System */
 
 @layer base {
@@ -367,7 +369,7 @@
 
   /* Navigation utilities */
   .nav-link {
-    @apply relative px-4 py-2 text-foreground hover:text-primary font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+    @apply relative px-4 py-2 text-foreground hover:text-primary font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visibl[...]
   }
 
   .nav-link::after {
