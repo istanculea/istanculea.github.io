@@ -66,7 +66,7 @@ export default function PostDeploymentMonitoring() {
           />
         </div>
 
-        <div className="prose prose-lg max-w-none dark:prose-invert">
+        <div className="prose prose-xl max-w-none dark:prose-invert">
           <div className="bg-primary/10 border-l-4 border-primary p-4 my-6 rounded-r-lg">
             <p className="text-primary italic font-medium">
               "In DevOps, deployment isn't the finish line; resilience and observability are."

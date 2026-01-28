@@ -64,7 +64,7 @@ export default function PostServerlessRecaptcha() {
           />
         </div>
 
-        <div className="prose prose-lg max-w-none dark:prose-invert">
+        <div className="prose prose-xl max-w-none dark:prose-invert">
           <p>
             In this post, I'll share the full journey, from initial planning to production deployment, including real-world challenges, AWS-specific tips, and things I wish I'd known at the start.
           </p>
