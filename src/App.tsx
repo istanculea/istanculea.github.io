@@ -87,5 +87,17 @@ const App = () => (
     </ThemeProvider>
   </QueryClientProvider>
 );
+// Inside App.jsx
+function App() {
+  return (
+    <>
+      {/* Navigation or Header would go here */}
+      <main id="main-content" tabIndex="-1">
+        {/* Your primary page content */}
+        <h1>Welcome to my site</h1>
+      </main>
+    </>
+  )
+}
 
 export default App;
