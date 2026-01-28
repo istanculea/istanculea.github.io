@@ -24,7 +24,10 @@ export default [
         sourceType: "module",
         ecmaFeatures: { jsx: true },
       },
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        React: "writable",
+      },
     },
     plugins: {
       "react-hooks": reactHooks,
@@ -38,6 +41,16 @@ export default [
         { allowConstantExport: true },
       ],
       "@typescript-eslint/no-unused-vars": "off",
+      "no-unused-vars": "off",
+      "no-undef": "off",
+    },
+  },
+  {
+    files: ["**/*.config.{js,ts}"],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
     },
   },
 ];
