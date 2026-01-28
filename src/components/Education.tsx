@@ -1,4 +1,5 @@
-import { GraduationCap, Award, BookOpen } from "lucide-react"
+import { GraduationCap, Award, BookOpen, GraduationCap as LearningIcon, ArrowDown } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import { useTranslation } from "react-i18next"
 
 export function Education() {
@@ -18,7 +19,10 @@ export function Education() {
     <section id="education" className="py-20 px-6 bg-surface">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold">{t('education.title')}</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold flex items-center justify-center gap-3">
+            <LearningIcon className="h-8 w-8 text-primary" />
+            {t('education.title')}
+          </h2>
           <p className="text-xl text-muted-foreground">
             {t('education.subtitle')}
           </p>
@@ -65,6 +69,20 @@ export function Education() {
               ))}
             </div>
           </div>
+        </div>
+
+        <div className="flex justify-center mt-12">
+          <Button
+            variant="outline"
+            className="group"
+            onClick={() => {
+              const target = document.getElementById('blog')
+              target?.scrollIntoView({ behavior: 'smooth' })
+            }}
+          >
+            {t('nav.blog')}
+            <ArrowDown className="h-4 w-4 ml-2 transition-transform group-hover:translate-y-0.5" />
+          </Button>
         </div>
       </div>
     </section>

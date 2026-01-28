@@ -5,21 +5,24 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import en from './locales/en.json';
 import es from './locales/es.json';
 import ro from './locales/ro.json';
+import it from './locales/it.json';
 
-export type Language = 'en' | 'es' | 'ro';
+export type Language = 'en' | 'es' | 'ro' | 'it';
 
-export const supportedLanguages: Language[] = ['en', 'es', 'ro'];
+export const supportedLanguages: Language[] = ['en', 'es', 'ro', 'it'];
 
 export const languageNames = {
   en: 'English',
   es: 'Español',
-  ro: 'Română'
+  ro: 'Română',
+  it: 'Italiano'
 };
 
 const resources = {
   en: { translation: en },
   es: { translation: es },
-  ro: { translation: ro }
+  ro: { translation: ro },
+  it: { translation: it }
 };
 
 i18n

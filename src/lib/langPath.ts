@@ -39,7 +39,7 @@ export function getCurrentLangFromPath(): Language {
   
   if (segments.length > 0) {
     const firstSegment = segments[0] as Language;
-    if (['es', 'ro'].includes(firstSegment)) {
+    if (['es', 'ro', 'it'].includes(firstSegment)) {
       return firstSegment;
     }
   }
