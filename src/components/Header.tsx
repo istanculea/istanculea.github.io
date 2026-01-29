@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
-import { Menu, X, PenLine, Download } from "lucide-react"
+import { Menu, X, PenLine, Download, User, Briefcase, Wrench, GraduationCap } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "./ThemeToggle"
 import { NavLink, useLocation } from "react-router-dom"
@@ -16,10 +16,10 @@ export function Header() {
   const ctaButtonRef = useRef<HTMLButtonElement>(null)
 
   const navItems = [
-    { href: "#about", label: "About" },
-    { href: "#experience", label: "Experience" },
-    { href: "#skills", label: "Skills" },
-    { href: "#education", label: "Learning" }
+    { href: "#about", label: "About", icon: User },
+    { href: "#experience", label: "Experience", icon: Briefcase },
+    { href: "#skills", label: "Skills", icon: Wrench },
+    { href: "#education", label: "Learning", icon: GraduationCap }
   ]
 
   // Scroll spy for active section
@@ -135,17 +135,21 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            {navItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => scrollToSection(item.href)}
-                className={`text-sm font-medium text-muted-foreground hover:text-foreground transition-colors link-underline ${
-                  activeSection === item.href.slice(1) ? 'text-foreground underline underline-offset-8' : ''
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
+            {navItems.map((item) => {
+              const Icon = item.icon
+              return (
+                <button
+                  key={item.href}
+                  onClick={() => scrollToSection(item.href)}
+                  className={`text-sm font-medium text-muted-foreground hover:text-foreground transition-colors link-underline flex items-center gap-2 ${
+                    activeSection === item.href.slice(1) ? 'text-foreground underline underline-offset-8' : ''
+                  }`}
+                >
+                  <Icon className="h-4 w-4" />
+                  {item.label}
+                </button>
+              )
+            })}
             
             <NavLink
               to="/blog"
@@ -232,18 +236,22 @@ export function Header() {
             
             {/* Section Links */}
             <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.href}
-                  onClick={() => {
-                    scrollToSection(item.href)
-                    setIsMenuOpen(false)
-                  }}
-                  className="px-4 py-2 text-foreground hover:text-primary hover:bg-secondary/50 transition-all duration-200 font-medium text-left rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  {item.label}
-                </button>
-              ))}
+              {navItems.map((item) => {
+                const Icon = item.icon
+                return (
+                  <button
+                    key={item.href}
+                    onClick={() => {
+                      scrollToSection(item.href)
+                      setIsMenuOpen(false)
+                    }}
+                    className="px-4 py-2 text-foreground hover:text-primary hover:bg-secondary/50 transition-all duration-200 font-medium text-left rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring flex items-center gap-2"
+                  >
+                    <Icon className="h-4 w-4" />
+                    {item.label}
+                  </button>
+                )
+              })}
             </div>
           </div>
         )}
