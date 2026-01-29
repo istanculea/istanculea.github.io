@@ -12,8 +12,11 @@ describe("consent storage", () => {
   })
 
   it("stores and retrieves consent", () => {
+    const changed = vi.fn()
+    window.addEventListener("consent:changed", changed)
     setStoredConsent("accepted")
     expect(getStoredConsent()).toBe("accepted")
+    expect(changed).toHaveBeenCalledWith(expect.objectContaining({ detail: "accepted" }))
   })
 
   it("dispatches consent events", () => {

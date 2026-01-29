@@ -39,4 +39,12 @@ describe("language path helpers", () => {
     window.history.pushState({}, "", "/ro/blog")
     expect(pathWithLang("/legal")).toBe("/ro/legal")
   })
+
+  it("prefixes root path for non-English", () => {
+    expect(pathWithLang("/", "es")).toBe("/es")
+  })
+
+  it("preserves trailing slashes", () => {
+    expect(pathWithLang("/blog/", "it")).toBe("/it/blog/")
+  })
 })

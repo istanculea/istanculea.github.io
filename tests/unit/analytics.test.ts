@@ -46,6 +46,10 @@ describe("analytics", () => {
     expect(script?.src).toBe(PLAUSIBLE_SRC)
     expect(script?.dataset.domain).toBe(window.location.hostname)
     expect(script?.crossOrigin).toBe("anonymous")
+    expect(script?.integrity).toBe(
+      "sha384-S7N2BXTJvGsQnyz5TH7r8dMSeEq4zHCWV1pod01adN3r5n6sA35wtTDHzNVHgIvz"
+    )
+    expect(script?.defer).toBe(true)
   })
 
   it("responds to consent changes", async () => {
