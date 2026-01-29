@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from "react"
-import { Menu, X, PenLine } from "lucide-react"
+import { Menu, X, PenLine, Download } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "./ThemeToggle"
 import { NavLink, useLocation } from "react-router-dom"
 import { LanguageToggle } from "./LanguageToggle"
+import { useTranslation } from "react-i18next"
 
 export function Header() {
+  const { t } = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState("")
@@ -159,7 +161,18 @@ export function Header() {
           </div>
 
           {/* Actions */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 md:space-x-3">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => window.open('/cv.pdf', '_blank')}
+              className="inline-flex h-10 text-xs md:text-sm"
+              aria-label={t('hero.downloadCV')}
+            >
+              <Download className="h-4 w-4 md:mr-2" />
+              <span className="hidden sm:inline">{t('hero.downloadCV')}</span>
+            </Button>
+            
             <Button
               ref={ctaButtonRef}
               variant="cta"
@@ -190,6 +203,15 @@ export function Header() {
                 <PenLine className="h-4 w-4" />
                 Blog
               </NavLink>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => window.open('/cv.pdf', '_blank')}
+                aria-label={t('hero.downloadCV')}
+              >
+                <Download className="h-4 w-4 mr-2" />
+                {t('hero.downloadCV')}
+              </Button>
               <Button
                 variant="cta"
                 size="sm"
