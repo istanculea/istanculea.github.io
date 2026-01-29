@@ -20,6 +20,20 @@ npm i
 npm run dev
 ```
 
+## Configuration
+
+The application uses centralized configuration stored in `src/config/constants.ts`. You can override certain values using environment variables:
+
+1. Copy `.env.example` to `.env.local`:
+   ```sh
+   cp .env.example .env.local
+   ```
+
+2. Update the values in `.env.local` as needed:
+   - `VITE_PLAUSIBLE_DOMAIN`: Your Plausible analytics domain (optional)
+
+For more configuration options, see `src/config/constants.ts`.
+
 **Edit a file directly in GitHub**
 
 - Navigate to the desired file(s).
