@@ -65,7 +65,7 @@ function loadPlausibleScript() {
   
   const script = document.createElement('script')
   script.defer = true
-  script.setAttribute('data-domain', SERVICES.plausibleDomain)
+  script.setAttribute('data-domain', SERVICES.getPlausibleDomain())
   script.src = 'https://plausible.io/js/plausible.js'
   script.crossOrigin = 'anonymous'
   script.onload = () => {

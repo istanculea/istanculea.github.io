@@ -7,7 +7,7 @@
 
 // Contact Information
 export const CONTACT = {
-  email: 'stanculea.ionut.93@gmail.com',
+  email: import.meta.env.VITE_CONTACT_EMAIL || 'stanculea.ionut.93@gmail.com',
   location: 'Bucharest, Romania',
 } as const;
 
@@ -19,9 +19,15 @@ export const SOCIAL_LINKS = {
 
 // External Services
 export const SERVICES = {
-  formspreeEndpoint: 'https://formspree.io/f/xanypape',
-  calendlyUrl: 'https://calendly.com/ionut-stanculea',
-  plausibleDomain: import.meta.env.VITE_PLAUSIBLE_DOMAIN || window.location.hostname,
+  formspreeEndpoint: import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xanypape',
+  calendlyUrl: import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/ionut-stanculea',
+  // Note: plausibleDomain should be accessed via getPlausibleDomain() to ensure window is defined
+  getPlausibleDomain: () => {
+    if (typeof window !== 'undefined') {
+      return import.meta.env.VITE_PLAUSIBLE_DOMAIN || window.location.hostname;
+    }
+    return import.meta.env.VITE_PLAUSIBLE_DOMAIN || 'ionut-stanculea.dev';
+  },
 } as const;
 
 // SEO & Meta Information

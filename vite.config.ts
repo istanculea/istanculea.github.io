@@ -60,7 +60,8 @@ export default defineConfig(({ mode }) => ({
         },
       },
     },
-    // Increase the chunk size warning limit (current bundle is ~554 KB)
+    // Increase the chunk size warning limit
+    // After code splitting, largest chunk is ~227 KB (down from 554 KB)
     chunkSizeWarningLimit: 600,
   },
 }));
