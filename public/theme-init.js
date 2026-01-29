@@ -1,3 +1,5 @@
+/* eslint-env browser */
+
 (function () {
   try {
     var storageKey = "portfolio-theme";
