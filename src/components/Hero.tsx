@@ -35,7 +35,8 @@ export function Hero() {
 
           <div className="flex flex-wrap items-center justify-center gap-3 text-sm">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-muted-foreground">
-              <span>📍</span>
+              <span>
+📍</span>
               <span className="font-medium">{t('hero.location')}</span>
             </span>
             <a 
@@ -43,7 +44,8 @@ export function Hero() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Contact via email"
             >
-              <span>✉️</span>
+              <span>
+✉️</span>
               <span className="font-medium">{t('hero.email')}</span>
             </a>
           </div>
