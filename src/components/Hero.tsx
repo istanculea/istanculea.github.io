@@ -3,7 +3,7 @@ import React from 'react';
 
 // Removed unused import 'ArrowDown'
 // Your component code here
-function Hero() {
+export function Hero() {
     return (
         <div>
             <h1>Hero Component</h1>
@@ -11,5 +11,3 @@ function Hero() {
         </div>
     );
 }
-
-export default Hero;
