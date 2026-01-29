@@ -156,9 +156,17 @@
       "messageMin": "Mesajul trebuie să aibă cel puțin 10 caractere"
     },
     "toast": {
-      "success": "Mesaj trimis cu succes! Îți voi răspunde în curând.",
-      "error": "Eroare la trimiterea mesajului. Te rog să încerci din nou.",
+      "success": "Mesaj trimis cu succes!",
+      "successDescription": "Mulțumesc! Îți voi răspunde în 24 de ore.",
+      "error": "Eroare",
+      "errorDescription": "Eroare la trimiterea mesajului. Te rog să încerci din nou sau trimite-mi un email direct.",
       "spam": "Spam detectat. Te rog să încerci din nou."
+    },
+    "schedule": {
+      "title": "Programează o Întâlnire",
+      "description": "Preferi un apel rapid? Programează o întâlnire de 30 de minute pentru a discuta despre proiectul tău sau oportunitate.",
+      "button": "Programează pe Calendly",
+      "buttonAriaLabel": "Programează o întâlnire pe Calendly (se deschide într-o filă nouă)"
     }
   },
   "footer": {

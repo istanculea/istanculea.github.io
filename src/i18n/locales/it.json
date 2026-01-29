@@ -156,8 +156,17 @@
       "messageMin": "Il messaggio deve avere almeno 10 caratteri"
     },
     "toast": {
-      "success": "Messaggio inviato con successo! Ti risponderò presto.",
-      "error": "Errore nell'invio del messaggio. Per favore riprova."
+      "success": "Messaggio inviato con successo!",
+      "successDescription": "Grazie! Ti risponderò entro 24 ore.",
+      "error": "Errore",
+      "errorDescription": "Errore nell'invio del messaggio. Per favore riprova o inviami un'email direttamente.",
+      "spam": "Spam rilevato. Per favore riprova."
+    },
+    "schedule": {
+      "title": "Programma un Incontro",
+      "description": "Preferisci una chiamata veloce? Programma un incontro di 30 minuti per discutere il tuo progetto o opportunità.",
+      "button": "Programma su Calendly",
+      "buttonAriaLabel": "Programma un incontro su Calendly (si apre in una nuova scheda)"
     }
   },
   "footer": {

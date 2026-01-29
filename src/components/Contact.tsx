@@ -2,7 +2,7 @@ import { CSSProperties, useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import { Mail, MapPin, Github, Linkedin, Send, MessageSquare } from "lucide-react"
+import { Mail, MapPin, Github, Linkedin, Send, MessageSquare, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -38,16 +38,39 @@ export function Contact() {
       return // Silent rejection for bots
     }
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    
-    toast({
-      title: t('contact.toast.success'),
-      description: "Thanks! I'll get back to you within 24 hours.",
-    })
-    
-    reset()
-    setIsSubmitting(false)
+    try {
+      // Submit to Formspree
+      const response = await fetch('https://formspree.io/f/xanypape', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          message: data.message
+        })
+      })
+      
+      if (response.ok) {
+        toast({
+          title: t('contact.toast.success'),
+          description: t('contact.toast.successDescription'),
+        })
+        reset()
+      } else {
+        throw new Error('Form submission failed')
+      }
+    } catch (error) {
+      toast({
+        title: t('contact.toast.error'),
+        description: t('contact.toast.errorDescription'),
+        variant: "destructive"
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
@@ -204,6 +227,23 @@ export function Contact() {
               </div>
             </div>
 
+            <div>
+              <h3 className="text-xl font-semibold mb-6">{t('contact.schedule.title')}</h3>
+              <div className="p-6 rounded-xl border border-border bg-card/60 card-interactive">
+                <p className="text-muted-foreground mb-4">
+                  {t('contact.schedule.description')}
+                </p>
+                <Button
+                  onClick={() => window.open('https://calendly.com/ionut-stanculea', '_blank')}
+                  className="w-full group"
+                  variant="outline"
+                  aria-label={t('contact.schedule.buttonAriaLabel')}
+                >
+                  <Calendar className="mr-2 h-4 w-4" />
+                  {t('contact.schedule.button')}
+                </Button>
+              </div>
+            </div>
 
           </div>
         </div>

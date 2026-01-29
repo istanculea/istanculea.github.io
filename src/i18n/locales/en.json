@@ -156,9 +156,17 @@
       "messageMin": "Message must be at least 10 characters"
     },
     "toast": {
-      "success": "Message sent successfully! I'll get back to you soon.",
-      "error": "Failed to send message. Please try again.",
+      "success": "Message sent successfully!",
+      "successDescription": "Thanks! I'll get back to you within 24 hours.",
+      "error": "Error",
+      "errorDescription": "Failed to send message. Please try again or email me directly.",
       "spam": "Spam detected. Please try again."
+    },
+    "schedule": {
+      "title": "Schedule a Meeting",
+      "description": "Prefer a quick call? Schedule a 30-minute meeting to discuss your project or opportunity.",
+      "button": "Schedule on Calendly",
+      "buttonAriaLabel": "Schedule a meeting on Calendly (opens in new tab)"
     }
   },
   "footer": {
