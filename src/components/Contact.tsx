@@ -114,9 +114,9 @@ export function Contact() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Contact Form */}
-          <div className="rounded-xl border border-border bg-card/70 p-8 card-interactive" data-reveal-item style={{ "--reveal-delay": "120ms" } as CSSProperties}>
+          <div className="rounded-xl border border-border bg-card/70 p-6 sm:p-8 card-interactive" data-reveal-item style={{ "--reveal-delay": "120ms" } as CSSProperties}>
             <h3 className="text-xl font-semibold mb-6">{t('contact.form.send')}</h3>
             
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -177,7 +177,7 @@ export function Contact() {
 
               <Button 
                 type="submit" 
-                className="btn-hero w-full group"
+                className="btn-hero w-full group min-h-[48px]"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? t('contact.form.sending') : t('contact.form.send')}
@@ -195,14 +195,14 @@ export function Contact() {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="flex items-center space-x-4 p-4 rounded-xl border border-border bg-card/60 transition-colors group card-interactive min-h-11"
+                    className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl border border-border bg-card/60 transition-colors group card-interactive min-h-[56px]"
                   >
                     <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                       {item.icon}
                     </div>
-                    <div>
-                      <div className="font-medium">{item.label}</div>
-                      <div className="text-muted-foreground">{item.value}</div>
+                    <div className="min-w-0 flex-1">
+                      <div className="font-medium text-sm sm:text-base">{item.label}</div>
+                      <div className="text-muted-foreground text-xs sm:text-sm truncate">{item.value}</div>
                     </div>
                   </a>
                 ))}
@@ -211,14 +211,14 @@ export function Contact() {
 
             <div>
               <h3 className="text-xl font-semibold mb-6">{t('contact.info.social')}</h3>
-              <div className="flex space-x-3">
+              <div className="flex flex-wrap gap-3">
                 {socialLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 border border-border rounded-xl text-primary hover:bg-primary hover:text-primary-foreground transition-all min-h-11 min-w-[44px] flex items-center justify-center"
+                    className="p-3 border border-border rounded-xl text-primary hover:bg-primary hover:text-primary-foreground transition-all min-h-[48px] min-w-[48px] flex items-center justify-center"
                     aria-label={link.label}
                   >
                     {link.icon}
@@ -229,13 +229,13 @@ export function Contact() {
 
             <div>
               <h3 className="text-xl font-semibold mb-6">{t('contact.schedule.title')}</h3>
-              <div className="p-6 rounded-xl border border-border bg-card/60 card-interactive">
-                <p className="text-muted-foreground mb-4">
+              <div className="p-4 sm:p-6 rounded-xl border border-border bg-card/60 card-interactive">
+                <p className="text-muted-foreground text-sm sm:text-base mb-4">
                   {t('contact.schedule.description')}
                 </p>
                 <Button
                   onClick={() => window.open('https://calendly.com/ionut-stanculea', '_blank')}
-                  className="w-full group"
+                  className="w-full group min-h-[48px]"
                   variant="outline"
                   aria-label={t('contact.schedule.buttonAriaLabel')}
                 >
