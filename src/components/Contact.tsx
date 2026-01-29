@@ -5,6 +5,7 @@ import * as z from "zod"
 import { Mail, MapPin, Github, Linkedin, Send, MessageSquare, Calendar } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
 import { useTranslation, TFunction } from "react-i18next"
@@ -131,7 +132,9 @@ export function Contact() {
               </div>
               
               <div>
+                <Label htmlFor="name" className="sr-only">{t('contact.form.namePlaceholder')}</Label>
                 <Input
+                  id="name"
                   placeholder={t('contact.form.namePlaceholder')}
                   {...register("name")}
                   className={errors.name ? "border-destructive" : ""}
@@ -142,7 +145,9 @@ export function Contact() {
               </div>
 
               <div>
+                <Label htmlFor="email" className="sr-only">{t('contact.form.emailPlaceholder')}</Label>
                 <Input
+                  id="email"
                   type="email"
                   placeholder={t('contact.form.emailPlaceholder')}
                   {...register("email")}
@@ -154,7 +159,9 @@ export function Contact() {
               </div>
 
               <div>
+                <Label htmlFor="subject" className="sr-only">{t('contact.form.subjectPlaceholder')}</Label>
                 <Input
+                  id="subject"
                   placeholder={t('contact.form.subjectPlaceholder')}
                   {...register("subject")}
                   className={errors.subject ? "border-destructive" : ""}
@@ -165,7 +172,9 @@ export function Contact() {
               </div>
 
               <div>
+                <Label htmlFor="message" className="sr-only">{t('contact.form.messagePlaceholder')}</Label>
                 <Textarea
+                  id="message"
                   placeholder={t('contact.form.messagePlaceholder')}
                   rows={5}
                   {...register("message")}
@@ -196,14 +205,14 @@ export function Contact() {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl border border-border bg-card/60 transition-colors group card-interactive min-h-[56px]"
+                    className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl border border-border bg-card/70 transition-colors group card-interactive min-h-[56px]"
                   >
                     <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
                       {item.icon}
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="font-medium text-sm sm:text-base">{item.label}</div>
-                      <div className="text-muted-foreground text-xs sm:text-sm break-all">{item.value}</div>
+                      <div className="text-muted-foreground text-xs sm:text-sm truncate">{item.value}</div>
                     </div>
                   </a>
                 ))}
@@ -230,7 +239,7 @@ export function Contact() {
 
             <div>
               <h3 className="text-xl font-semibold mb-6">{t('contact.schedule.title')}</h3>
-              <div className="p-4 sm:p-6 rounded-xl border border-border bg-card/60 card-interactive">
+              <div className="p-4 sm:p-6 rounded-xl border border-border bg-card/70 card-interactive">
                 <p className="text-muted-foreground text-sm sm:text-base mb-4">
                   {t('contact.schedule.description')}
                 </p>
