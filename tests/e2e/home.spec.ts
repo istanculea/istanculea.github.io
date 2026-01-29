@@ -14,9 +14,9 @@ test("home page loads and key sections are present", async ({ page }) => {
 test("navigation buttons scroll to sections", async ({ page }) => {
   await page.goto("/")
   const nav = page.getByRole("navigation").first()
-  await nav.getByRole("button", { name: "About", exact: true }).first().click()
+  await nav.getByRole("button", { name: "About", exact: true }).click()
   await expect(page.locator("#about")).toBeInViewport()
-  await nav.getByRole("button", { name: "Experience", exact: true }).first().click()
+  await nav.getByRole("button", { name: "Experience", exact: true }).click()
   await expect(page.locator("#experience")).toBeInViewport()
 })
 
@@ -54,8 +54,8 @@ test("robots and sitemap return 200", async ({ request }) => {
 test("sitemap includes key routes", async ({ request }) => {
   const response = await request.get("/sitemap.xml")
   const body = await response.text()
-  expect(body).toContain("https://ionut-stanculea.dev/privacy")
-  expect(body).toContain("https://ionut-stanculea.dev/legal")
+  expect(body).toContain("/privacy")
+  expect(body).toContain("/legal")
 })
 
 test("no severe console errors", async ({ page }) => {

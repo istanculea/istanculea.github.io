@@ -3,6 +3,7 @@ import { getCurrentLangFromPath, navigateWithLang, pathWithLang } from "@/lib/la
 
 describe("language path helpers", () => {
   afterEach(() => {
+    window.history.replaceState({}, "", "/")
     vi.unstubAllGlobals()
   })
 

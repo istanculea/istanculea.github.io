@@ -15,7 +15,7 @@ describe("cn utility", () => {
     expect(cn("", false, null, undefined)).toBe("")
   })
 
-  it("handles Tailwind class conflicts", () => {
+  it("resolves Tailwind class conflicts by keeping last class", () => {
     expect(cn("p-4 p-2")).toBe("p-2")
   })
 
