@@ -202,7 +202,7 @@ export function Contact() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="font-medium text-sm sm:text-base">{item.label}</div>
-                      <div className="text-muted-foreground text-xs sm:text-sm truncate">{item.value}</div>
+                      <div className="text-muted-foreground text-xs sm:text-sm break-all">{item.value}</div>
                     </div>
                   </a>
                 ))}

@@ -216,7 +216,7 @@ export function Header() {
                   className="min-h-[44px] min-w-[44px]"
                 >
                   <Download className="h-4 w-4 sm:mr-2" />
-                  <span className="hidden xs:inline text-sm">{t('hero.downloadCV')}</span>
+                  <span className="hidden sm:inline text-sm">{t('hero.downloadCV')}</span>
                 </Button>
               </div>
               <Button
