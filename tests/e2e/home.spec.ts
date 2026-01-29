@@ -1,0 +1,95 @@
+import { test, expect } from "@playwright/test"
+import { runA11yCheck } from "./axe-helper"
+
+const sectionIds = ["home", "about", "experience", "skills", "education", "blog", "contact"]
+
+test("home page loads and key sections are present", async ({ page }) => {
+  await page.goto("/")
+  for (const id of sectionIds) {
+    await expect(page.locator(`#${id}`)).toBeVisible()
+  }
+  await expect(page).toHaveTitle(/Ionuț Stănculea/i)
+})
+
+test("navigation buttons scroll to sections", async ({ page }) => {
+  await page.goto("/")
+  const nav = page.getByRole("navigation").first()
+  await nav.getByRole("button", { name: "About", exact: true }).click()
+  await expect(page.locator("#about")).toBeInViewport()
+  await nav.getByRole("button", { name: "Experience", exact: true }).click()
+  await expect(page.locator("#experience")).toBeInViewport()
+})
+
+test("resume download exists", async ({ page }) => {
+  await page.goto("/")
+  const downloadButton = page.getByRole("button", { name: /download cv/i })
+  await expect(downloadButton).toBeVisible()
+  const response = await page.request.get("/cv.pdf")
+  expect(response.ok()).toBeTruthy()
+  const contentType = response.headers()["content-type"] || ""
+  expect(contentType).toContain("pdf")
+})
+
+test("privacy and legal pages return 200", async ({ page }) => {
+  const privacyResponse = await page.goto("/privacy")
+  expect(privacyResponse?.ok()).toBeTruthy()
+  await expect(page.getByRole("heading", { name: "Privacy Policy" })).toBeVisible()
+  const legalResponse = await page.goto("/legal")
+  expect(legalResponse?.ok()).toBeTruthy()
+  await expect(page.getByRole("heading", { name: "Legal Notice" })).toBeVisible()
+})
+
+test("robots and sitemap return 200", async ({ request }) => {
+  const [robots, sitemap] = await Promise.all([
+    request.get("/robots.txt"),
+    request.get("/sitemap.xml"),
+  ])
+  expect(robots.ok()).toBeTruthy()
+  expect(sitemap.ok()).toBeTruthy()
+  const robotsBody = await robots.text()
+  expect(robotsBody).toContain("User-agent")
+  expect(robotsBody).toContain("Sitemap:")
+})
+
+test("sitemap includes key routes", async ({ request }) => {
+  const response = await request.get("/sitemap.xml")
+  const body = await response.text()
+  expect(body).toContain("/privacy")
+  expect(body).toContain("/legal")
+})
+
+test("no severe console errors", async ({ page }) => {
+  const messages: string[] = []
+  page.on("console", (msg) => {
+    if (msg.type() === "error" && !msg.text().includes("frame-ancestors")) {
+      messages.push(msg.text())
+    }
+  })
+  await page.goto("/")
+  expect(messages).toEqual([])
+})
+
+test("a11y smoke check", async ({ page }) => {
+  await page.goto("/")
+  await runA11yCheck(page)
+})
+
+test("privacy page a11y smoke check", async ({ page }) => {
+  await page.goto("/privacy")
+  await runA11yCheck(page)
+})
+
+test("legal page a11y smoke check", async ({ page }) => {
+  await page.goto("/legal")
+  await runA11yCheck(page)
+})
+
+test("mobile viewport has no horizontal overflow", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto("/")
+  const overflow = await page.evaluate(
+    () => document.documentElement.scrollWidth - document.documentElement.clientWidth
+  )
+  expect(overflow).toBeLessThanOrEqual(1)
+  await expect(page.getByRole("button", { name: /download cv/i })).toBeVisible()
+})

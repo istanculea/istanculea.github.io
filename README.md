@@ -43,3 +43,23 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+
+## Testing
+
+### Unit tests
+
+```bash
+npm run test:unit
+```
+
+### E2E tests (Playwright)
+
+```bash
+npm run test:e2e
+```
+
+Run everything:
+
+```bash
+npm test
+```
