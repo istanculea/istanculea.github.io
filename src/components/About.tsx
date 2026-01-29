@@ -8,7 +8,7 @@ export function About() {
   const { t } = useTranslation()
   
   const chipHighlights = [
-    { icon: Zap, text: "7+ years in IT Operations, QA, and Cloud Engineering" },
+    { icon: Zap, text: "5+ years of experience in IT Operations, QA, and Cloud Engineering" },
     { icon: Cloud, text: "AWS, Azure, CI/CD, Terraform, Docker, Kubernetes" },
     { icon: Wrench, text: "Incident management, automation, platform reliability" },
     { icon: Users, text: "Agile/Scrum, cross‑functional collaboration" },
