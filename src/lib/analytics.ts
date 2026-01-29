@@ -29,7 +29,7 @@ export function registerConsentListeners() {
   
   const handleConsentChange = (event: Event) => {
     const customEvent = event as CustomEvent<string>
-    const value = customEvent.detail
+    const value = customEvent.detail || getStoredConsent()
     
     if (value === 'accepted') {
       loadPlausibleScript()
@@ -55,12 +55,19 @@ function loadPlausibleScript() {
     return
   }
 
+  // Respect Do Not Track setting
+  if (navigator.doNotTrack === '1' || (window as any).doNotTrack === '1') {
+    return
+  }
+
   isLoadingScript = true
   
   const script = document.createElement('script')
   script.defer = true
-  script.setAttribute('data-domain', PLAUSIBLE_DOMAIN)
-  script.src = 'https://plausible.io/js/script.js'
+  script.setAttribute('data-domain', window.location.hostname)
+  script.src = 'https://plausible.io/js/plausible.js'
+  script.crossOrigin = 'anonymous'
+  script.integrity = 'sha384-m5bbq4cE+6fS5gq1lq0Gk7GlbGqmNdzLkzKxGcbnGTOCfXJjzRpLjBbAiEjWlA2x'
   script.onload = () => {
     isLoadingScript = false
   }

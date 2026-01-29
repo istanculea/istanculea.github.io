@@ -2,7 +2,7 @@ import { CSSProperties, useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import { Mail, MapPin, Github, Linkedin, Send } from "lucide-react"
+import { Mail, MapPin, Github, Linkedin, Send, MessageSquare } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -82,7 +82,10 @@ export function Contact() {
     <section id="contact" className="py-24 px-6 bg-surface" data-reveal>
       <div className="container max-w-6xl mx-auto">
         <div className="text-center space-y-3 mb-16" data-reveal-item>
-          <h2 className="text-3xl md:text-4xl font-bold">{t('contact.title')}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3">
+            <MessageSquare className="h-8 w-8 text-primary" />
+            {t('contact.title')}
+          </h2>
           <p className="text-lg text-muted-foreground">
             {t('contact.subtitle')}
           </p>
