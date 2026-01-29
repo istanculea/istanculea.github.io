@@ -61,9 +61,9 @@ export function Footer() {
   }
 
   return (
-    <footer className="py-16 px-6 border-t border-border bg-muted/30" data-reveal>
+    <footer className="py-12 sm:py-16 px-6 border-t border-border bg-muted/30" data-reveal>
       <div className="container max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10" data-reveal-item>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-8 sm:mb-10" data-reveal-item>
           {/* About */}
           <div className="space-y-4">
             <div className="text-2xl font-semibold text-foreground">Ionuț Stănculea</div>
@@ -72,7 +72,7 @@ export function Footer() {
             </p>
               <Button 
                 variant="cta"
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto min-h-[48px]"
                 onClick={() => scrollToSection('#contact')}
               >
                 {t('footer.getInTouch')}
@@ -88,22 +88,22 @@ export function Footer() {
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-muted-foreground hover:text-foreground transition-colors text-left text-sm hover:translate-x-1 transition-transform duration-200 link-underline min-h-11 inline-flex items-center"
+                  className="text-muted-foreground hover:text-foreground transition-colors text-left text-sm hover:translate-x-1 transition-transform duration-200 link-underline min-h-[44px] inline-flex items-center"
                 >
                   {link.name}
                 </button>
               ))}
             </nav>
             <div className="flex flex-col space-y-2 text-left">
-              <a className="text-muted-foreground hover:text-primary transition-colors text-sm link-underline min-h-11 inline-flex items-center" href="/privacy">
+              <a className="text-muted-foreground hover:text-primary transition-colors text-sm link-underline min-h-[44px] inline-flex items-center" href="/privacy">
                 Privacy
               </a>
-              <a className="text-muted-foreground hover:text-primary transition-colors text-sm link-underline min-h-11 inline-flex items-center" href="/legal">
+              <a className="text-muted-foreground hover:text-primary transition-colors text-sm link-underline min-h-[44px] inline-flex items-center" href="/legal">
                 Legal
               </a>
               <button
                 onClick={openConsentPreferences}
-                className="text-muted-foreground hover:text-primary transition-colors text-sm text-left hover:translate-x-1 transition-transform duration-200 link-underline min-h-11 inline-flex items-center"
+                className="text-muted-foreground hover:text-primary transition-colors text-sm text-left hover:translate-x-1 transition-transform duration-200 link-underline min-h-[44px] inline-flex items-center"
               >
                 Change consent
               </button>
@@ -116,13 +116,13 @@ export function Footer() {
             <div className="space-y-3">
               <a 
                 href="mailto:stanculea.ionut.93@gmail.com"
-                className="flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-colors text-sm group"
+                className="flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-colors text-sm group min-h-[44px]"
               >
-                <Mail className="h-4 w-4 group-hover:text-primary transition-colors" />
-                <span>stanculea.ionut.93@gmail.com</span>
+                <Mail className="h-4 w-4 group-hover:text-primary transition-colors flex-shrink-0" />
+                <span className="break-all">stanculea.ionut.93@gmail.com</span>
               </a>
-              <div className="flex items-center space-x-2 text-muted-foreground text-sm">
-                <MapPin className="h-4 w-4" />
+              <div className="flex items-center space-x-2 text-muted-foreground text-sm min-h-[44px]">
+                <MapPin className="h-4 w-4 flex-shrink-0" />
                 <span>Remote / Europe</span>
               </div>
             </div>
@@ -140,9 +140,9 @@ export function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-colors text-sm group"
+                    className="flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-colors text-sm group min-h-[44px]"
                   >
-                    <Icon className="h-4 w-4 group-hover:text-primary transition-colors" />
+                    <Icon className="h-4 w-4 group-hover:text-primary transition-colors flex-shrink-0" />
                     <span>{social.name}</span>
                   </a>
                 )
@@ -152,12 +152,12 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border" data-reveal-item style={{ "--reveal-delay": "120ms" } as CSSProperties}>
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
-            <p className="text-muted-foreground text-sm">
+        <div className="pt-6 sm:pt-8 border-t border-border" data-reveal-item style={{ "--reveal-delay": "120ms" } as CSSProperties}>
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-center sm:text-left">
+            <p className="text-muted-foreground text-xs sm:text-sm">
               {t('footer.copyright', { year: currentYear })}
             </p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-xs sm:text-sm text-muted-foreground">
               {t('footer.buildStatus')}
             </p>
           </div>

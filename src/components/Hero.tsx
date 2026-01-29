@@ -67,10 +67,10 @@ export function Hero() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-6">
             <Button 
               size="lg" 
-              className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-primary hover:bg-primary-dark"
+              className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 shadow-lg hover:shadow-xl transition-all duration-300 bg-primary hover:bg-primary-dark min-h-[48px]"
               onClick={() => scrollToSection('contact')}
             >
               Get in Touch
@@ -78,7 +78,7 @@ export function Hero() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="text-lg px-8 py-6 border-2 hover:bg-primary/5 transition-all duration-300"
+              className="text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 border-2 hover:bg-primary/5 transition-all duration-300 min-h-[48px]"
               onClick={() => scrollToSection('experience')}
             >
               View Experience

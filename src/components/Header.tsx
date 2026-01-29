@@ -197,25 +197,28 @@ export function Header() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 py-4 border-t border-border">
-            {/* Quick Access Row */}
-            <div className="flex items-center gap-4 mb-4 pb-4 border-b border-border">
-              <NavLink
-                to="/blog"
-                className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <PenLine className="h-4 w-4" />
-                Blog
-              </NavLink>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => window.open('/cv.pdf', '_blank')}
-                aria-label={t('hero.downloadCV')}
-              >
-                <Download className="h-4 w-4 mr-2" />
-                {t('hero.downloadCV')}
-              </Button>
+            {/* Quick Access Row - Optimized for small screens */}
+            <div className="flex flex-col gap-3 mb-4 pb-4 border-b border-border">
+              <div className="flex items-center gap-2 flex-wrap">
+                <NavLink
+                  to="/blog"
+                  className="flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium min-h-[44px] px-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <PenLine className="h-4 w-4" />
+                  <span className="text-sm">Blog</span>
+                </NavLink>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => window.open('/cv.pdf', '_blank')}
+                  aria-label={t('hero.downloadCV')}
+                  className="min-h-[44px] min-w-[44px]"
+                >
+                  <Download className="h-4 w-4 sm:mr-2" />
+                  <span className="hidden sm:inline text-sm">{t('hero.downloadCV')}</span>
+                </Button>
+              </div>
               <Button
                 variant="cta"
                 size="sm"
@@ -223,19 +226,19 @@ export function Header() {
                   handleGetInTouch()
                   setIsMenuOpen(false)
                 }}
-                className="ml-auto"
+                className="w-full min-h-[44px]"
               >
                 Get in Touch
               </Button>
             </div>
             
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-border">
               <LanguageToggle />
               <ThemeToggle />
             </div>
             
             {/* Section Links */}
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-2">
               {navItems.map((item) => {
                 const Icon = item.icon
                 return (
@@ -245,10 +248,10 @@ export function Header() {
                       scrollToSection(item.href)
                       setIsMenuOpen(false)
                     }}
-                    className="px-4 py-2 text-foreground hover:text-primary hover:bg-secondary/50 transition-all duration-200 font-medium text-left rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring flex items-center gap-2"
+                    className="px-4 py-3 text-foreground hover:text-primary hover:bg-secondary/50 transition-all duration-200 font-medium text-left rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring flex items-center gap-3 min-h-[44px]"
                   >
-                    <Icon className="h-4 w-4" />
-                    {item.label}
+                    <Icon className="h-5 w-5 flex-shrink-0" />
+                    <span className="text-sm">{item.label}</span>
                   </button>
                 )
               })}

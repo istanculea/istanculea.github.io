@@ -118,7 +118,7 @@ export function Blog() {
         )}
 
         {/* Grid of other posts */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {otherPosts.map((post, index) => (
             <article 
               key={post.id}
