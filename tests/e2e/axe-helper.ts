@@ -2,6 +2,7 @@ import AxeBuilder from "@axe-core/playwright"
 import type { Page } from "@playwright/test"
 
 export async function runA11yCheck(page: Page) {
+  // Smoke check: only fail on critical accessibility violations.
   const results = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa"])
     .analyze()

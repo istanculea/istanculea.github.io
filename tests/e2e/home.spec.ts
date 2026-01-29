@@ -8,13 +8,15 @@ test("home page loads and key sections are present", async ({ page }) => {
   for (const id of sectionIds) {
     await expect(page.locator(`#${id}`)).toBeVisible()
   }
+  await expect(page).toHaveTitle(/Ionuț Stănculea/i)
 })
 
 test("navigation buttons scroll to sections", async ({ page }) => {
   await page.goto("/")
-  await page.getByRole("button", { name: "About", exact: true }).first().click()
+  const nav = page.getByRole("navigation").first()
+  await nav.getByRole("button", { name: "About", exact: true }).first().click()
   await expect(page.locator("#about")).toBeInViewport()
-  await page.getByRole("button", { name: "Experience", exact: true }).first().click()
+  await nav.getByRole("button", { name: "Experience", exact: true }).first().click()
   await expect(page.locator("#experience")).toBeInViewport()
 })
 
@@ -24,13 +26,17 @@ test("resume download exists", async ({ page }) => {
   await expect(downloadButton).toBeVisible()
   const response = await page.request.get("/cv.pdf")
   expect(response.ok()).toBeTruthy()
+  const disposition = response.headers()["content-disposition"] || ""
+  expect(disposition).toContain("Ionut_Stanculea_CV.pdf")
 })
 
 test("privacy and legal pages return 200", async ({ page }) => {
   const privacyResponse = await page.goto("/privacy")
   expect(privacyResponse?.ok()).toBeTruthy()
+  await expect(page.getByRole("heading", { name: "Privacy Policy" })).toBeVisible()
   const legalResponse = await page.goto("/legal")
   expect(legalResponse?.ok()).toBeTruthy()
+  await expect(page.getByRole("heading", { name: "Legal Notice" })).toBeVisible()
 })
 
 test("robots and sitemap return 200", async ({ request }) => {
@@ -40,6 +46,8 @@ test("robots and sitemap return 200", async ({ request }) => {
   ])
   expect(robots.ok()).toBeTruthy()
   expect(sitemap.ok()).toBeTruthy()
+  const robotsBody = await robots.text()
+  expect(robotsBody).toContain("User-agent")
 })
 
 test("no severe console errors", async ({ page }) => {

@@ -45,6 +45,7 @@ describe("analytics", () => {
     const script = headSpy.mock.calls[0]?.[0] as HTMLScriptElement
     expect(script?.src).toBe(PLAUSIBLE_SRC)
     expect(script?.dataset.domain).toBe(window.location.hostname)
+    expect(script?.crossOrigin).toBe("anonymous")
   })
 
   it("responds to consent changes", async () => {

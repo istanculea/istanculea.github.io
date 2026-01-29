@@ -34,4 +34,9 @@ describe("language path helpers", () => {
     navigateWithLang("/privacy", "es")
     expect(locationStub.href).toBe("/es/privacy")
   })
+
+  it("uses current language when lang missing", () => {
+    window.history.pushState({}, "", "/ro/blog")
+    expect(pathWithLang("/legal")).toBe("/ro/legal")
+  })
 })

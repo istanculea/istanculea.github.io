@@ -6,6 +6,11 @@ describe("consent storage", () => {
     expect(getStoredConsent()).toBeNull()
   })
 
+  it("returns null for invalid stored values", () => {
+    window.localStorage.setItem("consent.analytics", "maybe")
+    expect(getStoredConsent()).toBeNull()
+  })
+
   it("stores and retrieves consent", () => {
     setStoredConsent("accepted")
     expect(getStoredConsent()).toBe("accepted")
