@@ -1,6 +1,5 @@
 import { getStoredConsent } from './consent'
-
-const PLAUSIBLE_DOMAIN = "your-domain"
+import { SERVICES } from '@/config/constants'
 
 // Track if script is being loaded to prevent race conditions
 let isLoadingScript = false
@@ -56,7 +55,9 @@ function loadPlausibleScript() {
   }
 
   // Respect Do Not Track setting
-  if (navigator.doNotTrack === '1' || (window as any).doNotTrack === '1') {
+  const doNotTrack = navigator.doNotTrack === '1' || 
+    (window as Window & { doNotTrack?: string }).doNotTrack === '1';
+  if (doNotTrack) {
     return
   }
 
@@ -64,7 +65,7 @@ function loadPlausibleScript() {
   
   const script = document.createElement('script')
   script.defer = true
-  script.setAttribute('data-domain', window.location.hostname)
+  script.setAttribute('data-domain', SERVICES.getPlausibleDomain())
   script.src = 'https://plausible.io/js/plausible.js'
   script.crossOrigin = 'anonymous'
   script.onload = () => {

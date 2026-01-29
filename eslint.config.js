@@ -13,7 +13,7 @@ import tsParser from "@typescript-eslint/parser";
 export default [
   js.configs.recommended,
   {
-    ignores: ["dist", "Header.tsx", "ThemeProvider.tsx"],
+    ignores: ["dist", "Header.tsx", "ThemeProvider.tsx", "public/**/*.js"],
   },
   {
     files: ["**/*.{js,mjs,cjs}"],

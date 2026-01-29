@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { CONTACT } from "@/config/constants"
 
 const LAST_UPDATED = "2026-01-28"
 
@@ -18,8 +19,8 @@ export default function Privacy() {
           <h2 className="text-2xl font-semibold">Who is responsible</h2>
           <p>
             Data Controller: Ionuț Stănculea, Romania. Contact:{" "}
-            <a className="text-primary underline" href="mailto:stanculea.ionut.93@gmail.com">
-              stanculea.ionut.93@gmail.com
+            <a className="text-primary underline" href={`mailto:${CONTACT.email}`}>
+              {CONTACT.email}
             </a>
           </p>
         </section>
@@ -78,8 +79,8 @@ export default function Privacy() {
           <h2 className="text-2xl font-semibold">Contact</h2>
           <p className="text-muted-foreground">
             For any privacy request, email{" "}
-            <a className="text-primary underline" href="mailto:stanculea.ionut.93@gmail.com">
-              stanculea.ionut.93@gmail.com
+            <a className="text-primary underline" href={`mailto:${CONTACT.email}`}>
+              {CONTACT.email}
             </a>
             .
           </p>

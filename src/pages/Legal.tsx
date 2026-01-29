@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { CONTACT } from "@/config/constants"
 
 export default function Legal() {
   return (
@@ -14,8 +15,8 @@ export default function Legal() {
           <p><strong>Country:</strong> Romania</p>
           <p>
             <strong>Contact:</strong>{" "}
-            <a className="text-primary underline" href="mailto:stanculea.ionut.93@gmail.com">
-              stanculea.ionut.93@gmail.com
+            <a className="text-primary underline" href={`mailto:${CONTACT.email}`}>
+              {CONTACT.email}
             </a>
           </p>
         </section>
