@@ -21,10 +21,6 @@ test("navigation buttons scroll to sections", async ({ page }) => {
 test("resume download exists", async ({ page }) => {
   await page.goto("/")
   const downloadButton = page.getByRole("button", { name: /download cv/i })
-  if (await downloadButton.count() === 0) {
-    test.skip(true, "TODO: resume download button not present")
-    return
-  }
   await expect(downloadButton).toBeVisible()
   const response = await page.request.get("/cv.pdf")
   expect(response.ok()).toBeTruthy()
@@ -66,8 +62,6 @@ test("mobile viewport has no horizontal overflow", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto("/")
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)
-  if (overflow) {
-    test.skip(true, "TODO: resolve mobile horizontal overflow")
-  }
+  expect(overflow).toBeFalsy()
   await expect(page.getByRole("button", { name: /download cv/i })).toBeVisible()
 })

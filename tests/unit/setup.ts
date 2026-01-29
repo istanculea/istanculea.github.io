@@ -25,5 +25,6 @@ beforeEach(() => {
 })
 
 afterEach(() => {
+  Object.keys(storage).forEach((key) => delete storage[key])
   vi.restoreAllMocks()
 })
