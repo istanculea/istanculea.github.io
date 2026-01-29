@@ -56,7 +56,7 @@ export function Contact() {
       if (response.ok) {
         toast({
           title: t('contact.toast.success'),
-          description: "Thanks! I'll get back to you within 24 hours.",
+          description: t('contact.toast.successDescription'),
         })
         reset()
       } else {
@@ -64,8 +64,8 @@ export function Contact() {
       }
     } catch (error) {
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again or email me directly.",
+        title: t('contact.toast.error'),
+        description: t('contact.toast.errorDescription'),
         variant: "destructive"
       })
     } finally {
@@ -228,18 +228,19 @@ export function Contact() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold mb-6">Schedule a Meeting</h3>
+              <h3 className="text-xl font-semibold mb-6">{t('contact.schedule.title')}</h3>
               <div className="p-6 rounded-xl border border-border bg-card/60 card-interactive">
                 <p className="text-muted-foreground mb-4">
-                  Prefer a quick call? Schedule a 30-minute meeting to discuss your project or opportunity.
+                  {t('contact.schedule.description')}
                 </p>
                 <Button
                   onClick={() => window.open('https://calendly.com/ionut-stanculea', '_blank')}
                   className="w-full group"
                   variant="outline"
+                  aria-label={t('contact.schedule.buttonAriaLabel')}
                 >
                   <Calendar className="mr-2 h-4 w-4" />
-                  Schedule on Calendly
+                  {t('contact.schedule.button')}
                 </Button>
               </div>
             </div>
