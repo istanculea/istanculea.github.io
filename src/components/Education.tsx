@@ -1,3 +1,4 @@
+import { CSSProperties } from "react"
 import { GraduationCap, Award, BookOpen, GraduationCap as LearningIcon, ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTranslation } from "react-i18next"
@@ -16,9 +17,9 @@ export function Education() {
   ]
 
   return (
-    <section id="education" className="py-24 px-6 bg-surface">
+    <section id="education" className="py-24 px-6 bg-surface" data-reveal>
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center space-y-3 mb-16">
+        <div className="text-center space-y-3 mb-16" data-reveal-item>
           <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3">
             <LearningIcon className="h-8 w-8 text-primary" />
             {t('education.title')}
@@ -29,7 +30,7 @@ export function Education() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="rounded-xl border border-border bg-card/70 p-8 space-y-6">
+          <div className="rounded-xl border border-border bg-card/70 p-8 space-y-6 card-interactive" data-reveal-item style={{ "--reveal-delay": "120ms" } as CSSProperties}>
             <div className="flex items-center space-x-3 mb-4">
               <div className="p-3 bg-primary/10 rounded-xl text-primary">
                 <GraduationCap className="h-6 w-6" />
@@ -50,7 +51,7 @@ export function Education() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-border bg-card/70 p-8 space-y-6">
+          <div className="rounded-xl border border-border bg-card/70 p-8 space-y-6 card-interactive" data-reveal-item style={{ "--reveal-delay": "200ms" } as CSSProperties}>
             <div className="flex items-center space-x-3 mb-4">
               <div className="p-3 bg-primary/10 rounded-xl text-primary">
                 <Award className="h-6 w-6" />
@@ -69,7 +70,7 @@ export function Education() {
           </div>
         </div>
 
-        <div className="flex justify-center mt-12">
+        <div className="flex justify-center mt-12" data-reveal-item style={{ "--reveal-delay": "260ms" } as CSSProperties}>
           <Button
             variant="outline"
             className="group px-6"

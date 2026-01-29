@@ -4,32 +4,42 @@
 
 @layer base {
   :root {
-    --background: 210 25% 98%;
-    --foreground: 216 21% 16%;
-    --card: 0 0% 100%;
-    --card-foreground: 216 21% 16%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 216 21% 16%;
-    --primary: 221 63% 53%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 221 63% 60%;
-    --primary-dark: 221 63% 45%;
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 216 21% 16%;
-    --muted: 214 32% 94%;
-    --muted-foreground: 215 16% 45%;
-    --accent: 200 98% 39%;
-    --accent-foreground: 0 0% 100%;
-    --accent-light: 200 98% 48%;
+    --bg: 42 52% 96%;
+    --surface: 38 28% 93%;
+    --text: 24 18% 14%;
+    --muted: 36 18% 92%;
+    --muted-foreground: 30 7% 40%;
+    --border: 30 12% 86%;
+    --accent: 32 88% 52%;
+    --accent-contrast: 24 20% 12%;
+
+    --background: var(--bg);
+    --foreground: var(--text);
+    --card: 40 30% 97%;
+    --card-foreground: var(--text);
+    --popover: var(--card);
+    --popover-foreground: var(--text);
+    --primary: var(--accent);
+    --primary-foreground: var(--accent-contrast);
+    --primary-light: 32 88% 60%;
+    --primary-dark: 28 70% 42%;
+    --secondary: var(--surface);
+    --secondary-foreground: var(--text);
+    --accent-foreground: var(--accent-contrast);
+    --accent-light: 32 88% 62%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
-    --border: 214 20% 85%;
-    --input: 214 20% 85%;
-    --ring: 221 63% 53%;
+    --input: var(--border);
+    --ring: var(--accent);
     --radius: 0.75rem;
-    --surface: 210 24% 97%;
-    --success: 142 58% 42%;
-    --warning: 38 92% 50%;
+    --success: 142 40% 42%;
+    --warning: 35 86% 52%;
+
+    --shadow-sm: 0 1px 2px hsl(30 18% 20% / 0.08);
+    --shadow-md: 0 8px 20px hsl(30 18% 20% / 0.12);
+    --shadow-lg: 0 16px 32px hsl(30 18% 20% / 0.14);
+    --shadow-glow: 0 0 0 1px hsl(var(--accent) / 0.2);
+    --shadow-tech: 0 12px 32px hsl(30 18% 20% / 0.18);
 
     /* spacing scale */
     --space-1: 4px;
@@ -43,31 +53,41 @@
   }
 
   .dark {
-    --background: 220 20% 6%;
-    --foreground: 0 0% 98%;
-    --card: 220 20% 6%;
-    --card-foreground: 0 0% 98%;
-    --popover: 220 20% 6%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 195 98% 50%;
-    --primary-foreground: 220 25% 10%;
-    --primary-light: 195 98% 60%;
-    --primary-dark: 195 98% 40%;
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 220 15% 15%;
-    --muted-foreground: 210 15% 60%;
-    --accent: 160 84% 45%;
-    --accent-foreground: 220 25% 10%;
-    --accent-light: 160 84% 55%;
-    --destructive: 0 62.8% 30.6%;
+    --bg: 24 10% 7%;
+    --surface: 24 12% 12%;
+    --text: 30 18% 92%;
+    --muted: 24 10% 16%;
+    --muted-foreground: 30 8% 68%;
+    --border: 24 8% 22%;
+    --accent: 35 78% 54%;
+    --accent-contrast: 24 20% 12%;
+
+    --background: var(--bg);
+    --foreground: var(--text);
+    --card: 24 12% 10%;
+    --card-foreground: var(--text);
+    --popover: var(--card);
+    --popover-foreground: var(--text);
+    --primary: var(--accent);
+    --primary-foreground: var(--accent-contrast);
+    --primary-light: 35 78% 60%;
+    --primary-dark: 32 68% 46%;
+    --secondary: var(--surface);
+    --secondary-foreground: var(--text);
+    --accent-foreground: var(--accent-contrast);
+    --accent-light: 35 78% 62%;
+    --destructive: 0 62.8% 35%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 15% 18%;
-    --input: 220 15% 18%;
-    --ring: 195 98% 50%;
-    --surface: 220 18% 10%;
-    --success: 142 70% 45%;
-    --warning: 38 92% 50%;
+    --input: var(--border);
+    --ring: var(--accent);
+    --success: 142 42% 44%;
+    --warning: 35 80% 55%;
+
+    --shadow-sm: 0 1px 2px hsl(24 10% 4% / 0.4);
+    --shadow-md: 0 12px 28px hsl(24 10% 4% / 0.45);
+    --shadow-lg: 0 20px 40px hsl(24 10% 4% / 0.5);
+    --shadow-glow: 0 0 0 1px hsl(var(--accent) / 0.25);
+    --shadow-tech: 0 16px 36px hsl(24 10% 4% / 0.5);
   }
 
   * {
@@ -75,7 +95,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter antialiased;
+    @apply bg-background text-foreground font-sans antialiased;
     line-height: 1.6;
   }
 
@@ -98,6 +118,78 @@
     .container {
       padding-inline: 24px;
     }
+  }
+}
+
+@layer components {
+  .header-transition {
+    transition: background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease, padding 200ms ease;
+  }
+
+  .btn-hero {
+    border-radius: 0.75rem;
+  }
+
+  .card-interactive {
+    transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+  }
+
+  .card-interactive:hover,
+  .card-interactive:focus-within {
+    transform: translateY(-3px);
+    border-color: hsl(var(--accent) / 0.8);
+    box-shadow: var(--shadow-sm);
+  }
+
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 450ms ease, transform 450ms ease;
+  }
+
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  [data-reveal] [data-reveal-item] {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 350ms ease, transform 350ms ease;
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  [data-reveal].is-visible [data-reveal-item] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .hero-entrance {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: hero-in 0.6s ease forwards;
+  }
+
+  .link-underline {
+    position: relative;
+  }
+
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: hsl(var(--accent));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms ease;
+  }
+
+  .link-underline:hover::after,
+  .link-underline:focus-visible::after {
+    transform: scaleX(1);
   }
 }
 
@@ -154,6 +246,17 @@
   }
 }
 
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradient-shift 6s ease infinite;
@@ -191,5 +294,28 @@
   .animate-fade-up {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .hero-entrance {
+    animation: none;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  [data-reveal],
+  [data-reveal] [data-reveal-item] {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .card-interactive {
+    transition: none;
+  }
+
+  .card-interactive:hover,
+  .card-interactive:focus-within {
+    transform: none;
+    box-shadow: none;
   }
 }

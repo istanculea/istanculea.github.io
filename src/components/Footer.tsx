@@ -1,3 +1,4 @@
+import { CSSProperties } from "react"
 import { Mail, MapPin, Linkedin, Github, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTranslation } from "react-i18next"
@@ -60,23 +61,23 @@ export function Footer() {
   }
 
   return (
-    <footer className="py-16 px-6 border-t border-border bg-muted/30">
+    <footer className="py-16 px-6 border-t border-border bg-muted/30" data-reveal>
       <div className="container max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-10" data-reveal-item>
           {/* About */}
           <div className="space-y-4">
             <div className="text-2xl font-semibold text-foreground">Ionuț Stănculea</div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               {t('footer.aboutText')}
             </p>
-            <Button 
-              variant="cta"
-              className="w-full sm:w-auto"
-              onClick={() => scrollToSection('#contact')}
-            >
-              {t('footer.getInTouch')}
-              <ExternalLink className="ml-2 h-4 w-4" />
-            </Button>
+              <Button 
+                variant="cta"
+                className="w-full sm:w-auto"
+                onClick={() => scrollToSection('#contact')}
+              >
+                {t('footer.getInTouch')}
+                <ExternalLink className="ml-2 h-4 w-4" />
+              </Button>
           </div>
 
           {/* Quick Links */}
@@ -87,22 +88,22 @@ export function Footer() {
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-muted-foreground hover:text-foreground transition-colors text-left text-sm hover:translate-x-1 transition-transform duration-200"
+                  className="text-muted-foreground hover:text-foreground transition-colors text-left text-sm hover:translate-x-1 transition-transform duration-200 link-underline min-h-11 inline-flex items-center"
                 >
                   {link.name}
                 </button>
               ))}
             </nav>
             <div className="flex flex-col space-y-2 text-left">
-              <a className="text-muted-foreground hover:text-primary transition-colors text-sm" href="/privacy">
+              <a className="text-muted-foreground hover:text-primary transition-colors text-sm link-underline min-h-11 inline-flex items-center" href="/privacy">
                 Privacy
               </a>
-              <a className="text-muted-foreground hover:text-primary transition-colors text-sm" href="/legal">
+              <a className="text-muted-foreground hover:text-primary transition-colors text-sm link-underline min-h-11 inline-flex items-center" href="/legal">
                 Legal
               </a>
               <button
                 onClick={openConsentPreferences}
-                className="text-muted-foreground hover:text-primary transition-colors text-sm text-left hover:translate-x-1 transition-transform duration-200"
+                className="text-muted-foreground hover:text-primary transition-colors text-sm text-left hover:translate-x-1 transition-transform duration-200 link-underline min-h-11 inline-flex items-center"
               >
                 Change consent
               </button>
@@ -151,7 +152,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border">
+        <div className="pt-8 border-t border-border" data-reveal-item style={{ "--reveal-delay": "120ms" } as CSSProperties}>
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
             <p className="text-muted-foreground text-sm">
               {t('footer.copyright', { year: currentYear })}

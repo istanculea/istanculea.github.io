@@ -1,4 +1,5 @@
-import { Zap, Cloud, Wrench, Users, Activity, CheckCircle, MapPin, Heart, Award, Sparkles, Code2, UserRound, ArrowDown } from "lucide-react"
+import { CSSProperties } from "react"
+import { Zap, Cloud, Wrench, Users, Activity, CheckCircle, Heart, Award, Sparkles, Code2, UserRound, ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useTranslation } from "react-i18next"
@@ -25,9 +26,9 @@ export function About() {
   ]
 
   return (
-    <section id="about" className="py-24 px-6 scroll-mt-20">
+    <section id="about" className="py-24 px-6 scroll-mt-20" data-reveal>
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center space-y-3 mb-16">
+        <div className="text-center space-y-3 mb-16" data-reveal-item>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface text-sm font-medium">
             <Sparkles className="h-4 w-4 text-primary" />
             {t('about.badge')}
@@ -41,9 +42,9 @@ export function About() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-10 items-start">
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-7 space-y-8">
-            <div className="space-y-4">
+            <div className="space-y-4" data-reveal-item style={{ "--reveal-delay": "80ms" } as CSSProperties}>
               <p className="text-base leading-relaxed text-muted-foreground">
                 {t('about.paragraph1')}
               </p>
@@ -58,13 +59,13 @@ export function About() {
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2" data-reveal-item style={{ "--reveal-delay": "140ms" } as CSSProperties}>
               {chipHighlights.map((highlight, index) => {
                 const IconComponent = highlight.icon
                 return (
                   <div 
                     key={index}
-                    className="rounded-xl border border-border bg-card/60 p-4 flex items-start gap-3"
+                    className="rounded-xl border border-border bg-card/60 p-4 flex items-start gap-3 card-interactive"
                   >
                     <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                       <IconComponent className="h-5 w-5 text-primary" />
@@ -75,7 +76,7 @@ export function About() {
               })}
             </div>
 
-            <div className="rounded-xl border border-border bg-card/60 p-6">
+            <div className="rounded-xl border border-border bg-card/60 p-6 card-interactive" data-reveal-item style={{ "--reveal-delay": "200ms" } as CSSProperties}>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Code2 className="h-5 w-5 text-primary" />
@@ -95,7 +96,7 @@ export function About() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-border bg-card/60 p-6 space-y-3">
+            <div className="rounded-xl border border-border bg-card/60 p-6 space-y-3 card-interactive" data-reveal-item style={{ "--reveal-delay": "260ms" } as CSSProperties}>
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Award className="h-5 w-5 text-primary" />
@@ -115,7 +116,7 @@ export function About() {
               </div>
             </div>
 
-            <div className="pt-2">
+            <div className="pt-2" data-reveal-item style={{ "--reveal-delay": "320ms" } as CSSProperties}>
               <Button 
                 size="lg"
                 variant="outline"
@@ -131,7 +132,7 @@ export function About() {
             </div>
           </div>
 
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+          <div className="lg:col-span-5 flex justify-center lg:justify-end" data-reveal-item style={{ "--reveal-delay": "200ms" } as CSSProperties}>
             <div className="lg:sticky lg:top-24">
               <div className="relative">
                 <img

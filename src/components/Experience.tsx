@@ -1,3 +1,4 @@
+import { CSSProperties } from "react"
 import { Building2, Calendar, MapPin, Briefcase, ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTranslation } from "react-i18next"
@@ -44,9 +45,9 @@ export function Experience() {
   ]
 
   return (
-    <section id="experience" className="py-24 px-6 bg-background">
+    <section id="experience" className="py-24 px-6 bg-background" data-reveal>
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center space-y-3 mb-16">
+        <div className="text-center space-y-3 mb-16" data-reveal-item>
           <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3">
             <Briefcase className="h-8 w-8 text-primary" />
             {t('experience.title')}
@@ -60,8 +61,9 @@ export function Experience() {
           {experiences.map((exp, index) => (
             <div 
               key={index}
-              className="rounded-xl border border-border bg-card/70 p-7"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="rounded-xl border border-border bg-card/70 p-6 card-interactive"
+              data-reveal-item
+              style={{ "--reveal-delay": `${index * 90}ms` } as CSSProperties}
             >
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 mb-6">
                 <div className="space-y-2">
@@ -95,7 +97,7 @@ export function Experience() {
           ))}
         </div>
 
-        <div className="flex justify-center mt-12">
+        <div className="flex justify-center mt-12" data-reveal-item style={{ "--reveal-delay": "120ms" } as CSSProperties}>
           <Button
             variant="outline"
             className="group px-6"

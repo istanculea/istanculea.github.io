@@ -28,7 +28,7 @@ export function ConsentBanner() {
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-50">
-      <div className="mx-auto max-w-4xl rounded-t-2xl border border-border bg-background/95 shadow-lg backdrop-blur px-6 py-4 gap-4 flex flex-col md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto max-w-4xl rounded-t-2xl border border-border bg-background/95 shadow-sm backdrop-blur px-6 py-4 gap-4 flex flex-col md:flex-row md:items-center md:justify-between" data-reveal>
         <div className="space-y-1">
           <p className="font-semibold">Privacy choices</p>
           <p className="text-sm text-muted-foreground">
