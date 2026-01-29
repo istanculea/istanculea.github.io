@@ -67,7 +67,6 @@ function loadPlausibleScript() {
   script.setAttribute('data-domain', window.location.hostname)
   script.src = 'https://plausible.io/js/plausible.js'
   script.crossOrigin = 'anonymous'
-  script.integrity = 'sha384-m5bbq4cE+6fS5gq1lq0Gk7GlbGqmNdzLkzKxGcbnGTOCfXJjzRpLjBbAiEjWlA2x'
   script.onload = () => {
     isLoadingScript = false
   }

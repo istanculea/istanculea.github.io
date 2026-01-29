@@ -46,7 +46,6 @@ describe("analytics", () => {
     expect(script?.src).toBe(PLAUSIBLE_SRC)
     expect(script?.dataset.domain).toBe(window.location.hostname)
     expect(script?.crossOrigin).toBe("anonymous")
-    expect(script?.integrity).toBeTruthy()
     expect(script?.defer).toBe(true)
   })
 

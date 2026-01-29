@@ -207,6 +207,7 @@ export function Header() {
                 variant="outline"
                 size="sm"
                 onClick={() => window.open('/cv.pdf', '_blank')}
+                aria-label={t('hero.downloadCV')}
               >
                 <Download className="h-4 w-4 mr-2" />
                 {t('hero.downloadCV')}
