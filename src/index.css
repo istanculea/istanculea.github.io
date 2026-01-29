@@ -4,42 +4,43 @@
 
 @layer base {
   :root {
-    --bg: 42 52% 96%;
-    --surface: 38 28% 93%;
-    --text: 24 18% 14%;
-    --muted: 36 18% 92%;
-    --muted-foreground: 30 7% 40%;
-    --border: 30 12% 86%;
-    --accent: 32 88% 52%;
-    --accent-contrast: 24 20% 12%;
+    /* Professional Cloud/Tech Theme - Light Mode */
+    --bg: 210 40% 98%;
+    --surface: 210 40% 96%;
+    --text: 215 25% 15%;
+    --muted: 210 30% 94%;
+    --muted-foreground: 215 15% 45%;
+    --border: 214 20% 88%;
+    --accent: 199 89% 48%;
+    --accent-contrast: 210 100% 98%;
 
     --background: var(--bg);
     --foreground: var(--text);
-    --card: 40 30% 97%;
+    --card: 210 50% 99%;
     --card-foreground: var(--text);
     --popover: var(--card);
     --popover-foreground: var(--text);
     --primary: var(--accent);
     --primary-foreground: var(--accent-contrast);
-    --primary-light: 32 88% 60%;
-    --primary-dark: 28 70% 42%;
+    --primary-light: 199 89% 58%;
+    --primary-dark: 199 89% 38%;
     --secondary: var(--surface);
     --secondary-foreground: var(--text);
     --accent-foreground: var(--accent-contrast);
-    --accent-light: 32 88% 62%;
+    --accent-light: 199 89% 65%;
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
     --input: var(--border);
     --ring: var(--accent);
     --radius: 0.75rem;
-    --success: 142 40% 42%;
-    --warning: 35 86% 52%;
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
 
-    --shadow-sm: 0 1px 2px hsl(30 18% 20% / 0.08);
-    --shadow-md: 0 8px 20px hsl(30 18% 20% / 0.12);
-    --shadow-lg: 0 16px 32px hsl(30 18% 20% / 0.14);
-    --shadow-glow: 0 0 0 1px hsl(var(--accent) / 0.2);
-    --shadow-tech: 0 12px 32px hsl(30 18% 20% / 0.18);
+    --shadow-sm: 0 1px 2px hsl(215 25% 20% / 0.08);
+    --shadow-md: 0 8px 20px hsl(215 25% 20% / 0.12);
+    --shadow-lg: 0 16px 32px hsl(215 25% 20% / 0.14);
+    --shadow-glow: 0 0 20px hsl(var(--accent) / 0.25), 0 0 0 1px hsl(var(--accent) / 0.2);
+    --shadow-tech: 0 12px 32px hsl(199 89% 48% / 0.15);
 
     /* spacing scale */
     --space-1: 4px;
@@ -53,41 +54,42 @@
   }
 
   .dark {
-    --bg: 24 10% 7%;
-    --surface: 24 12% 12%;
-    --text: 30 18% 92%;
-    --muted: 24 10% 16%;
-    --muted-foreground: 30 8% 68%;
-    --border: 24 8% 22%;
-    --accent: 35 78% 54%;
-    --accent-contrast: 24 20% 12%;
+    /* Professional Cloud/Tech Theme - Dark Mode */
+    --bg: 215 28% 8%;
+    --surface: 215 25% 12%;
+    --text: 210 40% 95%;
+    --muted: 215 20% 16%;
+    --muted-foreground: 215 15% 65%;
+    --border: 215 18% 20%;
+    --accent: 199 89% 55%;
+    --accent-contrast: 215 30% 8%;
 
     --background: var(--bg);
     --foreground: var(--text);
-    --card: 24 12% 10%;
+    --card: 215 28% 10%;
     --card-foreground: var(--text);
     --popover: var(--card);
     --popover-foreground: var(--text);
     --primary: var(--accent);
     --primary-foreground: var(--accent-contrast);
-    --primary-light: 35 78% 60%;
-    --primary-dark: 32 68% 46%;
+    --primary-light: 199 89% 65%;
+    --primary-dark: 199 89% 45%;
     --secondary: var(--surface);
     --secondary-foreground: var(--text);
     --accent-foreground: var(--accent-contrast);
-    --accent-light: 35 78% 62%;
-    --destructive: 0 62.8% 35%;
+    --accent-light: 199 89% 70%;
+    --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 98%;
     --input: var(--border);
     --ring: var(--accent);
-    --success: 142 42% 44%;
-    --warning: 35 80% 55%;
+    --success: 142 71% 50%;
+    --warning: 38 92% 55%;
 
-    --shadow-sm: 0 1px 2px hsl(24 10% 4% / 0.4);
-    --shadow-md: 0 12px 28px hsl(24 10% 4% / 0.45);
-    --shadow-lg: 0 20px 40px hsl(24 10% 4% / 0.5);
-    --shadow-glow: 0 0 0 1px hsl(var(--accent) / 0.25);
-    --shadow-tech: 0 16px 36px hsl(24 10% 4% / 0.5);
+    --shadow-sm: 0 1px 2px hsl(215 30% 5% / 0.5);
+    --shadow-md: 0 12px 28px hsl(215 30% 5% / 0.6);
+    --shadow-lg: 0 20px 40px hsl(215 30% 5% / 0.7);
+    --shadow-glow: 0 0 25px hsl(var(--accent) / 0.3), 0 0 0 1px hsl(var(--accent) / 0.3);
+    --shadow-tech: 0 16px 36px hsl(199 89% 55% / 0.2);
   }
 
   * {
