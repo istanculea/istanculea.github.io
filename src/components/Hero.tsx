@@ -54,7 +54,7 @@ export function Hero() {
           <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground pt-4">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span>7+ Years Experience</span>
+              <span>5+ years of experience</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
