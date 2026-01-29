@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { useTranslation } from "react-i18next"
 import { pathWithLang } from "@/lib/langPath"
 import { openConsentPreferences } from "@/lib/consent"
+import { CONTACT, SOCIAL_LINKS } from "@/config/constants"
 
 export function Footer() {
   const { t } = useTranslation()
@@ -21,12 +22,12 @@ export function Footer() {
   const socialLinks = [
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/in/ionut-stanculea",
+      href: SOCIAL_LINKS.linkedin,
       icon: Linkedin
     },
     {
       name: "GitHub", 
-      href: "https://github.com/ionut-stanculea",
+      href: SOCIAL_LINKS.github,
       icon: Github
     }
   ]
@@ -115,15 +116,15 @@ export function Footer() {
             <h3 className="font-semibold text-foreground">{t('footer.contact')}</h3>
             <div className="space-y-3">
               <a 
-                href="mailto:stanculea.ionut.93@gmail.com"
+                href={`mailto:${CONTACT.email}`}
                 className="flex items-center space-x-2 text-muted-foreground hover:text-foreground transition-colors text-sm group min-h-[44px]"
               >
                 <Mail className="h-4 w-4 group-hover:text-primary transition-colors flex-shrink-0" />
-                <span className="break-all">stanculea.ionut.93@gmail.com</span>
+                <span className="break-all">{CONTACT.email}</span>
               </a>
               <div className="flex items-center space-x-2 text-muted-foreground text-sm min-h-[44px]">
                 <MapPin className="h-4 w-4 flex-shrink-0" />
-                <span>Remote / Europe</span>
+                <span>{CONTACT.location}</span>
               </div>
             </div>
           </div>

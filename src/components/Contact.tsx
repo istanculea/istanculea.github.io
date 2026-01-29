@@ -7,9 +7,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
-import { useTranslation } from "react-i18next"
+import { useTranslation, TFunction } from "react-i18next"
+import { CONTACT, SOCIAL_LINKS, SERVICES } from "@/config/constants"
 
-const buildContactSchema = (t: any) => z.object({
+const buildContactSchema = (t: TFunction) => z.object({
   name: z.string().min(2, t('contact.validation.nameMin')).max(100, "Name must be less than 100 characters"),
   email: z.string().email(t('contact.validation.emailInvalid')).max(255, "Email must be less than 255 characters"),
   subject: z.string().min(3, t('contact.validation.subjectMin')).max(150, "Subject must be less than 150 characters"),
@@ -40,7 +41,7 @@ export function Contact() {
     
     try {
       // Submit to Formspree
-      const response = await fetch('https://formspree.io/f/xanypape', {
+      const response = await fetch(SERVICES.formspreeEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -77,13 +78,13 @@ export function Contact() {
     {
       icon: <Mail className="h-5 w-5" />,
       label: t('contact.info.email'),
-      value: "stanculea.ionut.93@gmail.com",
-      href: "mailto:stanculea.ionut.93@gmail.com"
+      value: CONTACT.email,
+      href: `mailto:${CONTACT.email}`
     },
     {
       icon: <MapPin className="h-5 w-5" />,
       label: t('contact.info.location'),
-      value: "Remote / Europe",
+      value: CONTACT.location,
       href: "#"
     }
   ]
@@ -92,12 +93,12 @@ export function Contact() {
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: "LinkedIn", 
-      href: "https://linkedin.com/in/ionut-stanculea"
+      href: SOCIAL_LINKS.linkedin
     },
     {
       icon: <Github className="h-5 w-5" />,
       label: "GitHub",
-      href: "https://github.com/ionut-stanculea"
+      href: SOCIAL_LINKS.github
     }
   ]
 
@@ -234,7 +235,7 @@ export function Contact() {
                   {t('contact.schedule.description')}
                 </p>
                 <Button
-                  onClick={() => window.open('https://calendly.com/ionut-stanculea', '_blank')}
+                  onClick={() => window.open(SERVICES.calendlyUrl, '_blank')}
                   className="w-full group min-h-[48px]"
                   variant="outline"
                   aria-label={t('contact.schedule.buttonAriaLabel')}
