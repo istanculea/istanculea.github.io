@@ -1,6 +1,12 @@
 import { getStoredConsent } from './consent'
 
-const _PLAUSIBLE_DOMAIN = "your-domain"
+const PLAUSIBLE_DOMAIN = "your-domain"
+
+// Track if script is being loaded to prevent race conditions
+let isLoadingScript = false
+
+// Track if listeners are already registered to prevent duplicates
+let listenersRegistered = false
 
 /**
  * Initialize analytics if consent has been granted
@@ -14,10 +20,15 @@ export function initAnalytics() {
 
 /**
  * Register event listeners for consent changes
+ * This should only be called once during app initialization
  */
 export function registerConsentListeners() {
-  window.addEventListener('consent:changed', (event: Event) => {
-    const customEvent = event as CustomEvent
+  if (listenersRegistered) {
+    return
+  }
+  
+  const handleConsentChange = (event: Event) => {
+    const customEvent = event as CustomEvent<string>
     const value = customEvent.detail
     
     if (value === 'accepted') {
@@ -29,21 +40,32 @@ export function registerConsentListeners() {
         script.remove()
       }
     }
-  })
+  }
+  
+  window.addEventListener('consent:changed', handleConsentChange)
+  listenersRegistered = true
 }
 
 /**
  * Load the Plausible analytics script
  */
 function loadPlausibleScript() {
-  // Check if script is already loaded
-  if (document.querySelector('script[data-domain]')) {
+  // Check if script is already loaded or currently loading
+  if (isLoadingScript || document.querySelector('script[data-domain]')) {
     return
   }
 
+  isLoadingScript = true
+  
   const script = document.createElement('script')
   script.defer = true
-  script.setAttribute('data-domain', _PLAUSIBLE_DOMAIN)
+  script.setAttribute('data-domain', PLAUSIBLE_DOMAIN)
   script.src = 'https://plausible.io/js/script.js'
+  script.onload = () => {
+    isLoadingScript = false
+  }
+  script.onerror = () => {
+    isLoadingScript = false
+  }
   document.head.appendChild(script)
 }
