@@ -65,7 +65,7 @@ export function About() {
                 return (
                   <div 
                     key={index}
-                    className="rounded-xl border border-border bg-card/60 p-4 flex items-start gap-3 card-interactive"
+                    className="rounded-xl border border-border bg-card/70 p-4 flex items-start gap-3 card-interactive"
                   >
                     <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                       <IconComponent className="h-5 w-5 text-primary" />
@@ -76,7 +76,7 @@ export function About() {
               })}
             </div>
 
-            <div className="rounded-xl border border-border bg-card/60 p-6 card-interactive" data-reveal-item style={{ "--reveal-delay": "200ms" } as CSSProperties}>
+            <div className="rounded-xl border border-border bg-card/70 p-6 card-interactive" data-reveal-item style={{ "--reveal-delay": "200ms" } as CSSProperties}>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Code2 className="h-5 w-5 text-primary" />
@@ -96,7 +96,7 @@ export function About() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-border bg-card/60 p-6 space-y-3 card-interactive" data-reveal-item style={{ "--reveal-delay": "260ms" } as CSSProperties}>
+            <div className="rounded-xl border border-border bg-card/70 p-6 space-y-3 card-interactive" data-reveal-item style={{ "--reveal-delay": "260ms" } as CSSProperties}>
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                   <Award className="h-5 w-5 text-primary" />
