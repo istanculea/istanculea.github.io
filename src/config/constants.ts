@@ -20,7 +20,9 @@ export const SOCIAL_LINKS = {
 // External Services
 export const SERVICES = {
   formspreeEndpoint: import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/maqjzovk',
-  calendlyUrl: import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/ionut-stanculea',
+  // Calendly URL - Update this with your actual Calendly scheduling page
+  // Format: https://calendly.com/your-calendly-username or https://calendly.com/your-calendly-username/meeting-type
+  calendlyUrl: import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/istanculea',
   // Note: plausibleDomain should be accessed via getPlausibleDomain() to ensure window is defined
   getPlausibleDomain: () => {
     if (typeof window !== 'undefined') {
