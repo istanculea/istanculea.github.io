@@ -45,7 +45,8 @@ export function Contact() {
       const response = await fetch(SERVICES.formspreeEndpoint, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify({
           name: data.name,
@@ -62,9 +63,12 @@ export function Contact() {
         })
         reset()
       } else {
-        throw new Error('Form submission failed')
+        const errorData = await response.json().catch(() => ({}))
+        console.error('Form submission failed:', response.status, errorData)
+        throw new Error(`Form submission failed with status ${response.status}`)
       }
     } catch (error) {
+      console.error('Form submission error:', error)
       toast({
         title: t('contact.toast.error'),
         description: t('contact.toast.errorDescription'),
@@ -243,15 +247,16 @@ export function Contact() {
                 <p className="text-muted-foreground text-sm sm:text-base mb-4">
                   {t('contact.schedule.description')}
                 </p>
-                <Button
-                  onClick={() => window.open(SERVICES.calendlyUrl, '_blank')}
-                  className="w-full group min-h-[48px]"
-                  variant="outline"
+                <a
+                  href={SERVICES.calendlyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center w-full group min-h-[48px] rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground px-4 py-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
                   aria-label={t('contact.schedule.buttonAriaLabel')}
                 >
                   <Calendar className="mr-2 h-4 w-4" />
                   {t('contact.schedule.button')}
-                </Button>
+                </a>
               </div>
             </div>
 
