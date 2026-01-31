@@ -18,7 +18,7 @@ export function RevealObserver() {
           }
         })
       },
-      { threshold: 0.2 }
+      { threshold: 0.01, rootMargin: "50px" }
     )
 
     document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((el) => {
