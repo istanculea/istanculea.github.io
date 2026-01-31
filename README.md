@@ -31,6 +31,29 @@ The application uses centralized configuration stored in `src/config/constants.t
 
 2. Update the values in `.env.local` as needed:
    - `VITE_PLAUSIBLE_DOMAIN`: Your Plausible analytics domain (optional)
+   - `VITE_FORMSPREE_ENDPOINT`: Your Formspree form endpoint for contact form submissions
+   - `VITE_CONTACT_EMAIL`: Your contact email address
+   - `VITE_CALENDLY_URL`: Your Calendly scheduling page URL (see below)
+
+### Setting up Calendly Integration
+
+The website includes a "Schedule a Meeting" button that opens your Calendly scheduling page. To configure this:
+
+1. **Create a Calendly account** (if you haven't already) at [calendly.com](https://calendly.com)
+
+2. **Find your Calendly URL**:
+   - Log in to Calendly
+   - Go to your Event Types page
+   - Copy the link to your scheduling page (e.g., `https://calendly.com/your-username` or `https://calendly.com/your-username/30min`)
+
+3. **Update the configuration**:
+   - Option A: Set the environment variable in `.env.local`:
+     ```
+     VITE_CALENDLY_URL=https://calendly.com/your-username
+     ```
+   - Option B: Update the default value directly in `src/config/constants.ts`
+
+4. **Verify** the URL works by opening it in a browser before deploying
 
 For more configuration options, see `src/config/constants.ts`.
 
