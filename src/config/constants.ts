@@ -19,7 +19,7 @@ export const SOCIAL_LINKS = {
 
 // External Services
 export const SERVICES = {
-  formspreeEndpoint: import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/xanypape',
+  formspreeEndpoint: import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/maqjzovk',
   calendlyUrl: import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/ionut-stanculea',
   // Note: plausibleDomain should be accessed via getPlausibleDomain() to ensure window is defined
   getPlausibleDomain: () => {
