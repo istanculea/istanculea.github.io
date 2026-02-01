@@ -7,7 +7,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { useTranslation } from "react-i18next";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import "./i18n";
-import { Language, supportedLanguages } from "./i18n";
+import { LANGUAGE_STORAGE_KEY, Language, supportedLanguages } from "./i18n";
 import { getCurrentLangFromPath } from "./lib/langPath";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -29,20 +29,21 @@ function LanguageGuard({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const currentLang = getCurrentLangFromPath();
-    
+
     // Validate and set language
     if (lang && supportedLanguages.includes(lang as Language)) {
       if (i18n.language !== lang) {
         i18n.changeLanguage(lang);
       }
+      localStorage.setItem(LANGUAGE_STORAGE_KEY, lang as Language);
     } else if (!lang) {
-      // For routes without language prefix, use detected language for i18n but stay on clean URL
-      const savedLang = localStorage.getItem('portfolio-lang') as Language || 'en';
+      // For routes without language prefix, use saved language if available
+      const savedLang = (localStorage.getItem(LANGUAGE_STORAGE_KEY) as Language) || currentLang;
       if (i18n.language !== savedLang) {
         i18n.changeLanguage(savedLang);
       }
     }
-    
+
     // Update document language
     document.documentElement.lang = currentLang;
   }, [lang, i18n]);
