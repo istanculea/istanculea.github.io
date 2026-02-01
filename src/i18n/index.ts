@@ -32,6 +32,9 @@ i18n
     resources,
     fallbackLng: 'en',
     debug: false,
+    supportedLngs: supportedLanguages,
+    nonExplicitSupportedLngs: true,
+    load: 'languageOnly',
     
     detection: {
       order: ['path', 'localStorage', 'navigator'],

@@ -4,6 +4,7 @@ import { getCurrentLangFromPath, navigateWithLang, pathWithLang } from "@/lib/la
 describe("language path helpers", () => {
   afterEach(() => {
     window.history.replaceState({}, "", "/")
+    localStorage.clear()
     vi.unstubAllGlobals()
   })
 
@@ -22,6 +23,12 @@ describe("language path helpers", () => {
   it("returns English for unknown path segment", () => {
     window.history.pushState({}, "", "/unknown")
     expect(getCurrentLangFromPath()).toBe("en")
+  })
+
+  it("returns saved language when no path prefix", () => {
+    localStorage.setItem("portfolio-lang", "ro")
+    window.history.pushState({}, "", "/")
+    expect(getCurrentLangFromPath()).toBe("ro")
   })
 
   it("detects language from path", () => {

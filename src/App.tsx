@@ -29,22 +29,23 @@ function LanguageGuard({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const currentLang = getCurrentLangFromPath();
-    
+
     // Validate and set language
     if (lang && supportedLanguages.includes(lang as Language)) {
       if (i18n.language !== lang) {
         i18n.changeLanguage(lang);
       }
+      localStorage.setItem('portfolio-lang', lang as Language);
     } else if (!lang) {
-      // For routes without language prefix, use detected language for i18n but stay on clean URL
-      const savedLang = localStorage.getItem('portfolio-lang') as Language || 'en';
+      // For routes without language prefix, use saved language if available
+      const savedLang = (localStorage.getItem('portfolio-lang') as Language) || currentLang;
       if (i18n.language !== savedLang) {
         i18n.changeLanguage(savedLang);
       }
     }
-    
+
     // Update document language
-    document.documentElement.lang = currentLang;
+    document.documentElement.lang = i18n.language;
   }, [lang, i18n]);
 
   // Redirect invalid language codes

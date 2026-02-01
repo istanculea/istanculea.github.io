@@ -39,12 +39,13 @@ export function getCurrentLangFromPath(): Language {
   
   if (segments.length > 0) {
     const firstSegment = segments[0] as Language;
-    if (['es', 'ro', 'it'].includes(firstSegment)) {
+    if (['en', 'es', 'ro', 'it'].includes(firstSegment)) {
       return firstSegment;
     }
   }
   
-  return 'en';
+  const savedLang = localStorage.getItem('portfolio-lang') as Language | null;
+  return savedLang && ['en', 'es', 'ro', 'it'].includes(savedLang) ? savedLang : 'en';
 }
 
 /**
