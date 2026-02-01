@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LANGUAGE_STORAGE_KEY, Language, supportedLanguages } from "@/i18n";
-import { pathWithLang, getCurrentLangFromPath } from "@/lib/langPath";
+import { buildPathForLanguage, getCurrentLangFromPath } from "@/lib/langPath";
 
 const langLabels: Record<Language, string> = {
   en: "ENG",
@@ -19,17 +19,7 @@ export function LanguageToggle() {
     i18n.changeLanguage(lang);
     localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
 
-    const currentPath = window.location.pathname;
-    const currentHash = window.location.hash;
-
-    let cleanPath = currentPath;
-    const langPattern = new RegExp(`^\\/(${supportedLanguages.join("|")})(\\/|$)`);
-    const langPrefixMatch = currentPath.match(langPattern);
-    if (langPrefixMatch) {
-      cleanPath = currentPath.substring(langPrefixMatch[0].length - 1) || '/';
-    }
-
-    const newPath = pathWithLang(cleanPath + currentHash, lang);
+    const newPath = buildPathForLanguage(lang);
     window.location.href = newPath;
   };
 
