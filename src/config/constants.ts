@@ -22,7 +22,7 @@ export const SERVICES = {
   formspreeEndpoint: import.meta.env.VITE_FORMSPREE_ENDPOINT || 'https://formspree.io/f/maqjzovk',
   // Calendly URL - Update this with your actual Calendly scheduling page
   // Format: https://calendly.com/your-calendly-username or https://calendly.com/your-calendly-username/meeting-type
-  calendlyUrl: import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/istanculea',
+  calendlyUrl: import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/stanculea-ionut-93',
   // Note: plausibleDomain should be accessed via getPlausibleDomain() to ensure window is defined
   getPlausibleDomain: () => {
     if (typeof window !== 'undefined') {
