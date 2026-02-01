@@ -31,7 +31,7 @@ The application uses centralized configuration stored in `src/config/constants.t
 
 2. Update the values in `.env.local` as needed:
    - `VITE_PLAUSIBLE_DOMAIN`: Your Plausible analytics domain (optional)
-   - `VITE_FORMSPREE_ENDPOINT`: Your Formspree form endpoint for contact form submissions (defaults to `https://formspree.io/f/maqjzovk` — replace with your own to avoid unintended submissions)
+   - `VITE_FORMSPREE_ENDPOINT`: Your Formspree form endpoint for contact form submissions (replace with your own to avoid unintended submissions)
    - `VITE_CONTACT_EMAIL`: Your contact email address
    - `VITE_CALENDLY_URL`: Your Calendly scheduling page URL (see below)
 
