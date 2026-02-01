@@ -1,4 +1,4 @@
-import { Language } from '@/i18n';
+import { LANGUAGE_STORAGE_KEY, Language, supportedLanguages } from '@/i18n';
 
 /**
  * Build a path with the appropriate language prefix
@@ -39,12 +39,13 @@ export function getCurrentLangFromPath(): Language {
   
   if (segments.length > 0) {
     const firstSegment = segments[0] as Language;
-    if (['es', 'ro', 'it'].includes(firstSegment)) {
+    if (supportedLanguages.includes(firstSegment)) {
       return firstSegment;
     }
   }
   
-  return 'en';
+  const savedLang = localStorage.getItem(LANGUAGE_STORAGE_KEY) as Language | null;
+  return savedLang && supportedLanguages.includes(savedLang) ? savedLang : 'en';
 }
 
 /**

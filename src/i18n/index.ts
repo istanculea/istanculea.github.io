@@ -18,6 +18,8 @@ export const languageNames = {
   it: 'Italiano'
 };
 
+export const LANGUAGE_STORAGE_KEY = 'portfolio-lang';
+
 const resources = {
   en: { translation: en },
   es: { translation: es },
@@ -32,6 +34,9 @@ i18n
     resources,
     fallbackLng: 'en',
     debug: false,
+    supportedLngs: supportedLanguages,
+    nonExplicitSupportedLngs: true,
+    load: 'languageOnly',
     
     detection: {
       order: ['path', 'localStorage', 'navigator'],
