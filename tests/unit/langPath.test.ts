@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from "vitest"
-import { getCurrentLangFromPath, navigateWithLang, pathWithLang } from "@/lib/langPath"
+import { buildPathForLanguage, getCurrentLangFromPath, navigateWithLang, pathWithLang } from "@/lib/langPath"
 
 describe("language path helpers", () => {
   afterEach(() => {
@@ -54,5 +54,15 @@ describe("language path helpers", () => {
 
   it("preserves trailing slashes", () => {
     expect(pathWithLang("/blog/", "it")).toBe("/it/blog/")
+  })
+
+  it("builds path for language keeping hash and stripping prefix", () => {
+    window.history.pushState({}, "", "/ro/blog#section")
+    expect(buildPathForLanguage("es")).toBe("/es/blog#section")
+  })
+
+  it("builds path for language when no prefix", () => {
+    window.history.pushState({}, "", "/blog#section")
+    expect(buildPathForLanguage("it")).toBe("/it/blog#section")
   })
 })

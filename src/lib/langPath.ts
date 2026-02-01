@@ -57,3 +57,24 @@ export function navigateWithLang(path: string, lang?: Language) {
   const finalPath = pathWithLang(path, lang);
   window.location.href = finalPath;
 }
+
+/**
+ * Rebuild the current URL for a target language while preserving the hash
+ * and removing any existing language prefix.
+ * @param lang - Target language
+ * @param path - Current pathname (defaults to window.location.pathname)
+ * @param hash - Current hash (defaults to window.location.hash)
+ */
+export function buildPathForLanguage(
+  lang: Language,
+  path: string = window.location.pathname,
+  hash: string = window.location.hash
+): string {
+  const langPattern = new RegExp(`^\\/(${supportedLanguages.join("|")})(\\/|$)`);
+  const langPrefixMatch = path.match(langPattern);
+  const cleanPath = langPrefixMatch
+    ? path.substring(langPrefixMatch[0].length - 1) || '/'
+    : path || '/';
+
+  return pathWithLang(`${cleanPath}${hash}`, lang);
+}
