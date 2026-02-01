@@ -31,6 +31,19 @@ export function Contact() {
     resolver: zodResolver(contactSchema)
   })
 
+  const openEmailClientFallback = (data: ContactForm) => {
+    if (typeof window === "undefined") return
+    const subject = data.subject || t('contact.form.subject')
+    const body = [
+      `Name: ${data.name}`,
+      `Email: ${data.email}`,
+      "",
+      data.message
+    ].join("\n")
+    const mailtoLink = `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    window.location.href = mailtoLink
+  }
+
   const onSubmit = async (data: ContactForm) => {
     setIsSubmitting(true)
     
@@ -74,6 +87,7 @@ export function Contact() {
         description: t('contact.toast.errorDescription'),
         variant: "destructive"
       })
+      openEmailClientFallback(data)
     } finally {
       setIsSubmitting(false)
     }
