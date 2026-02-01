@@ -78,7 +78,6 @@ export function Contact() {
       } else {
         const errorData = await response.json().catch(() => ({}))
         console.error('Form submission failed:', response.status, errorData)
-        openEmailClientFallback(data)
         throw new Error(`Form submission failed with status ${response.status}`)
       }
     } catch (error) {
