@@ -23,7 +23,8 @@ export function LanguageToggle() {
     const currentHash = window.location.hash;
 
     let cleanPath = currentPath;
-    const langPrefixMatch = currentPath.match(/^\/(en|es|ro|it)(\/|$)/);
+    const langPattern = new RegExp(`^\\/(${supportedLanguages.join("|")})(\\/|$)`);
+    const langPrefixMatch = currentPath.match(langPattern);
     if (langPrefixMatch) {
       cleanPath = currentPath.substring(langPrefixMatch[0].length - 1) || '/';
     }

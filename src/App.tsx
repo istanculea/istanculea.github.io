@@ -45,7 +45,7 @@ function LanguageGuard({ children }: { children: React.ReactNode }) {
     }
 
     // Update document language
-    document.documentElement.lang = i18n.language;
+    document.documentElement.lang = currentLang;
   }, [lang, i18n]);
 
   // Redirect invalid language codes
