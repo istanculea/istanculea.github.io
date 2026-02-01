@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Language, supportedLanguages } from "@/i18n";
+import { LANGUAGE_STORAGE_KEY, Language, supportedLanguages } from "@/i18n";
 import { pathWithLang, getCurrentLangFromPath } from "@/lib/langPath";
 
 const langLabels: Record<Language, string> = {
@@ -17,7 +17,7 @@ export function LanguageToggle() {
 
   const handleLanguageChange = (lang: Language) => {
     i18n.changeLanguage(lang);
-    localStorage.setItem('portfolio-lang', lang);
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
 
     const currentPath = window.location.pathname;
     const currentHash = window.location.hash;

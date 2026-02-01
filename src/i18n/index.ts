@@ -18,6 +18,8 @@ export const languageNames = {
   it: 'Italiano'
 };
 
+export const LANGUAGE_STORAGE_KEY = 'portfolio-lang';
+
 const resources = {
   en: { translation: en },
   es: { translation: es },
