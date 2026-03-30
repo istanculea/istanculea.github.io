@@ -17,6 +17,7 @@ import BlogPost2 from "./pages/BlogPost2";
 import BlogPost3 from "./pages/BlogPost3";
 import BlogPost4 from "./pages/BlogPost4";
 import PostLinuxACL from "./pages/PostLinuxACL";
+import BlogPost6 from "./pages/BlogPost6";
 import Privacy from "./pages/Privacy";
 import Legal from "./pages/Legal";
 
@@ -72,6 +73,7 @@ const App = () => (
               <Route path="/blog/serverless-website-recaptcha" element={<LanguageGuard><BlogPost3 /></LanguageGuard>} />
               <Route path="/blog/openvpn-server-setup" element={<LanguageGuard><BlogPost4 /></LanguageGuard>} />
               <Route path="/blog/linux-acl-management" element={<LanguageGuard><PostLinuxACL /></LanguageGuard>} />
+              <Route path="/blog/echo-system-roguelite-design" element={<LanguageGuard><BlogPost6 /></LanguageGuard>} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/legal" element={<Legal />} />
               

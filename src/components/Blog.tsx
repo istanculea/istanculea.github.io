@@ -59,6 +59,17 @@ export function Blog() {
       category: "Linux",
       image: "/lovable-uploads/e98ddacc-29c4-4915-9c1c-3025e3925c7b.png",
       slug: "/blog/linux-acl-management"
+    },
+    {
+      id: 6,
+      title: "Designing the Echo System: A Hybrid Progression Mechanic for Roguelite Games",
+      excerpt: "How combining Hades-style run powers with Hollow Knight-style permanent traversal creates an addictive gameplay loop that rewards both short runs and long-term mastery.",
+      date: "March 30, 2026",
+      readTime: "12 min read",
+      category: "Game Design",
+      // TODO: Replace with actual thumbnail image for the Echo System post
+      image: "/placeholder.svg",
+      slug: "/blog/echo-system-roguelite-design"
     }
   ]
 
