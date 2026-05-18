@@ -64,6 +64,28 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    if (!isMenuOpen) return
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false)
+      }
+    }
+
+    window.addEventListener("keydown", onKeyDown)
+    document.body.style.overflow = "hidden"
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown)
+      document.body.style.overflow = ""
+    }
+  }, [isMenuOpen])
+
+  useEffect(() => {
+    setIsMenuOpen(false)
+  }, [location.pathname])
+
   // Magnetic effect for CTA button
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!ctaButtonRef.current) return
@@ -120,15 +142,17 @@ export function Header() {
         ? 'bg-background/80 backdrop-blur-xl border-b border-border/60 py-3 shadow-sm' 
         : 'bg-background/95 backdrop-blur-md border-b border-border/40 py-4'
     }`}>
-      <nav className="container">
+      <nav className="container relative">
         <div className="flex items-center justify-between">
           {/* Mobile menu button - Left Side */}
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden min-h-[44px] min-w-[44px]"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
@@ -196,7 +220,17 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-border">
+          <>
+            <button
+              type="button"
+              className="md:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-[60]"
+              onClick={() => setIsMenuOpen(false)}
+              aria-label="Close menu overlay"
+            />
+            <div
+              id="mobile-navigation"
+              className="md:hidden mt-4 py-4 border-t border-border absolute left-0 right-0 top-full px-4 bg-background/95 backdrop-blur-xl shadow-lg z-[70]"
+            >
             {/* Quick Access Row - Optimized for small screens */}
             <div className="flex flex-col gap-3 mb-4 pb-4 border-b border-border">
               <div className="flex items-center gap-2 flex-wrap">
@@ -256,7 +290,8 @@ export function Header() {
                 )
               })}
             </div>
-          </div>
+            </div>
+          </>
         )}
       </nav>
     </header>
