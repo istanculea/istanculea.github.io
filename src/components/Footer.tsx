@@ -89,7 +89,7 @@ export function Footer() {
                 <button
                   key={link.name}
                   onClick={() => scrollToSection(link.href)}
-                  className="text-muted-foreground hover:text-foreground transition-colors text-left text-sm hover:translate-x-1 transition-transform duration-200 link-underline min-h-[44px] inline-flex items-center"
+                  className="text-muted-foreground hover:text-foreground transition-all text-left text-sm hover:translate-x-1 duration-200 link-underline min-h-[44px] inline-flex items-center"
                 >
                   {link.name}
                 </button>
@@ -104,7 +104,7 @@ export function Footer() {
               </a>
               <button
                 onClick={openConsentPreferences}
-                className="text-muted-foreground hover:text-primary transition-colors text-sm text-left hover:translate-x-1 transition-transform duration-200 link-underline min-h-[44px] inline-flex items-center"
+                className="text-muted-foreground hover:text-primary transition-all text-sm text-left hover:translate-x-1 duration-200 link-underline min-h-[44px] inline-flex items-center"
               >
                 Change consent
               </button>

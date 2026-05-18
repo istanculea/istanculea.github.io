@@ -16,10 +16,10 @@ export function Header() {
   const ctaButtonRef = useRef<HTMLButtonElement>(null)
 
   const navItems = [
-    { href: "#about", label: "About", icon: User },
-    { href: "#experience", label: "Experience", icon: Briefcase },
-    { href: "#skills", label: "Skills", icon: Wrench },
-    { href: "#education", label: "Learning", icon: GraduationCap }
+    { href: "#about", label: t('nav.about'), icon: User },
+    { href: "#experience", label: t('nav.experience'), icon: Briefcase },
+    { href: "#skills", label: t('nav.skills'), icon: Wrench },
+    { href: "#education", label: t('nav.education'), icon: GraduationCap }
   ]
 
   // Scroll spy for active section
